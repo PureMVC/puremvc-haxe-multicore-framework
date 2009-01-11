@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">extern </span><span class="kwd">class </span>Array&lt;T&gt;</div><div class="classdoc">
+	An Array is a storage for values. You can access it using indexes or
+	with its API. On the server side, it's often better to use a <code>List</code> which
+	is less memory and CPU consuming, unless you really need indexed access.
+</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>
+		The length of the Array
+</dd><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd>
+		Creates a new Array.
+</dd><dt><span class="kwd">function </span>concat(a : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
+		Returns a new Array by appending <code>a</code> to <code>this</code>.
+</dd><dt><span class="kwd">function </span>copy() : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
+		Returns a copy of the Array. The values are not
+		copied, only the Array structure.
+</dd><dt><span class="kwd">function </span>insert(pos : <a href="Int.html" class="type">Int</a>, x : T) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Inserts the element <code>x</code> at the position <code>pos</code>.
+		All elements after <code>pos</code> are moved one index ahead.
+</dd><dt><span class="kwd">function </span>iterator() : <a href="Iterator.html" class="type">Iterator</a>&lt;<a href="Null.html" class="type">Null</a>&lt;T&gt;&gt;</dt><dd>
+		Returns an iterator of the Array values.
+</dd><dt><span class="kwd">function </span>join(sep : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns a representation of an array with <code>sep</code> for separating each element.
+</dd><dt><span class="kwd">function </span>pop() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd>
+		Removes the last element of the array and returns it.
+</dd><dt><span class="kwd">function </span>push(x : T) : <a href="Int.html" class="type">Int</a></dt><dd>
+		Adds the element <code>x</code> at the end of the array.
+</dd><dt><span class="kwd">function </span>remove(x : T) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Removes the first occurence of <code>x</code>.
+		Returns false if <code>x</code> was not present.
+		Elements are compared by using standard equality.
+</dd><dt><span class="kwd">function </span>reverse() : <a href="Void.html" class="type">Void</a></dt><dd>
+		Reverse the order of elements of the Array.
+</dd><dt><span class="kwd">function </span>shift() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd>
+		Removes the first element and returns it.
+</dd><dt><span class="kwd">function </span>slice(pos : <a href="Int.html" class="type">Int</a>, ?end : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
+		Copies the range of the array starting at <code>pos</code> up to,
+		but not including, <code>end</code>. Both <code>pos</code> and <code>end</code> can be
+		negative to count from the end: -1 is the last item in
+		the array.
+</dd><dt><span class="kwd">function </span>sort(f : T -> T -> <a href="Int.html" class="type">Int</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Sort the Array according to the comparison function <code>f</code>.
+		<code>f(x,y)</code> should return <code>0</code> if <code>x == y</code>, <code>&gt;0</code> if <code>x &gt; y</code>
+		and <code>&lt;0</code> if <code>x &lt; y</code>.
+</dd><dt><span class="kwd">function </span>splice(pos : <a href="Int.html" class="type">Int</a>, len : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
+		Removes <code>len</code> elements starting from <code>pos</code> an returns them.
+</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
+		Returns a displayable representation of the Array content.
+</dd><dt><span class="kwd">function </span>unshift(x : T) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Adds the element <code>x</code> at the start of the array.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

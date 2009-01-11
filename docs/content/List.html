@@ -1,0 +1,162 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>List&lt;T&gt;</div><div class="classdoc">
+	A linked-list of elements. The list is composed of two-elements arrays
+	that are chained together. It's optimized so that adding or removing an
+	element doesn't imply to copy the whole array content everytime.
+</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>
+		The number of elements in this list.
+</dd><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd>
+		Creates a new empty list.
+</dd><dt><span class="kwd">function </span>add(item : T) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Add an element at the end of the list.
+</dd><dt><span class="kwd">function </span>clear() : <a href="Void.html" class="type">Void</a></dt><dd>
+		Makes the list empty.
+</dd><dt><span class="kwd">function </span>filter(f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="List.html" class="type">List</a>&lt;T&gt;</dt><dd>
+		Returns a list filtered with <code>f</code>. The returned list
+		will contain all elements <code>x</code> for which <code>f(x) = true</code>.
+</dd><dt><span class="kwd">function </span>first() : T</dt><dd>
+		Returns the first element of the list, or null
+		if the list is empty.
+</dd><dt><span class="kwd">function </span>isEmpty() : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Tells if a list is empty.
+</dd><dt><span class="kwd">function </span>iterator() : <a href="Iterator.html" class="type">Iterator</a>&lt;T&gt;</dt><dd>
+		Returns an iterator on the elements of the list.
+</dd><dt><span class="kwd">function </span>join(sep : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Join the element of the list by using the separator <code>sep</code>.
+</dd><dt><span class="kwd">function </span>last() : T</dt><dd>
+		Returns the last element of the list, or null
+		if the list is empty.
+</dd><dt><span class="kwd">function </span>map&lt;X&gt;(f : T -> X) : <a href="List.html" class="type">List</a>&lt;X&gt;</dt><dd>
+		Returns a new list where all elements have been converted
+		by the function <code>f</code>.
+</dd><dt><span class="kwd">function </span>pop() : T</dt><dd>
+		Removes the first element of the list and
+		returns it or simply returns null if the
+		list is empty.
+</dd><dt><span class="kwd">function </span>push(item : T) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Push an element at the beginning of the list.
+</dd><dt><span class="kwd">function </span>remove(v : T) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Remove the first element that is <code>== v</code> from the list.
+		Returns <code>true</code> if an element was removed, <code>false</code> otherwise.
+</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
+		Returns a displayable representation of the String.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

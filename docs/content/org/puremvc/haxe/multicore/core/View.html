@@ -1,0 +1,160 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.core.View</div><div class="implements">implements <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IView.html" class="type">org.puremvc.haxe.multicore.interfaces.IView</a></div><div class="classdoc"><p>A Multiton <code>IView</code> implementation.</p>
+<p><p>In PureMVC, the <code>View</code> class assumes these responsibilities:</p>
+  <ul>
+  <li>Maintain a cache of <code>IMediator</code> instances.</li>
+  <li>Provide methods for registering, retrieving, and removing <code>IMediators</code>.</li>
+  <li>Notifiying <code>IMediators</code> when they are registered or removed.</li>
+  <li>Managing the observer lists for each <code>INotification</code> in the application.</li>
+  <li>Providing a method for attaching <code>IObservers</code> to an <code>INotification</code>'s observer list.</li>
+  <li>Providing a method for broadcasting an <code>INotification</code>.</li>
+  <li>Notifying the <code>IObservers</code> of a given <code>INotification</code> when it broadcast.</li>
+  </ul></p></div><dl><dt><span class="kwd">function </span>new(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Constructor.</p>
+<p><p>This <code>IView</code> implementation is a Multiton,
+	  so you should not call the constructor
+	  directly, but instead call the static Multiton
+	  Factory method <code>View.getInstance( multitonKey )</code></p></p></dd><dt><span class="kwd">function </span>hasMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Check if a Mediator is registered or not
+</dd><dt><span class="kwd">function </span>notifyObservers(notification : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">org.puremvc.haxe.multicore.interfaces.INotification</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Notify the <code>IObservers</code> for a particular <code>INotification</code>.</p>
+<p><p>All previously attached <code>IObservers</code> for this <code>INotification</code>'s
+	  list are notified and are passed a reference to the <code>INotification</code> in
+	  the order in which they were registered.</p></p></dd><dt><span class="kwd">function </span>registerMediator(mediator : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">org.puremvc.haxe.multicore.interfaces.IMediator</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Register an <code>IMediator</code> instance with the <code>View</code>.</p>
+<p><p>Registers the <code>IMediator</code> so that it can be retrieved by name,
+	  and further interrogates the <code>IMediator</code> for its <code>INotification</code> interests.</p>
+	  <p>
+	  If the <code>IMediator</code> returns any <code>INotification</code>
+	  names to be notified about, an <code>Observer</code> is created encapsulating
+	  the <code>IMediator</code> instance's <code>handleNotification</code> method
+	  and registering it as an <code>Observer</code> for all <code>INotifications</code> the
+	  <code>IMediator</code> is interested in.</p></p></dd><dt><span class="kwd">function </span>registerObserver(notificationName : <a href="../../../../../String.html" class="type">String</a>, observer : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IObserver.html" class="type">org.puremvc.haxe.multicore.interfaces.IObserver</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Register an <code>IObserver</code> to be notified of <code>INotifications</code> with a given name.
+</dd><dt><span class="kwd">function </span>removeMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">org.puremvc.haxe.multicore.interfaces.IMediator</a></dt><dd>
+ 	 Remove an <code>IMediator</code> from the <code>View</code>.
+</dd><dt><span class="kwd">function </span>removeObserver(notificationName : <a href="../../../../../String.html" class="type">String</a>, notifyContext : <a href="../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+ 	 Remove the observer for a given notifyContext from an observer list for a given Notification name.
+</dd><dt><span class="kwd">function </span>removeView(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Remove an IView instance
+</dd><dt><span class="kwd">function </span>retrieveMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">org.puremvc.haxe.multicore.interfaces.IMediator</a></dt><dd>
+	  Retrieve an <code>IMediator</code> from the <code>View</code>.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getInstance(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IView.html" class="type">org.puremvc.haxe.multicore.interfaces.IView</a></dt><dd>
+	  View Singleton Factory method.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

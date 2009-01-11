@@ -1,0 +1,151 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">extern </span><span class="kwd">class </span>String</div><div class="classdoc">
+	The basic String class.
+</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>
+		The number of characters in the String.
+</dd><dt><span class="kwd">function </span>new(string : <a href="String.html" class="type">String</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Creates a copy from a given String.
+</dd><dt><span class="kwd">function </span>charAt(index : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns the character at the given position.
+		Returns the empty String if outside of String bounds.
+</dd><dt><span class="kwd">function </span>charCodeAt(index : <a href="Int.html" class="type">Int</a>) : <a href="Null.html" class="type">Null</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd>
+		Returns the character code at the given position.
+		Returns <code>null</code> if outside of String bounds.
+</dd><dt><span class="kwd">function </span>indexOf(value : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
+		Returns the index of first occurence of <code>value</code>
+		Returns <code>1-1</code> if <code>value</code> is not found.
+		The optional <code>startIndex</code> parameter allows you to specify at which character to start searching.
+		The position returned is still relative to the beginning of the string.
+</dd><dt><span class="kwd">function </span>lastIndexOf(value : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
+		Similar to <code>indexOf</code> but returns the latest index.
+</dd><dt><span class="kwd">function </span>split(delimiter : <a href="String.html" class="type">String</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
+		Split the string using the specified delimiter.
+</dd><dt><span class="kwd">function </span>substr(pos : <a href="Int.html" class="type">Int</a>, ?len : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns a part of the String, taking <code>len</code> characters starting from <code>pos</code>.
+		If <code>len</code> is not specified, it takes all the remaining characters.
+</dd><dt><span class="kwd">function </span>toLowerCase() : <a href="String.html" class="type">String</a></dt><dd>
+		Returns an String where all characters have been lowercased.
+</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
+		Returns the String itself.
+</dd><dt><span class="kwd">function </span>toUpperCase() : <a href="String.html" class="type">String</a></dt><dd>
+		Returns an String where all characters have been uppercased.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>fromCharCode(code : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

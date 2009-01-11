@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">interface </span>org.puremvc.haxe.multicore.interfaces.IFacade</div><div class="implements">implements <a href="../../../../../org/puremvc/haxe/multicore/interfaces/INotifier.html" class="type">INotifier</a></div><div class="classdoc"><p>The interface definition for a PureMVC Facade.</p>
+<p><p>The Facade Pattern suggests providing a single
+  class to act as a central point of communication
+  for a subsystem.</p></p>
+<p><p>In PureMVC, the Facade acts as an interface between
+  the core MVC actors (Model, View, Controller) and
+  the rest of your application.</p></p></div><dl><dt><span class="kwd">function </span>hasCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Check if a <code>Command</code> is registered for a given Notification
+</dd><dt><span class="kwd">function </span>hasMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Check if a <code>Mediator</code> is registered or not
+</dd><dt><span class="kwd">function </span>hasProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Check if a <code>Proxy</code> is registered
+</dd><dt><span class="kwd">function </span>notifyObservers(note : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">INotification</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Notify the <code>IObservers</code> for a particular <code>INotification</code>.</p>
+<p><p>All previously attached <code>IObservers</code> for this <code>INotification</code>'s
+	  list are notified and are passed a reference to the <code>INotification</code> in
+	  the order in which they were registered.</p></p>
+<p><p>NOTE: Use this method only if you are sending custom Notifications. Otherwise
+	  use the sendNotification method which does not require you to create the
+	  Notification instance.</p></p></dd><dt><span class="kwd">function </span>registerCommand(noteName : <a href="../../../../../String.html" class="type">String</a>, commandClassRef : <a href="../../../../../Class.html" class="type">Class</a>&lt;<a href="../../../../../org/puremvc/haxe/multicore/interfaces/ICommand.html" class="type">ICommand</a>&gt;) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Register an <code>ICommand</code> with the <code>Controller</code>.
+</dd><dt><span class="kwd">function </span>registerMediator(mediator : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">IMediator</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Register an <code>IMediator</code> instance with the <code>View</code>.
+</dd><dt><span class="kwd">function </span>registerProxy(proxy : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">IProxy</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Register an <code>IProxy</code> with the <code>Model</code> by name.
+</dd><dt><span class="kwd">function </span>removeCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Remove a previously registered <code>ICommand</code> to <code>INotification</code> mapping from the Controller.
+</dd><dt><span class="kwd">function </span>removeCore(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Remove a Core
+</dd><dt><span class="kwd">function </span>removeMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">IMediator</a></dt><dd>
+	  Remove a <code>IMediator</code> instance from the <code>View</code>.
+</dd><dt><span class="kwd">function </span>removeProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">IProxy</a></dt><dd>
+	  Remove an <code>IProxy</code> instance from the <code>Model</code> by name.
+</dd><dt><span class="kwd">function </span>retrieveMediator(mediatorName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">IMediator</a></dt><dd>
+	  Retrieve an <code>IMediator</code> instance from the <code>View</code>.
+</dd><dt><span class="kwd">function </span>retrieveProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">IProxy</a></dt><dd>
+	  Retrieve a <code>IProxy</code> from the <code>Model</code> by name.
+</dd><dt><span class="kwd">function </span>sendNotification(notificationName : <a href="../../../../../String.html" class="type">String</a>, ?body : <a href="../../../../../Dynamic.html" class="type">Dynamic</a>, ?type : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Create and send an <code>INotification</code>.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

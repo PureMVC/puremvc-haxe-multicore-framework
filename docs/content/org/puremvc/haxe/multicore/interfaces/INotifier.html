@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">interface </span>org.puremvc.haxe.multicore.interfaces.INotifier</div><div class="classdoc"><p>The interface definition for a PureMVC Notifier.</p>
+<p><p><code>MacroCommand, Command, Mediator</code> and <code>Proxy</code>
+  all have a need to send <code>Notifications</code>. </p></p>
+<p><p>The <code>INotifier</code> interface provides a common method called
+  <code>sendNotification</code> that relieves implementation code of
+  the necessity to actually construct <code>Notifications</code>.</p></p>
+<p><p>The <code>Notifier</code> class, which all of the above mentioned classes
+  extend, also provides an initialized reference to the <code>Facade</code>
+  Singleton, which is required for the convienience method
+  for sending <code>Notifications</code>, but also eases implementation as these
+  classes have frequent <code>Facade</code> interactions and usually require
+  access to the facade anyway.</p></p></div><dl><dt><span class="kwd">function </span>initializeNotifier(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Initialize this INotifier instance.</p>
+<p><p>This is how a Notifier gets its multitonKey.
+	  Calls to sendNotification or to access the
+	  facade will fail until after this method
+	  has been called.</p></p></dd><dt><span class="kwd">function </span>sendNotification(notificationName : <a href="../../../../../String.html" class="type">String</a>, ?body : <a href="../../../../../Dynamic.html" class="type">Dynamic</a>, ?type : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd><p>Send a <code>INotification</code>.</p>
+<p><p>Convenience method to prevent having to construct new
+	  notification instances in our implementation code.</p></p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

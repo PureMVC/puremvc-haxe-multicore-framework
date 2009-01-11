@@ -1,0 +1,153 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.patterns.observer.Notification</div><div class="implements">implements <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">org.puremvc.haxe.multicore.interfaces.INotification</a></div><div class="classdoc"><p>A base <code>INotification</code> implementation.</p>
+<p><p>PureMVC does not rely upon underlying event models such
+  as the one provided with Flash.</p></p>
+<p><p>The Observer Pattern as implemented within PureMVC exists
+  to support event-driven communication between the
+  application and the actors of the MVC triad.</p></p>
+<p><p>Notifications are not meant to be a replacement for Events.
+  Generally, <code>IMediator</code> implementors place event listeners on their view components, which they
+  then handle in the usual way. This may lead to the broadcast of <code>Notification</code>s to
+  trigger <code>ICommand</code>s or to communicate with other <code>IMediators</code>. <code>IProxy</code> and <code>ICommand</code>
+  instances communicate with each other and <code>IMediator</code>s  by broadcasting <code>INotification</code>s.</p></p>
+<p><p>A key difference between Flash <code>Event</code>s and PureMVC
+  <code>Notification</code>s is that <code>Event</code>s follow the
+  'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy
+  until some parent component handles the <code>Event</code>, while
+  PureMVC <code>Notification</code>s follow a 'Publish/Subscribe'
+  pattern. PureMVC classes need not be related to each other in a
+  parent/child relationship in order to communicate with one another
+  using <code>Notification</code>s.</p></div><dl><dt><span class="kwd">function </span>new(name : <a href="../../../../../../String.html" class="type">String</a>, ?body : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>, ?type : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Constructor.
+</dd><dt><span class="kwd">function </span>getBody() : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a></dt><dd>
+	  Get the body of the <code>Notification</code> instance.
+</dd><dt><span class="kwd">function </span>getName() : <a href="../../../../../../String.html" class="type">String</a></dt><dd>
+	  Get the name of the <code>Notification</code> instance.
+</dd><dt><span class="kwd">function </span>getType() : <a href="../../../../../../String.html" class="type">String</a></dt><dd>
+	  Get the type of the <code>Notification</code> instance.
+</dd><dt><span class="kwd">function </span>setBody(body : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Set the body of the <code>Notification</code> instance.
+</dd><dt><span class="kwd">function </span>setType(type : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Set the type of the <code>Notification</code> instance.
+</dd><dt><span class="kwd">function </span>toString() : <a href="../../../../../../String.html" class="type">String</a></dt><dd>
+	  Get the string representation of the <code>Notification</code> instance.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

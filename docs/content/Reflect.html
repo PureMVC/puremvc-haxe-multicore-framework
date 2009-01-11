@@ -1,0 +1,149 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Reflect</div><div class="classdoc">
+	The Reflect API is a way to manipulate values dynamicly through an
+	abstract interface in an untyped manner. Use with care.
+</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>callMethod(o : <a href="Dynamic.html" class="type">Dynamic</a>, func : <a href="Dynamic.html" class="type">Dynamic</a>, args : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="Dynamic.html" class="type">Dynamic</a></dt><dd>
+		Call a method with the given object and arguments.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>compare&lt;T&gt;(a : T, b : T) : <a href="Int.html" class="type">Int</a></dt><dd>
+		Generic comparison function, does not work for methods, see <code>compareMethods</code>
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>compareMethods(f1 : <a href="Dynamic.html" class="type">Dynamic</a>, f2 : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Compare two methods closures. Returns true if it's the same method of the same instance.
+		Does not work on Neko platform.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>copy&lt;T&gt;(o : T) : T</dt><dd>
+		Make a copy of the fields of an object.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>deleteField(o : <a href="Dynamic.html" class="type">Dynamic</a>, f : <a href="String.html" class="type">String</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Delete an object field.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>field(o : <a href="Dynamic.html" class="type">Dynamic</a>, field : <a href="String.html" class="type">String</a>) : <a href="Dynamic.html" class="type">Dynamic</a></dt><dd>
+		Returns the field of an object, or null if <code>o</code> is not an object or doesn't have this field.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>fields(o : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
+		Returns the list of fields of an object, excluding its prototype (class methods).
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>hasField(o : <a href="Dynamic.html" class="type">Dynamic</a>, field : <a href="String.html" class="type">String</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Tells if an object has a field set. This doesn't take into account the object prototype (class methods).
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>isFunction(f : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Tells if a value is a function or not.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>isObject(v : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd><p>Tells if a value is an object or not.</p>
+<p></p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>makeVarArgs(f : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt; -> <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Dynamic.html" class="type">Dynamic</a></dt><dd>
+		Transform a function taking an array of arguments into a function that can
+		be called with any number of arguments.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>setField(o : <a href="Dynamic.html" class="type">Dynamic</a>, field : <a href="String.html" class="type">String</a>, value : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
+		Set an object field value.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+# PureMVC haXe Port by Marco Secchi <marco.secchi@puremvc.org>
+# PureMVC - Copyright(c) 2006-08 Futurescale, Inc., Some rights reserved. 
+# Your reuse is governed by the Creative Commons Attribution 3.0 License 
+
+# build flash9 library
+-cp src
+-swf bin/puremvc_fl9.swf
+-swf-version 9
+org.puremvc.haxe.multicore.ImportAll
+
+# build flash8 library
+--next
+-cp src
+-swf bin/puremvc_fl8.swf
+-swf-version 8
+org.puremvc.haxe.multicore.ImportAll
+
+# build flash7 library
+--next
+-cp src
+-swf bin/puremvc_fl7.swf
+-swf-version 7
+org.puremvc.haxe.multicore.ImportAll
+
+# build flash6 library
+--next
+-cp src
+-swf bin/puremvc_fl6.swf
+-swf-version 6
+org.puremvc.haxe.multicore.ImportAll
+
+# build javascript library
+--next
+-cp src
+-js bin/puremvc.js
+org.puremvc.haxe.multicore.ImportAll
+
+# build docs
+# use the following command-line action to generate docs:
+# haxedoc puremvc_docs.xml -f Array -f Bool -f org -f Class -f Dynamic -f Enum -f float -f Hash -f Int -f Iter -f List -f Math -f Null -f Reflect -f Std -f String -f Type -f Void -f Value
+--next
+-cp src
+-neko docs/all.n
+-xml docs/puremvc_docs.xml
+org.puremvc.haxe.multicore.ImportAll
+

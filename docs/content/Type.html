@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Type</div><div class="classdoc">
+	The haXe Reflection API enables you to retreive informations about any value,
+	Classes and Enums at runtime.
+</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>createEmptyInstance&lt;T&gt;(cl : <a href="Class.html" class="type">Class</a>&lt;T&gt;) : T</dt><dd>
+		Similar to <code>Reflect.createInstance</code> excepts that the constructor is not called.
+		This enables you to create an instance without any side-effect.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>createEnum(e : <a href="Enum.html" class="type">Enum</a>, constr : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="Dynamic.html" class="type">Dynamic</a></dt><dd>
+		Create an instance of an enum by using a constructor name and parameters.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>createInstance&lt;T&gt;(cl : <a href="Class.html" class="type">Class</a>&lt;T&gt;, args : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : T</dt><dd>
+		Creates an instance of the given class with the list of constructor arguments.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>enumConstructor(e : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns the constructor of an enum
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>enumEq&lt;T&gt;(a : T, b : T) : <a href="Bool.html" class="type">Bool</a></dt><dd>
+		Recursively compare two enums constructors and parameters.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>enumIndex(e : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
+		Returns the index of the constructor of an enum
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>enumParameters(e : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;</dt><dd>
+		Returns the parameters of an enum
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getClass&lt;T&gt;(o : T) : <a href="Class.html" class="type">Class</a>&lt;T&gt;</dt><dd>
+		Returns the class of a value or <code>null</code> if this value is not a Class instance.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getClassFields(c : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
+		Returns the list of a class static fields.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getClassName(c : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns the complete name of a class.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getEnum(o : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Enum.html" class="type">Enum</a></dt><dd>
+		Returns the enum of a value or <code>null</code> if this value is not an Enum instance.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getEnumConstructs(e : <a href="Enum.html" class="type">Enum</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
+		Returns all the available constructor names for an enum.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getEnumName(e : <a href="Enum.html" class="type">Enum</a>) : <a href="String.html" class="type">String</a></dt><dd>
+		Returns the complete name of an enum.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getInstanceFields(c : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
+		Returns the list of instance fields.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getSuperClass(c : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;</dt><dd>
+		Returns the super-class of a class, or null if no super class.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>resolveClass(name : <a href="String.html" class="type">String</a>) : <a href="Class.html" class="type">Class</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;</dt><dd>
+		Evaluates a class from a name. The class must have been compiled
+		to be accessible.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>resolveEnum(name : <a href="String.html" class="type">String</a>) : <a href="Enum.html" class="type">Enum</a></dt><dd>
+		Evaluates an enum from a name. The enum must have been compiled
+		to be accessible.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>typeof(v : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="ValueType.html" class="type">ValueType</a></dt><dd>
+		Returns the runtime type of a value.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.patterns.command.SimpleCommand</div><div class="extends">extends <a href="../../../../../../org/puremvc/haxe/multicore/patterns/observer/Notifier.html" class="type">org.puremvc.haxe.multicore.patterns.observer.Notifier</a></div><div class="implements">implements <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/ICommand.html" class="type">org.puremvc.haxe.multicore.interfaces.ICommand</a></div><div class="classdoc"><p>A base <code>ICommand</code> implementation.</p>
+<p><p>Your subclass should override the <code>execute</code>
+  method where your business logic will handle the <code>INotification</code>.</p></p></div><dl><dt><span class="kwd">function </span>new() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>execute(notification : <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">org.puremvc.haxe.multicore.interfaces.INotification</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd><p>Fulfill the use-case initiated by the given <code>INotification</code>.</p>
+<p><p>In the Command Pattern, an application use-case typically
+	  begins with some user action, which results in an <code>INotification</code> being broadcast, which
+	  is handled by business logic in the <code>execute</code> method of an <code>ICommand</code>.</p></p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>

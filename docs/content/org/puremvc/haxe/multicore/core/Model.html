@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<title>haXe API Documentation</title>
+
+<script type="text/javascript">
+<!--
+	function toggle(id) {
+		var e = document.getElementById(id);
+		e.isopen = !e.isopen;
+		e.style.display = e.isopen?"block":"none";
+		return false;
+	}
+-->
+</script>
+
+<style type="text/css">
+body {
+	text-align: center;
+	font-family: Trebuchet MS, sans-serif;
+	background-color : #ffffff;
+}
+
+.document {
+	width : 800px;
+	position : relative;
+	margin : 10px auto 5px auto;
+	border : solid 2px #CFD0D4;
+	text-align : justify;
+	background-color: #ffffff;
+	color: #292929;
+}
+
+.title {
+	font-size: 28px;
+	font-weight: bold;
+	text-align: center;
+	background-color : #0067b0;
+	color : white;
+}
+
+ul.entry {
+	list-style-type: circle;
+	font-weight : bold;
+	margin-left : 20px;
+}
+
+.package_content {
+	display : none;
+}
+
+a {
+	color : #0067b0;
+	font-weight : bold;
+	text-decoration : none;
+}
+
+a:hover {
+	color : #0067b0;
+	text-decoration : underline;
+}
+
+a.package {
+	color : #292929;
+}
+
+.index {
+	margin-left : 10px;
+}
+
+.kwd {
+	color: #008cd7;
+}
+
+.classname {
+	font-size : 25px;
+	font-weight : bold;
+	margin : 20px 10px;
+}
+
+.classdoc {
+	border : 1px dashed #666;
+	margin-left : 20px;
+	margin-right : 20px;
+	padding : 5px 5px 5px 5px;
+}
+
+.importmod, .extends, .implements, .typedef, .platforms {
+	margin-left: 20px;
+	color : #777;
+}
+
+dd {
+	margin : 0px 20px 20px 40px;
+	font-size : 12pt;
+	color : #444;
+}
+
+dt {
+	margin-left : 20px;
+	margin-bottom : 5px;
+	text-align : left;
+	font-size : 10pt;
+	font-family: Courier New, monospace;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="document">
+<div class="title">PureMVC Framework for haXe: API Documentation</div>
+
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.core.Model</div><div class="implements">implements <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IModel.html" class="type">org.puremvc.haxe.multicore.interfaces.IModel</a></div><div class="classdoc"><p>A Singleton <code>IModel</code> implementation.</p>
+<p><p>In PureMVC, the <code>Model</code> class provides access to model objects (Proxies) by named lookup.</p></p>
+<p><p>The <code>Model</code> assumes these responsibilities:</p>
+  <ul>
+  <li>Maintain a cache of <code>IProxy</code> instances.</li>
+  <li>Provide methods for registering, retrieving, and removing <code>IProxy</code> instances.</li>
+  </ul></p>
+<p><p>Your application must register <code>IProxy</code> instances with the <code>Model</code>. Typically, you use an
+  <code>ICommand</code> to create and register <code>IProxy</code> instances once the <code>Facade</code> has initialized the Core
+  actors.</p></p></div><dl><dt><span class="kwd">function </span>hasProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
+	  Check if a <code>Proxy</code> is registered
+</dd><dt><span class="kwd">function </span>registerProxy(proxy : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">org.puremvc.haxe.multicore.interfaces.IProxy</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Register an <code>IProxy</code> with the <code>Model</code>.
+</dd><dt><span class="kwd">function </span>removeModel(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
+	  Remove an IModel instance
+</dd><dt><span class="kwd">function </span>removeProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">org.puremvc.haxe.multicore.interfaces.IProxy</a></dt><dd>
+	  Remove an <code>IProxy</code> from the <code>Model</code>.
+</dd><dt><span class="kwd">function </span>retrieveProxy(proxyName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IProxy.html" class="type">org.puremvc.haxe.multicore.interfaces.IProxy</a></dt><dd>
+	  Retrieve an <code>IProxy</code> from the <code>Model</code>.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>getInstance(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/IModel.html" class="type">org.puremvc.haxe.multicore.interfaces.IModel</a></dt><dd>
+	  <code>Model</code> Multiton Factory method.
+</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
+
+</div>
+
+</body>
+</html>
