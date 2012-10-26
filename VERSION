@@ -1,12 +1,10 @@
-PureMVC MultiCore Port to haXe by Marco Secchi
-PureMVC MultiCore - Copyright(c) 2007-2009 Futurescale, Inc., Some rights reserved.
+PureMVC MultiCore Framework for Haxe (Ported) - Copyright © 2008-2009 Marco Secchi
 --------------------------------------------------------------------------
 Release Date: 01/10/09
     Platform: haXe - JavaScript, Flash 6, 7, 8, 9, Neko VM
      Version: 1 
     Revision: 2 
       Author: Marco Secchi <marco.secchi@puremvc.org>
-     License: Creative Commons Attribution 3.0 United States License
 --------------------------------------------------------------------------
 1.2 Libraries now include version number. - CLH 
 
