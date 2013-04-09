@@ -18,6 +18,12 @@ import org.puremvc.haxe.multicore.interfaces.IController;
 import org.puremvc.haxe.multicore.interfaces.IModel;
 import org.puremvc.haxe.multicore.interfaces.IView;
 
+#if haxe3
+import haxe.ds.StringMap;
+#else
+private typedef StringMap<T> = Hash<T>;
+#end
+
 /**
  * A base Multiton [IFacade] implementation.
  */
@@ -57,7 +63,7 @@ class Facade implements IFacade
 	 */
 	public static function getInstance( key: String ): IFacade
 	{
-		if ( instanceMap == null ) instanceMap = new Hash();
+		if ( instanceMap == null ) instanceMap = new StringMap();
 		if ( !instanceMap.exists( key ) ) instanceMap.set(  key, new Facade( key ) );
 		return instanceMap.get( key );
 	}
@@ -278,6 +284,6 @@ class Facade implements IFacade
 	private var multitonKey: String;
 	
 	// The Multiton Facade instanceMap.
-	private static var instanceMap : Hash<IFacade>;
+	private static var instanceMap : StringMap<IFacade>;
 
 }

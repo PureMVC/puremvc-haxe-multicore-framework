@@ -34,7 +34,11 @@ package org.puremvc.haxe.multicore.interfaces;
  * and register it as an Observer for each [INotification] name returned by 
  * [listNotificationInterests].</p>
  */
+#if haxe3
+interface IMediator extends INotifier
+#else
 interface IMediator implements INotifier
+#end
 {
 		
 	/**

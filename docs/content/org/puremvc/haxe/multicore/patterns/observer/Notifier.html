@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,7 +111,7 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
 <a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.patterns.observer.Notifier</div><div class="implements">implements <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/INotifier.html" class="type">org.puremvc.haxe.multicore.interfaces.INotifier</a></div><div class="classdoc"><p>A Base <code>INotifier</code> implementation.</p>
 <p><p><code>MacroCommand, Command, Mediator</code> and <code>Proxy</code>
@@ -124,19 +124,7 @@ dt {
   Singleton, which is required for the convienience method
   for sending <code>Notifications</code>, but also eases implementation as these
   classes have frequent <code>Facade</code> interactions and usually require
-  access to the facade anyway.</p></p></div><dl><dt><span class="kwd">var </span>facade(getFacade,null) : <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/IFacade.html" class="type">org.puremvc.haxe.multicore.interfaces.IFacade</a></dt><dd></dd><dt><span class="kwd">function </span>new() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>initializeNotifier(key : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd><p>Initialize this INotifier instance.</p>
-<p><p>This is how a Notifier gets its multitonKey.
-	  Calls to sendNotification or to access the
-	  facade will fail until after this method
-	  has been called.</p></p>
-<p><p>Mediators, Commands or Proxies may override
-	  this method in order to send notifications
-	  or access the Multiton Facade instance as
-	  soon as possible. They CANNOT access the facade
-	  in their constructors, since this method will not
-	  yet have been called.</p></p></dd><dt><span class="kwd">function </span>sendNotification(notificationName : <a href="../../../../../../String.html" class="type">String</a>, ?body : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>, ?type : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd><p>Send an <code>INotification</code>s.</p>
-<p><p>Keeps us from having to construct new notification
-	  instances in our implementation code.</p></p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a>
+  access to the facade anyway.</p></p></div><dl><dt><span class="kwd">var </span>facade(dynamic,null) : <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/IFacade.html" class="type">org.puremvc.haxe.multicore.interfaces.IFacade</a></dt><dd></dd><dt><span class="kwd">function </span>new() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>initializeNotifier(key : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>sendNotification(notificationName : <a href="../../../../../../String.html" class="type">String</a>, ?body : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>, ?type : <a href="../../../../../../String.html" class="type">String</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a>
 
 </div>
 

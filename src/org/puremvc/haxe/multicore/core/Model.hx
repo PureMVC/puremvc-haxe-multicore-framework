@@ -7,6 +7,12 @@ package org.puremvc.haxe.multicore.core;
 
 import org.puremvc.haxe.multicore.interfaces.IModel;
 import org.puremvc.haxe.multicore.interfaces.IProxy;
+
+#if haxe3
+import haxe.ds.StringMap;
+#else
+private typedef StringMap<T> = Hash<T>;
+#end
 	
 /**
  * A Singleton [IModel] implementation.
@@ -37,7 +43,7 @@ class Model implements IModel
 	{
 		multitonKey = key;
 		instanceMap.set( multitonKey, this );
-		proxyMap = new Hash();	
+		proxyMap = new StringMap();	
 		initializeModel();
 	}
 		
@@ -56,7 +62,7 @@ class Model implements IModel
 	 */
 	public static function getInstance( key: String ): IModel 
 	{
-		if ( instanceMap == null ) instanceMap = new Hash();
+		if ( instanceMap == null ) instanceMap = new StringMap();
 		if ( !instanceMap.exists( key ) ) instanceMap.set( key, new Model( key ) );
 		return instanceMap.get( key );
 	}
@@ -110,10 +116,10 @@ class Model implements IModel
 	}
 
 	// Mapping of proxyNames to [IProxy] instances
-	private var proxyMap: Hash<IProxy>;
+	private var proxyMap: StringMap<IProxy>;
 
 	// Singleton instance
-	private static var instanceMap: Hash<IModel>;
+	private static var instanceMap: StringMap<IModel>;
 	
 	// The Multiton Key for this Core
 	private var multitonKey: String;

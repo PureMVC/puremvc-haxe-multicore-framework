@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,39 +111,55 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
-<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">extern </span><span class="kwd">class </span>String</div><div class="classdoc">
-	The basic String class.
-</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>
-		The number of characters in the String.
-</dd><dt><span class="kwd">function </span>new(string : <a href="String.html" class="type">String</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Creates a copy from a given String.
-</dd><dt><span class="kwd">function </span>charAt(index : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd>
-		Returns the character at the given position.
-		Returns the empty String if outside of String bounds.
-</dd><dt><span class="kwd">function </span>charCodeAt(index : <a href="Int.html" class="type">Int</a>) : <a href="Null.html" class="type">Null</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd>
-		Returns the character code at the given position.
-		Returns <code>null</code> if outside of String bounds.
-</dd><dt><span class="kwd">function </span>indexOf(value : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
-		Returns the index of first occurence of <code>value</code>
-		Returns <code>1-1</code> if <code>value</code> is not found.
-		The optional <code>startIndex</code> parameter allows you to specify at which character to start searching.
-		The position returned is still relative to the beginning of the string.
-</dd><dt><span class="kwd">function </span>lastIndexOf(value : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
-		Similar to <code>indexOf</code> but returns the latest index.
-</dd><dt><span class="kwd">function </span>split(delimiter : <a href="String.html" class="type">String</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd>
-		Split the string using the specified delimiter.
-</dd><dt><span class="kwd">function </span>substr(pos : <a href="Int.html" class="type">Int</a>, ?len : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd>
-		Returns a part of the String, taking <code>len</code> characters starting from <code>pos</code>.
-		If <code>len</code> is not specified, it takes all the remaining characters.
-</dd><dt><span class="kwd">function </span>toLowerCase() : <a href="String.html" class="type">String</a></dt><dd>
-		Returns an String where all characters have been lowercased.
-</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
-		Returns the String itself.
-</dd><dt><span class="kwd">function </span>toUpperCase() : <a href="String.html" class="type">String</a></dt><dd>
-		Returns an String where all characters have been uppercased.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>fromCharCode(code : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>String</div><div class="classdoc"><p>The basic String class.</p>
+<p>A haxe String is immutable, it is not possible to modify individual
+	characters. No method of this class changes the state of <code>this</code> String.</p>
+<p>Strings can be constructed using the string literal syntax "string value".</p>
+<p>String can be concatenated by using the + operator. If an operand is not a
+	String, it is passed through Std.string() first.</p></div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>The number of characters in <code>this</code> String.</dd><dt><span class="kwd">function </span>new(string : <a href="String.html" class="type">String</a>) : <a href="Void.html" class="type">Void</a></dt><dd>Creates a copy from a given String.</dd><dt><span class="kwd">function </span>charAt(index : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Returns the character at position <code>index</code> of <code>this</code> String.</p>
+<p>If <code>index</code> is negative or exceeds <code>this</code>.length, the empty String ""
+		is returned.</p></dd><dt><span class="kwd">function </span>charCodeAt(index : <a href="Int.html" class="type">Int</a>) : <a href="Null.html" class="type">Null</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd><p>Returns the character code at position <code>index</code> of <code>this</code> String.</p>
+<p>If <code>index</code> is negative or exceeds <code>this</code>.length, null is returned.</p>
+<p>To obtain the character code of a single character, "x".code can be used
+		instead to inline the character code at compile time. Note that this
+		only works on String literals of length 1.</p></dd><dt><span class="kwd">function </span>indexOf(str : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd><p>Returns the position of the leftmost occurence of <code>str</code> within <code>this</code>
+		String.</p>
+<p>If <code>startIndex</code> is given, the search is performed within the substring
+		of <code>this</code> String starting from <code>startIndex</code>. Otherwise the search is
+		performed within <code>this</code> String. In either case, the returned position
+		is relative to the beginning of <code>this</code> String.</p>
+<p>If <code>str</code> cannot be found, -1 is returned.</p></dd><dt><span class="kwd">function </span>lastIndexOf(str : <a href="String.html" class="type">String</a>, ?startIndex : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd><p>Returns the position of the rightmost occurence of <code>str</code> within <code>this</code>
+		String.</p>
+<p>If <code>startIndex</code> is given, the search is performed within the substring
+		of <code>this</code> String from 0 to <code>startIndex</code>. Otherwise the search is
+		performed within <code>this</code> String. In either case, the returned position
+		is relative to the beginning of <code>this</code> String.</p>
+<p>If <code>str</code> cannot be found, -1 is returned.</p></dd><dt><span class="kwd">function </span>split(delimiter : <a href="String.html" class="type">String</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd><p>Splits <code>this</code> String at each occurence of <code>delimiter</code>.</p>
+<p>If <code>delimiter</code> is the empty String "", <code>this</code> String is split into an
+		Array of <code>this</code>.length elements, where the elements correspond to the
+		characters of <code>this</code> String.</p>
+<p>If <code>delimiter</code> is not found within <code>this</code> String, the result is an Array
+		with one element, which equals <code>this</code> String.</p>
+<p>If <code>delimiter</code> is null, the result is unspecified.</p>
+<p>Otherwise, <code>this</code> String is split into parts at each occurence of
+		<code>delimiter</code>. If <code>this</code> String starts (or ends) with <pre>delimiter}, the
+        result Array contains a leading (or trailing) empty String "" element.
+        Two subsequent delimiters also result in an empty String "" element</pre></p></dd><dt><span class="kwd">function </span>substr(pos : <a href="Int.html" class="type">Int</a>, ?len : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Returns <code>len</code> characters of <code>this</code> String, starting at position <code>pos</code>.</p>
+<p>If <code>len</code> is omitted, all characters from position <code>pos</code> to the end of
+		<code>this</code> String are included.</p>
+<p>If <code>pos</code> is negative, its values is calculated from the end	of <code>this</code>
+		String by <code>this</code>.length + <code>pos</code>. If this yields a negative value, 0 is
+		used instead.</p>
+<p>If <code>len</code> is negative, the result is unspecified.</p></dd><dt><span class="kwd">function </span>substring(startIndex : <a href="Int.html" class="type">Int</a>, ?endIndex : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Returns the part of <code>this</code> String from <code>startIndex</code> to <code>endIndex</code>.</p>
+<p>If <code>endIndex</code> is omitted, <code>this</code>.length is used instead.</p>
+<p>If <code>startIndex</code> or <code>endIndex</code> are negative, 0 is used instead.</p>
+<p>If <code>startIndex</code> exceeds <code>endIndex</code>, they are swapped.</p></dd><dt><span class="kwd">function </span>toLowerCase() : <a href="String.html" class="type">String</a></dt><dd><p>Returns a String where all characters of <code>this</code> String are lower case.</p>
+<p>Affects the characters <code>A-Z</code>. Other characters remain unchanged.</p></dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>Returns the String itself.</dd><dt><span class="kwd">function </span>toUpperCase() : <a href="String.html" class="type">String</a></dt><dd><p>Returns a String where all characters of <code>this</code> String are upper case.</p>
+<p>Affects the characters <code>a-z</code>. Other characters remain unchanged.</p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>fromCharCode(code : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Returns the String corresponding to the character code <code>code</code>.</p>
+<p>If <code>code</code> is negative or has another invalid value, the result is
+		unspecified.</p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
 
 </div>
 

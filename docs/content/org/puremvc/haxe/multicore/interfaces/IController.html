@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,7 +111,7 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
 <a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">interface </span>org.puremvc.haxe.multicore.interfaces.IController</div><div class="classdoc"><p>The interface definition for a PureMVC Controller.</p>
 <p><p>In PureMVC, an <code>IController</code> implementor
@@ -127,19 +127,9 @@ dt {
   to handle a given <code>INotification</code> when notified by the <code>View</code>.</li>
   <li> Calling the <code>ICommand</code>'s <code>execute</code>
   method, passing in the <code>INotification</code>.</li>
-  </ul></p></div><dl><dt><span class="kwd">function </span>executeCommand(notification : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">INotification</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Execute the <code>ICommand</code> previously registered as the
-	  handler for <code>INotification</code>s with the given notification name.
-</dd><dt><span class="kwd">function </span>hasCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd>
-	  Check if a Command is registered for a given Notification
-</dd><dt><span class="kwd">function </span>registerCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>, commandClassRef : <a href="../../../../../Class.html" class="type">Class</a>&lt;<a href="../../../../../org/puremvc/haxe/multicore/interfaces/ICommand.html" class="type">ICommand</a>&gt;) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Register a particular <code>ICommand</code> class as the handler
-	  for a particular <code>INotification</code>.
-</dd><dt><span class="kwd">function </span>removeCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Remove a previously registered <code>ICommand</code> to <code>INotification</code> mapping.
-</dd><dt><span class="kwd">function </span>removeController(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Remove an IController instance
-</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
+  </ul></p></div><dl><dt><span class="kwd">function </span>executeCommand(notification : <a href="../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">INotification</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd> Execute the <code>ICommand</code> previously registered as the
+	  handler for <code>INotification</code>s with the given notification name.</dd><dt><span class="kwd">function </span>hasCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Bool.html" class="type">Bool</a></dt><dd> Check if a Command is registered for a given Notification</dd><dt><span class="kwd">function </span>registerCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>, commandClassRef : <a href="../../../../../Class.html" class="type">Class</a>&lt;<a href="../../../../../org/puremvc/haxe/multicore/interfaces/ICommand.html" class="type">ICommand</a>&gt;) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd> Register a particular <code>ICommand</code> class as the handler
+	  for a particular <code>INotification</code>.</dd><dt><span class="kwd">function </span>removeCommand(notificationName : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd> Remove a previously registered <code>ICommand</code> to <code>INotification</code> mapping.</dd><dt><span class="kwd">function </span>removeController(key : <a href="../../../../../String.html" class="type">String</a>) : <a href="../../../../../Void.html" class="type">Void</a></dt><dd> Remove an IController instance</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../index.html" class="index">Index</a>
 
 </div>
 
