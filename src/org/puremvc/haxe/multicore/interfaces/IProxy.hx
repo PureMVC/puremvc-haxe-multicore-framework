@@ -21,7 +21,11 @@ package org.puremvc.haxe.multicore.interfaces;
  * <li>Encapsulate interaction with local or remote services used to fetch and persist model data.</li>
  * </ul>
  */
+#if haxe3
+interface IProxy extends INotifier
+#else
 interface IProxy implements INotifier
+#end
 {
 		
 	/**

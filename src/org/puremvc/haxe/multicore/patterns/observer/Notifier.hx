@@ -63,14 +63,23 @@ class Notifier implements INotifier
 	{
 		multitonKey = key;
 	}
-
-	public var facade( getFacade, null ): IFacade;
+	
+	#if haxe3
+	public var facade( get, null ): IFacade;
+	#else
+	public var facade( get_facade, null ): IFacade;
+	#end
 
 	// Return the Multiton Facade instance 
-	private function getFacade(): IFacade
+	private function get_facade(): IFacade
 	{
 		if ( multitonKey == null ) throw MULTITON_MSG;
 		return Facade.getInstance( multitonKey );
+	}
+	
+	private function getFacade() : IFacade
+	{
+		return facade;
 	}
 	
 	// The Multiton Key for this app

@@ -17,7 +17,11 @@ import org.puremvc.haxe.multicore.patterns.observer.Notifier;
  * <p>Your subclass should override the [execute] 
  * method where your business logic will handle the [INotification].</p>
  */
-class SimpleCommand extends Notifier, implements ICommand 
+#if haxe3
+class SimpleCommand extends Notifier implements ICommand
+#else
+class SimpleCommand extends Notifier, implements ICommand
+#end
 {
 	/**
 	 * Fulfill the use-case initiated by the given [INotification].

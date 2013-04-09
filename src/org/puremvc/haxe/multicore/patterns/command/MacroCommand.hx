@@ -28,7 +28,11 @@ import org.puremvc.haxe.multicore.patterns.observer.Notifier;
  * calling [addSubCommand] once for each <em>SubCommand</em>
  * to be executed.</p>
  */
+#if haxe3
+class MacroCommand extends Notifier implements ICommand
+#else
 class MacroCommand extends Notifier, implements ICommand
+#end
 {
 		
 	private var subCommands: List<Class<ICommand>>;

@@ -11,6 +11,12 @@ import org.puremvc.haxe.multicore.interfaces.IView;
 import org.puremvc.haxe.multicore.interfaces.IController;
 import org.puremvc.haxe.multicore.interfaces.INotification;
 import org.puremvc.haxe.multicore.patterns.observer.Observer;
+
+#if haxe3
+import haxe.ds.StringMap;
+#else
+private typedef StringMap<T> = Hash<T>;
+#end
 	
 /**
  * A Multiton [IController] implementation.
@@ -45,7 +51,7 @@ class Controller implements IController
 	{
 		multitonKey = key;
 		instanceMap.set( multitonKey, this );
-		commandMap = new Hash();
+		commandMap = new StringMap();
 		initializeController();	
 	}
 		
@@ -68,7 +74,7 @@ class Controller implements IController
 	 */
 	public static function getInstance( key: String ): IController
 	{
-		if ( instanceMap == null ) instanceMap = new Hash();	
+		if ( instanceMap == null ) instanceMap = new StringMap();	
 		if ( !instanceMap.exists( key ) ) instanceMap.set( key, new Controller( key ) );
 		return instanceMap.get( key );
 	}
@@ -139,12 +145,12 @@ class Controller implements IController
 	private var view: IView;
 	
 	// Mapping of Notification names to Command Class references
-	private var commandMap: Hash<Class<ICommand>>;
+	private var commandMap: StringMap<Class<ICommand>>;
 
 	// The Multiton Key for this Core
 	private var multitonKey: String;
 
 	// Singleton instance
-	private static var instanceMap: Hash<IController>;
+	private static var instanceMap: StringMap<IController>;
 
 }

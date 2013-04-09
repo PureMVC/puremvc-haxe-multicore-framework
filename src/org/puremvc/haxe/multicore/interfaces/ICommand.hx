@@ -8,7 +8,11 @@ package org.puremvc.haxe.multicore.interfaces;
 /**
  * The interface definition for a PureMVC Command.
  */
+#if haxe3
+interface ICommand extends INotifier
+#else
 interface ICommand implements INotifier
+#end
 {
 	/**
  	 * Execute the [ICommand]'s logic to handle a given [INotification].
