@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,23 +111,16 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
-<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>StringBuf</div><div class="classdoc">
-	A String buffer is an efficient way to build a big string by
-	appending small elements together.
-</div><dl><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd>
-		Creates a new string buffer.
-</dd><dt><span class="kwd">function </span>add(?x : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Adds the representation of any value to the string buffer.
-</dd><dt><span class="kwd">function </span>addChar(c : <a href="Int.html" class="type">Int</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Adds a character to the string buffer.
-</dd><dt><span class="kwd">function </span>addSub(s : <a href="String.html" class="type">String</a>, pos : <a href="Int.html" class="type">Int</a>, ?len : <a href="Int.html" class="type">Int</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Adds a part of a string to the string buffer.
-</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
-		Returns the content of the string buffer.
-		The buffer is not emptied by this operation.
-</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>StringBuf</div><div class="classdoc"><p>A String buffer is an efficient way to build a big string by appending small
+	elements together.</p>
+<p>Its cross-platform implementation uses String concatenation internally, but
+	StringBuf may be optimized for different targets.</p>
+<p>Unlike String, an instance of StringBuf is not immutable in the sense that
+	it can be passed as argument to functions which modify it by appending more
+	values. However, the internal buffer cannot be modified.</p></div><dl><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd><p>Creates a new StringBuf instance.</p>
+<p>This may involve initialization of the internal buffer.</p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
 
 </div>
 

@@ -1,35 +1,1200 @@
 <haxe>
-	<class path="org.puremvc.haxe.multicore.interfaces.INotifier" params="" file="src/org/puremvc/haxe/multicore/interfaces/INotifier.hx" interface="1">
-		<sendNotification public="1">
-			<f a="notificationName:?body:?type">
+	<class path="neko.Lib" params="" file="/usr/lib/haxe/std/neko/Lib.hx">
+		<load public="1" set="method" line="29" static="1">
+			<f a="lib:prim:nargs">
 				<c path="String"/>
+				<c path="String"/>
+				<x path="Int"/>
+				<d/>
+			</f>
+			<haxe_doc>Load and return a Neko primitive from a NDLL library.</haxe_doc>
+		</load>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="Array" params="T" file="/usr/lib/haxe/std/neko/_std/Array.hx">
+		<new1 params="T" set="method" line="32" static="1"><f a="a:l">
+	<c path="neko.NativeArray"><c path="new1.T"/></c>
+	<x path="Int"/>
+	<c path="Array"><c path="new1.T"/></c>
+</f></new1>
+		<__neko set="method" line="290"><f a=""><c path="neko.NativeArray"><c path="Array.T"/></c></f></__neko>
+		<__double set="method" line="275"><f a="l">
+	<x path="Int"/>
+	<x path="Void"/>
+</f></__double>
+		<__set set="method" line="260"><f a="pos:v">
+	<x path="Int"/>
+	<c path="Array.T"/>
+	<c path="Array.T"/>
+</f></__set>
+		<__get set="method" line="256"><f a="pos">
+	<x path="Int"/>
+	<c path="Array.T"/>
+</f></__get>
+		<filter public="1" set="method" line="245"><f a="f">
+	<f a="">
+		<c path="Array.T"/>
+		<x path="Bool"/>
+	</f>
+	<c path="Array"><c path="Array.T"/></c>
+</f></filter>
+		<map public="1" params="S" set="method" line="238"><f a="f">
+	<f a="">
+		<c path="Array.T"/>
+		<c path="map.S"/>
+	</f>
+	<c path="Array"><c path="map.S"/></c>
+</f></map>
+		<splice public="1" set="method" line="215">
+			<f a="pos:len">
+				<x path="Int"/>
+				<x path="Int"/>
+				<c path="Array"><c path="Array.T"/></c>
+			</f>
+			<haxe_doc><![CDATA[Removes [len] elements from [this] Array, starting at and including
+		[pos], an returns them.
+		
+		This operation modifies [this] Array in place.
+		
+		If [len] is < 0 or [pos] exceeds [this].length, the result is the empty
+		Array [].
+		
+		If [pos] is negative, its value is calculated from the end	of [this]
+		Array by [this].length + [pos]. If this yields a negative value, 0 is
+		used instead.
+		
+		If the sum of the resulting values for [len] and [pos] exceed
+		[this].length, this operation will affect the elements from [pos] to the
+		end of [this] Array.
+		
+		The length of the returned Array is equal to the new length of [this]
+		Array subtracted from the original length of [this] Array. In other
+		words, each element of the original [this] Array either remains in
+		[this] Array or becomes an element of the returned Array.]]></haxe_doc>
+		</splice>
+		<sort public="1" set="method" line="192">
+			<f a="f">
+				<f a=":">
+					<c path="Array.T"/>
+					<c path="Array.T"/>
+					<x path="Int"/>
+				</f>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[Sorts [this] Array according to the comparison function [f], where
+		[f(x,y)] returns 0 if x == y, a positive Int if x > y and a
+		negative Int if x < y.
+		
+		This operation modifies [this] Array in place.
+		
+		The sort operation is not guaranteed to be stable, which means that the
+		order of equal elements may not be retained. For a stable Array sorting
+		algorithm, haxe.ds.sort.MergeSort.sort() can be used instead.
+		
+		If [f] is null, the result is unspecified.]]></haxe_doc>
+		</sort>
+		<slice public="1" set="method" line="175">
+			<f a="pos:?end">
+				<x path="Int"/>
+				<x path="Int"/>
+				<c path="Array"><c path="Array.T"/></c>
+			</f>
+			<haxe_doc>Creates a shallow copy of the range of [this] Array, starting at and
+		including [pos], up to but not including [end].
+		
+		This operation does not modify [this] Array.
+		
+		The elements are not copied and retain their identity.
+		
+		If [end] is omitted or exceeds [this].length, it defaults to the end of
+		[this] Array.
+		
+		If [pos] or [end] are negative, their offsets are calculated from the
+		end	of [this] Array by [this].length + [pos] and [this].length + [end]
+		respectively. If this yields a negative value, 0 is used instead.
+		
+		If [pos] exceeds [this].length or if [end} exceeds or equals [pos],
+		the result is [].</haxe_doc>
+		</slice>
+		<shift public="1" set="method" line="162">
+			<f a=""><t path="Null"><c path="Array.T"/></t></f>
+			<haxe_doc>Removes the first element of [this] Array and returns it.
+		
+		This operation modifies [this] Array in place.
+		
+		If [this] has at least one element, [this].length and the index of each
+		remaining element is decreased by 1.
+		
+		If [this] is the empty Array [], null is returned and the length remains
+		0.</haxe_doc>
+		</shift>
+		<reverse public="1" set="method" line="148">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc><![CDATA[Reverse the order of elements of [this] Array.
+		
+		This operation modifies [this] Array in place.
+		
+		If [this].length < 2, [this] remains unchanged.]]></haxe_doc>
+		</reverse>
+		<remove public="1" set="method" line="131">
+			<f a="x">
+				<c path="Array.T"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>Removes the first occurence of [x] in [this] Array.
+		
+		This operation modifies [this] Array in place.
+		
+		If [x] is found by checking standard equality, it is removed from [this]
+		Array and all following elements are reindexed acoordingly. The function
+		then returns true.
+		
+		If [x] is not found, [this] Array is not changed and the function
+		returns false.</haxe_doc>
+		</remove>
+		<unshift public="1" set="method" line="123">
+			<f a="x">
+				<c path="Array.T"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Adds the element [x] at the start of [this] Array.
+		
+		This operation modifies [this] Array in place.
+		
+		[this].length and the index of each Array element increases by 1.</haxe_doc>
+		</unshift>
+		<push public="1" set="method" line="116">
+			<f a="x">
+				<c path="Array.T"/>
+				<x path="Int"/>
+			</f>
+			<haxe_doc>Adds the element [x] at the end of [this] Array and returns the offset
+		it was added at.
+		
+		This operation modifies [this] Array in place.
+		
+		[this].length will increase by 1.</haxe_doc>
+		</push>
+		<pop public="1" set="method" line="107">
+			<f a=""><t path="Null"><c path="Array.T"/></t></f>
+			<haxe_doc>Removes the last element of [this] Array and returns it.
+		
+		This operation modifies [this] Array in place.
+		
+		If [this] has at least one element, [this].length will decrease by 1.
+		
+		If [this] is the empty Array [], null is returned and the length remains
+		0.</haxe_doc>
+		</pop>
+		<toString public="1" set="method" line="94">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>Returns a string representation of [this] Array.
+		
+		The result will include the individual elements' String representations
+		separated by comma. The enclosing [ ] may be missing on some platforms,
+		use Std.string() to get a String representation that is consistent
+		across platforms.</haxe_doc>
+		</toString>
+		<join public="1" set="method" line="82">
+			<f a="sep">
+				<c path="String"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns a string representation of [this] Array, with [sep] separating
+		each element.
+		
+		The result of this operation is equal to Std.string(this[0]) + sep +
+		Std.string(this[1]) + sep + ... + sep + Std.string(this[this.length-1]).
+		
+		If [this] is the empty Array [], the result is the empty String "". If
+		[this] has exactly one element, the result is equal to a call to
+		Std.string(this[0]).
+		
+		If [a] is null, the result is unspecified.</haxe_doc>
+		</join>
+		<insert public="1" set="method" line="69">
+			<f a="pos:x">
+				<x path="Int"/>
+				<c path="Array.T"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Inserts the element [x] at the position [pos].
+		
+		This operation modifies [this] Array in place.
+		
+		The offset is calculated like so:
+			
+		- If [pos] exceeds [this].length, the offset is [this].length.
+		- If [pos] is negative, the offset is calculated from the end of [this]
+		Array, i.e. [this].length + [pos]. If this yields a negative value,
+		the offset is 0.
+		- Otherwise, the offset is [pos].
+		
+		If the resulting offset does not exceed [this].length, all elements from
+		and including that offset to the end of [this] Array are moved one index
+		ahead.</haxe_doc>
+		</insert>
+		<iterator public="1" set="method" line="54">
+			<f a=""><t path="Iterator"><c path="Array.T"/></t></f>
+			<haxe_doc>Returns an iterator of the Array values.</haxe_doc>
+		</iterator>
+		<copy public="1" set="method" line="50">
+			<f a=""><c path="Array"><c path="Array.T"/></c></f>
+			<haxe_doc>Returns a shallow copy of [this] Array.
+		
+		The elements are not copied and retain their identity, so
+		a[i] == a.copy()[i] is true for any valid i. However, a == a.copy() is
+		always false.</haxe_doc>
+		</copy>
+		<concat public="1" set="method" line="39">
+			<f a="a">
+				<c path="Array"><c path="Array.T"/></c>
+				<c path="Array"><c path="Array.T"/></c>
+			</f>
+			<haxe_doc>Returns a new Array by appending the elements of [a] to the elements of
+		[this] Array.
+		
+		This operation does not modify [this] Array.
+		
+		If [a] is the empty Array [], a copy of [this] Array is returned.
+		
+		The length of the returned Array is equal to the sum of [this].length
+		and [a].length.
+		
+		If [a] is null, the result is unspecified.</haxe_doc>
+		</concat>
+		<length public="1" set="null">
+			<x path="Int"/>
+			<haxe_doc>The length of [this] Array.</haxe_doc>
+		</length>
+		<__a><c path="neko.NativeArray"><c path="Array.T"/></c></__a>
+		<new public="1" set="method" line="27">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Creates a new Array.</haxe_doc>
+		</new>
+		<haxe_doc>An Array is a storage for values. You can access it using indexes or
+	with its API. On the server side, it's often better to use a [List] which
+	is less memory and CPU consuming, unless you really need indexed access.</haxe_doc>
+		<meta>
+			<m n=":coreApi"/>
+			<m n=":final"/>
+		</meta>
+	</class>
+	<abstract path="Class" params="T" file="/usr/lib/haxe/std/Class.hx">
+		<haxe_doc>An abstract type that represents a Class.
+	
+	See [Type] for the haXe Reflection API.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<abstract path="Enum" params="T" file="/usr/lib/haxe/std/Enum.hx">
+		<haxe_doc>An abstract type that represents an Enum type.
+	
+	The corresponding enum instance type is EnumValue.
+	
+	See [Type] for the haXe Reflection API.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<abstract path="EnumValue" params="" file="/usr/lib/haxe/std/EnumValue.hx">
+		<haxe_doc>An abstract type that represents any enum value.
+	See [Type] for the haXe Reflection API.</haxe_doc>
+		<meta><m n=":coreType"/></meta>
+	</abstract>
+	<class path="List" params="T" file="/usr/lib/haxe/std/List.hx">
+		<iterator public="1" set="method" line="148"><f a=""><t path="Iterator"><c path="List.T"/></t></f></iterator>
+		<remove public="1" set="method" line="125"><f a="v">
+	<c path="List.T"/>
+	<x path="Bool"/>
+</f></remove>
+		<isEmpty public="1" set="method" line="108"><f a=""><x path="Bool"/></f></isEmpty>
+		<pop public="1" set="method" line="94"><f a=""><t path="Null"><c path="List.T"/></t></f></pop>
+		<add public="1" set="method" line="47"><f a="item">
+	<c path="List.T"/>
+	<x path="Void"/>
+</f></add>
+		<length public="1" set="null">
+			<x path="Int"/>
+			<haxe_doc>The number of elements in this list.</haxe_doc>
+		</length>
+		<q><c path="Array"><d/></c></q>
+		<h><c path="Array"><d/></c></h>
+		<new public="1" set="method" line="40">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Creates a new empty list.</haxe_doc>
+		</new>
+		<haxe_doc>A linked-list of elements. The list is composed of two-elements arrays
+	that are chained together. It's optimized so that adding or removing an
+	element doesn't imply to copy the whole array content everytime.</haxe_doc>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<abstract path="Int" params="" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<to><x path="Float"/></to>
+		<haxe_doc>The standard Int type. Its precision depends on the platform.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":notNull"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<abstract path="Float" params="" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<haxe_doc>The standard Float type, this is a double-precision IEEE 64bit float.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":notNull"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<abstract path="Bool" params="" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<haxe_doc>The standard Boolean type is represented as an enum with two choices.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":notNull"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<abstract path="Dynamic" params="T" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<haxe_doc>Dynamic is an internal compiler type which has special behavior.
+	See the haXe language reference for more informations.</haxe_doc>
+		<meta>
+			<m n=":valueUsed"/>
+			<m n=":coreType"/>
+			<m n=":runtimeValue"/>
+		</meta>
+	</abstract>
+	<class path="neko.Boot" params="" file="/usr/lib/haxe/std/neko/Boot.hx">
+		<__tmp_str set="method" line="27" static="1"><f a=""><c path="String"/></f></__tmp_str>
+		<__enum_str set="method" line="31" static="1"><f a="e">
+	<d/>
+	<c path="String"/>
+</f></__enum_str>
+		<__interfLoop set="method" line="53" static="1"><f a="cc:cl">
+	<d/>
+	<d/>
+	<x path="Bool"/>
+</f></__interfLoop>
+		<__instanceof set="method" line="69" static="1">
+			<f a="o:cl">
+				<a>
+					<__name__ set="null"><unknown/></__name__>
+					<__enum__ set="null"><t path="#Dynamic"/></__enum__>
+					<__ename__ set="null"><unknown/></__ename__>
+					<__class__ set="null"><unknown/></__class__>
+				</a>
+				<t path="#Dynamic"/>
+				<x path="Bool"/>
+			</f>
+			<meta><m n=":ifFeature"><e>"typed_catch"</e></m></meta>
+		</__instanceof>
+		<__serialize set="method" line="87" static="1"><f a="o">
+	<a>
+		<__enum__ set="null"><a><__ename__ set="null"><a><length set="null"><x path="Int"/></length></a></__ename__></a></__enum__>
+		<__class__ set="null"><a><__name__ set="null"><a><length set="null"><x path="Int"/></length></a></__name__></a></__class__>
+	</a>
+	<c path="Array"><unknown/></c>
+</f></__serialize>
+		<__tagserialize set="method" line="107" static="1"><f a="o">
+	<a>
+		<tag set="null"><unknown/></tag>
+		<__enum__ set="null"><a><__ename__ set="null"><a><length set="null"><x path="Int"/></length></a></__ename__></a></__enum__>
+	</a>
+	<c path="Array"><unknown/></c>
+</f></__tagserialize>
+		<__unserialize set="method" line="116" static="1"><f a="v">
+	<c path="Array"><unknown/></c>
+	<unknown/>
+</f></__unserialize>
+		<__init set="method" line="139" static="1"><f a=""><x path="Void"/></f></__init>
+		<meta><m n=":keep"/></meta>
+	</class>
+	<class path="Std" params="" file="/usr/lib/haxe/std/neko/_std/Std.hx">
+		<string public="1" set="method" line="29" static="1">
+			<f a="s">
 				<d/>
 				<c path="String"/>
-				<e path="Void"/>
 			</f>
-			<haxe_doc><![CDATA[
-	 * Send a [INotification].
-	 * 
-	 * <p>Convenience method to prevent having to construct new 
-	 * notification instances in our implementation code.</p>
-	 ]]></haxe_doc>
-		</sendNotification>
-		<initializeNotifier public="1">
+			<haxe_doc>Converts any value to a String.
+
+		If s is of String, Int, Float or Bool, its value is returned.
+
+		If s is an instance of a class and that class or one of its parent classes has
+		a toString() method, that method is called. If no such method is present, the result
+		is unspecified.
+
+		If s is an enum constructor without argument, the constructor's name is returned. If
+		arguments exists, the constructor's name followed by the String representations of
+		the arguments is returned.
+
+		If s is a structure, the field names along with their values are returned. The field order
+		and the operator separating field names and values are unspecified.
+
+		If s is null, "null" is returned.</haxe_doc>
+		</string>
+		<haxe_doc>The Std class provides standard methods for manipulating basic types.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<abstract path="Void" params="" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<haxe_doc>The standard Void type. Only [null] values can be of the type [Void].</haxe_doc>
+		<meta><m n=":coreType"/></meta>
+	</abstract>
+	<typedef path="Null" params="T" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<c path="Null.T"/>
+		<haxe_doc>[Null] can be useful in two cases. In order to document some methods
+	that accepts or can return a [null] value, or for the Flash9 compiler and AS3
+	generator to distinguish between base values that can be null and others that
+	can't.</haxe_doc>
+	</typedef>
+	<typedef path="Iterator" params="T" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<a>
+			<next set="method">
+				<f a=""><c path="Iterator.T"/></f>
+				<haxe_doc>Returns the current item of the Iterator and advances to the next one.
+		
+		This method is not required to check hasNext() first. A call to this
+		method while hasNext() is false yields unspecified behavior.</haxe_doc>
+			</next>
+			<hasNext set="method"><f a=""><x path="Bool"/></f></hasNext>
+		</a>
+		<haxe_doc>An Iterator is a structure that permits iteration over elements of type T.
+
+	Any class with matching hasNext and next fields is considered an Iterator
+	and can then be used e.g. in for-loops. This makes it easy to implement
+	custom iterators.</haxe_doc>
+	</typedef>
+	<typedef path="Iterable" params="T" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes">
+		<a><iterator set="method"><f a=""><t path="Iterator"><c path="Iterable.T"/></t></f></iterator></a>
+		<haxe_doc>An Iterable is a data structure which has an iterator() method.
+	See [Lambda] for generic functions on iterable structures.</haxe_doc>
+	</typedef>
+	<class path="ArrayAccess" params="T" file="/usr/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>ArrayAccess is used to indicate a class that can be accessed using brackets.
+	The type parameter represent the type of the elements stored.</haxe_doc></class>
+	<class path="String" params="" file="/usr/lib/haxe/std/neko/_std/String.hx">
+		<__is_String static="1"><x path="Bool"/></__is_String>
+		<__split line="25" static="1"><d/></__split>
+		<fromCharCode public="1" set="method" line="200" static="1">
+			<f a="code">
+				<x path="Int"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns the String corresponding to the character code [code].
+		
+		If [code] is negative or has another invalid value, the result is
+		unspecified.</haxe_doc>
+		</fromCharCode>
+		<__radd set="method" line="196"><f a="s">
+	<d/>
+	<c path="String"/>
+</f></__radd>
+		<__add set="method" line="192"><f a="s">
+	<d/>
+	<c path="String"/>
+</f></__add>
+		<__compare set="method" line="188"><f a="o">
+	<c path="String"/>
+	<x path="Int"/>
+</f></__compare>
+		<toString public="1" set="method" line="182">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>Returns the String itself.</haxe_doc>
+		</toString>
+		<toUpperCase public="1" set="method" line="166">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>Returns a String where all characters of [this] String are upper case.
+		
+		Affects the characters [a-z]. Other characters remain unchanged.</haxe_doc>
+		</toUpperCase>
+		<toLowerCase public="1" set="method" line="150">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>Returns a String where all characters of [this] String are lower case.
+		
+		Affects the characters [A-Z]. Other characters remain unchanged.</haxe_doc>
+		</toLowerCase>
+		<substring public="1" set="method" line="126">
+			<f a="startIndex:?endIndex">
+				<x path="Int"/>
+				<x path="Int"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns the part of [this] String from [startIndex] to [endIndex].
+		
+		If [endIndex] is omitted, [this].length is used instead.
+		
+		If [startIndex] or [endIndex] are negative, 0 is used instead.
+		
+		If [startIndex] exceeds [endIndex], they are swapped.</haxe_doc>
+		</substring>
+		<substr public="1" set="method" line="100">
+			<f a="pos:?len">
+				<x path="Int"/>
+				<x path="Int"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns [len] characters of [this] String, starting at position [pos].
+		
+		If [len] is omitted, all characters from position [pos] to the end of
+		[this] String are included.
+		
+		If [pos] is negative, its values is calculated from the end	of [this]
+		String by [this].length + [pos]. If this yields a negative value, 0 is
+		used instead.
+		
+		If [len] is negative, the result is unspecified.</haxe_doc>
+		</substr>
+		<split public="1" set="method" line="84">
+			<f a="delimiter">
+				<c path="String"/>
+				<c path="Array"><c path="String"/></c>
+			</f>
+			<haxe_doc>Splits [this] String at each occurence of [delimiter].
+		
+		If [delimiter] is the empty String "", [this] String is split into an
+		Array of [this].length elements, where the elements correspond to the
+		characters of [this] String.
+		
+		If [delimiter] is not found within [this] String, the result is an Array
+		with one element, which equals [this] String.
+		
+		If [delimiter] is null, the result is unspecified.
+		
+		Otherwise, [this] String is split into parts at each occurence of
+		[delimiter]. If [this] String starts (or ends) with [delimiter}, the
+		result Array contains a leading (or trailing) empty String "" element.
+		Two subsequent delimiters also result in an empty String "" element.</haxe_doc>
+		</split>
+		<lastIndexOf public="1" set="method" line="69">
+			<f a="str:?startIndex">
+				<c path="String"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<haxe_doc>Returns the position of the rightmost occurence of [str] within [this]
+		String.
+		
+		If [startIndex] is given, the search is performed within the substring
+		of [this] String from 0 to [startIndex]. Otherwise the search is
+		performed within [this] String. In either case, the returned position
+		is relative to the beginning of [this] String.
+		
+		If [str] cannot be found, -1 is returned.</haxe_doc>
+		</lastIndexOf>
+		<indexOf public="1" set="method" line="60">
+			<f a="str:?startIndex">
+				<c path="String"/>
+				<x path="Int"/>
+				<x path="Int"/>
+			</f>
+			<haxe_doc>Returns the position of the leftmost occurence of [str] within [this]
+		String.
+		
+		If [startIndex] is given, the search is performed within the substring
+		of [this] String starting from [startIndex]. Otherwise the search is
+		performed within [this] String. In either case, the returned position
+		is relative to the beginning of [this] String.
+		
+		If [str] cannot be found, -1 is returned.</haxe_doc>
+		</indexOf>
+		<charCodeAt public="1" set="method" line="54">
+			<f a="index">
+				<x path="Int"/>
+				<t path="Null"><x path="Int"/></t>
+			</f>
+			<haxe_doc>Returns the character code at position [index] of [this] String.
+		
+		If [index] is negative or exceeds [this].length, null is returned.
+		
+		To obtain the character code of a single character, "x".code can be used
+		instead to inline the character code at compile time. Note that this
+		only works on String literals of length 1.</haxe_doc>
+		</charCodeAt>
+		<charAt public="1" set="method" line="42">
+			<f a="index">
+				<x path="Int"/>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns the character at position [index] of [this] String.
+		
+		If [index] is negative or exceeds [this].length, the empty String ""
+		is returned.</haxe_doc>
+		</charAt>
+		<length public="1" set="null">
+			<x path="Int"/>
+			<haxe_doc>The number of characters in [this] String.</haxe_doc>
+		</length>
+		<new public="1" set="method" line="33">
+			<f a="string">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>Creates a copy from a given String.</haxe_doc>
+		</new>
+		<haxe_doc>The basic String class.
+	
+	A haxe String is immutable, it is not possible to modify individual
+	characters. No method of this class changes the state of [this] String.
+	
+	Strings can be constructed using the string literal syntax "string value".
+	
+	String can be concatenated by using the + operator. If an operand is not a
+	String, it is passed through Std.string() first.</haxe_doc>
+		<meta>
+			<m n=":coreApi"/>
+			<m n=":final"/>
+		</meta>
+	</class>
+	<class path="StringBuf" params="" file="/usr/lib/haxe/std/neko/_std/StringBuf.hx">
+		<__make line="46" static="1"><d/></__make>
+		<__add line="47" static="1"><d/></__add>
+		<__add_char line="48" static="1"><d/></__add_char>
+		<__to_string line="50" static="1"><d/></__to_string>
+		<b><d/></b>
+		<new public="1" set="method" line="26">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Creates a new StringBuf instance.
+		
+		This may involve initialization of the internal buffer.</haxe_doc>
+		</new>
+		<haxe_doc>A String buffer is an efficient way to build a big string by appending small
+	elements together.
+	
+	Its cross-platform implementation uses String concatenation internally, but
+	StringBuf may be optimized for different targets.
+	
+	Unlike String, an instance of StringBuf is not immutable in the sense that
+	it can be passed as argument to functions which modify it by appending more
+	values. However, the internal buffer cannot be modified.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<class path="Type" params="" file="/usr/lib/haxe/std/neko/_std/Type.hx">
+		<createInstance public="1" params="T" set="method" line="98" static="1">
+			<f a="cl:args">
+				<x path="Class"><c path="createInstance.T"/></x>
+				<c path="Array"><d/></c>
+				<c path="createInstance.T"/>
+			</f>
+			<haxe_doc>Creates an instance of class [cl], using [args] as arguments to the
+		class constructor.
+		
+		This function guarantees that the class constructor is called.
+		
+		Default values of constructors arguments are not guaranteed to be
+		taken into account.
+		
+		If [cl] or [args] are null, or if the number of elements in [args] does
+		not match the expected number of constructor arguments, or if any
+		argument has an invalid type,  or if [cl] has no own constructor, the
+		result is unspecified.
+		
+		In particular, default values of constructor arguments are not
+		guaranteed to be taken into account.</haxe_doc>
+		</createInstance>
+		<haxe_doc>The haxe Reflection API allows retrieval of type information at runtime.
+	
+	This class complements the more lightweight Reflect class, with a focus on
+	class and enum instances.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<class path="haxe.EnumTools" params="" file="/usr/lib/haxe/std/haxe/EnumTools.hx" extern="1">
+		<getName public="1" params="T" get="inline" set="null" line="41" static="1">
+			<f a="e">
+				<x path="Enum"><c path="getName.T"/></x>
+				<c path="String"/>
+			</f>
+			<haxe_doc>Returns the name of enum [e], including its path.
+		
+		If [e] is inside a package, the package structure is returned dot-
+		separated, with another dot separating the enum name:
+			pack1.pack2.(...).packN.EnumName
+		If [e] is a sub-type of a haxe module, that module is not part of the
+		package structure.
+			
+		If [e] has no package, the enum name is returned.
+		
+		If [e] is null, the result is unspecified.
+		
+		The enum name does not include any type parameters.</haxe_doc>
+		</getName>
+		<createByName public="1" params="T" get="inline" set="null" line="54" static="1"><f a="e:constr:?params">
+	<x path="Enum"><c path="createByName.T"/></x>
+	<c path="String"/>
+	<c path="Array"><d/></c>
+	<c path="createByName.T"/>
+</f></createByName>
+		<createByIndex public="1" params="T" get="inline" set="null" line="70" static="1"><f a="e:index:?params">
+	<x path="Enum"><c path="createByIndex.T"/></x>
+	<x path="Int"/>
+	<c path="Array"><d/></c>
+	<c path="createByIndex.T"/>
+</f></createByIndex>
+		<createAll public="1" params="T" get="inline" set="null" line="87" static="1"><f a="e">
+	<x path="Enum"><c path="createAll.T"/></x>
+	<c path="Array"><c path="createAll.T"/></c>
+</f></createAll>
+		<getConstructors public="1" params="T" get="inline" set="null" line="99" static="1"><f a="e">
+	<x path="Enum"><c path="getConstructors.T"/></x>
+	<c path="Array"><c path="String"/></c>
+</f></getConstructors>
+	</class>
+	<class path="haxe.EnumValueTools" params="" file="/usr/lib/haxe/std/haxe/EnumTools.hx" module="haxe.EnumTools" extern="1">
+		<equals public="1" params="T" get="inline" set="null" line="114" static="1">
+			<f a="a:b">
+				<c path="equals.T"/>
+				<c path="equals.T"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>Recursively compares two enum instances [a] and [b] by value.
+		
+		Unlike [a] == [b], this function performs a deep equality check on the
+		arguments of the constructors, if exists.
+		
+		If [a] or [b] are null, the result is unspecified.</haxe_doc>
+		</equals>
+		<getName public="1" get="inline" set="null" line="125" static="1"><f a="e">
+	<x path="EnumValue"/>
+	<c path="String"/>
+</f></getName>
+		<getParameters public="1" get="inline" set="null" line="139" static="1"><f a="e">
+	<x path="EnumValue"/>
+	<c path="Array"><d/></c>
+</f></getParameters>
+		<getIndex public="1" get="inline" set="null" line="151" static="1"><f a="e">
+	<x path="EnumValue"/>
+	<x path="Int"/>
+</f></getIndex>
+	</class>
+	<class path="haxe.ds.StringMap" params="T" file="/usr/lib/haxe/std/neko/_std/haxe/ds/StringMap.hx">
+		<h><d/></h>
+		<new public="1" set="method" line="28">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>Creates a new empty hashtable.</haxe_doc>
+		</new>
+		<haxe_doc>Hashtable over a set of elements, using [String] as keys.
+	Other kind of keys are not possible on all platforms since they
+	can't always be implemented efficiently.</haxe_doc>
+		<meta>
+			<m n=":keep"/>
+			<m n=":coreApi"/>
+		</meta>
+	</class>
+	<typedef path="haxe.io.BytesData" params="" file="/usr/lib/haxe/std/haxe/io/BytesData.hx"><c path="neko.NativeString"/></typedef>
+	<class path="neko.NativeArray" params="T" file="/usr/lib/haxe/std/neko/NativeArray.hx"><meta><m n=":keep"/></meta></class>
+	<class path="org.puremvc.haxe.multicore.interfaces.IController" params="" file="src/org/puremvc/haxe/multicore/interfaces/IController.hx" interface="1">
+		<removeController public="1" set="method">
 			<f a="key">
 				<c path="String"/>
-				<e path="Void"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc><![CDATA[
-	 * Initialize this INotifier instance.
+			<haxe_doc>* Remove an IController instance</haxe_doc>
+		</removeController>
+		<hasCommand public="1" set="method">
+			<f a="notificationName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a Command is registered for a given Notification</haxe_doc>
+		</hasCommand>
+		<removeCommand public="1" set="method">
+			<f a="notificationName">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Remove a previously registered [ICommand] to [INotification] mapping.</haxe_doc>
+		</removeCommand>
+		<executeCommand public="1" set="method">
+			<f a="notification">
+				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Execute the [ICommand] previously registered as the
+	 * handler for [INotification]s with the given notification name.</haxe_doc>
+		</executeCommand>
+		<registerCommand public="1" set="method">
+			<f a="notificationName:commandClassRef">
+				<c path="String"/>
+				<x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register a particular [ICommand] class as the handler 
+	 * for a particular [INotification].</haxe_doc>
+		</registerCommand>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Controller.
+ * 
+ * <p>In PureMVC, an [IController] implementor 
+ * follows the 'Command and Controller' strategy, and 
+ * assumes these responsibilities:</p>
+ * <ul>
+ * <li> Remembering which [ICommand]s 
+ * are intended to handle which [INotifications].</li>
+ * <li> Registering itself as an [IObserver] with
+ * the [View] for each [INotification] 
+ * that it has an [ICommand] mapping for.</li>
+ * <li> Creating a new instance of the proper [ICommand]
+ * to handle a given [INotification] when notified by the [View].</li>
+ * <li> Calling the [ICommand]'s [execute]
+ * method, passing in the [INotification].</li>
+ * </ul>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.core.Controller" params="" file="src/org/puremvc/haxe/multicore/core/Controller.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.IController"/>
+		<getInstance public="1" set="method" line="75" static="1"><f a="key">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IController"/>
+</f></getInstance>
+		<instanceMap static="1"><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IController"/></c></instanceMap>
+		<multitonKey><c path="String"/></multitonKey>
+		<commandMap><c path="haxe.ds.StringMap"><x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x></c></commandMap>
+		<view><c path="org.puremvc.haxe.multicore.interfaces.IView"/></view>
+		<removeController public="1" set="method" line="139"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeController>
+		<removeCommand public="1" set="method" line="124"><f a="notificationName">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeCommand>
+		<hasCommand public="1" set="method" line="116"><f a="notificationName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasCommand>
+		<registerCommand public="1" set="method" line="106"><f a="notificationName:commandClassRef">
+	<c path="String"/>
+	<x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x>
+	<x path="Void"/>
+</f></registerCommand>
+		<executeCommand public="1" set="method" line="86"><f a="note">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></executeCommand>
+		<initializeController set="method" line="67"><f a=""><x path="Void"/></f></initializeController>
+		<new set="method" line="50">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Constructor. 
+	 * 
+	 * <p>This [IController] implementation is a Multiton, so you cannot
+	 * call the constructor directly, but instead call the static 
+	 * Factory method passing the unique key for this instance
+	 * [Controller.getInstance( multitonKey )]</p>]]></haxe_doc>
+		</new>
+		<haxe_doc><![CDATA[* A Multiton [IController] implementation.
+ * 
+ * <p>In PureMVC, the [Controller] class follows the
+ * 'Command and Controller' strategy, and assumes these responsibilities:</p>
+ * <ul>
+ * <li> Remembering which [ICommand]s are intended to handle which [INotifications].</li>
+ * <li> Registering itself as an [IObserver] with the [View] for each [INotification] 
+ * that it has an [ICommand] mapping for.</li>
+ * <li> Creating a new instance of the proper [ICommand] to handle a given [INotification]
+ * when notified by the [View].</li>
+ * <li> Calling the [ICommand]'s [execute] method, passing in the [INotification].</li> 
+ * </ul>
+ * 
+ * <p>Your application must register [ICommands] with the Controller.
+ * The simplest way is to subclass [Facade], 
+ * and use its [initializeController] method to add your registrations.</p>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.interfaces.IModel" params="" file="src/org/puremvc/haxe/multicore/interfaces/IModel.hx" interface="1">
+		<removeModel public="1" set="method">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Remove an IModel instance</haxe_doc>
+		</removeModel>
+		<hasProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a [Proxy] is registered</haxe_doc>
+		</hasProxy>
+		<removeProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+			</f>
+			<haxe_doc>* Remove an [IProxy] instance from the Model.</haxe_doc>
+		</removeProxy>
+		<retrieveProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+			</f>
+			<haxe_doc>* Retrieve an [IProxy] instance from the Model.</haxe_doc>
+		</retrieveProxy>
+		<registerProxy public="1" set="method">
+			<f a="proxy">
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register an [IProxy] instance with the [Model].</haxe_doc>
+		</registerProxy>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Model.
+ * 
+ * <p>In PureMVC, [IModel] implementors provide
+ * access to [IProxy] objects by named lookup. </p>
+ * 
+ * <p>An [IModel] assumes these responsibilities:</p>
+ * <ul>
+ * <li>Maintain a cache of [IProxy] instances</li>
+ * <li>Provide methods for registering, retrieving, and removing [IProxy] instances</li>
+ * </ul>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.core.Model" params="" file="src/org/puremvc/haxe/multicore/core/Model.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.IModel"/>
+		<getInstance public="1" set="method" line="63" static="1"><f a="key">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IModel"/>
+</f></getInstance>
+		<instanceMap static="1"><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IModel"/></c></instanceMap>
+		<multitonKey><c path="String"/></multitonKey>
+		<proxyMap><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IProxy"/></c></proxyMap>
+		<removeModel public="1" set="method" line="113"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeModel>
+		<removeProxy public="1" set="method" line="99"><f a="proxyName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+</f></removeProxy>
+		<hasProxy public="1" set="method" line="91"><f a="proxyName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasProxy>
+		<retrieveProxy public="1" set="method" line="83"><f a="proxyName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+</f></retrieveProxy>
+		<registerProxy public="1" set="method" line="73"><f a="proxy">
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+	<x path="Void"/>
+</f></registerProxy>
+		<initializeModel set="method" line="56"><f a=""><x path="Void"/></f></initializeModel>
+		<new set="method" line="42">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Constructor. 
+	 * 
+	 * <p>This [IModel] implementation is a Multiton,
+	 * so you should not call the constructor 
+	 * directly, but instead call the static Multiton
+	 * Factory method [Model.getInstance( multitonKey )]</p>]]></haxe_doc>
+		</new>
+		<haxe_doc><![CDATA[* A Singleton [IModel] implementation.
+ * 
+ * <p>In PureMVC, the [Model] class provides access to model objects (Proxies) by named lookup.</p> 
+ * 
+ * <p>The [Model] assumes these responsibilities:</p>
+ * <ul>
+ * <li>Maintain a cache of [IProxy] instances.</li>
+ * <li>Provide methods for registering, retrieving, and removing [IProxy] instances.</li>
+ * </ul>
+ * 
+ * <p>Your application must register [IProxy] instances with the [Model]. Typically, you use an 
+ * [ICommand] to create and register [IProxy] instances once the [Facade] has initialized the Core 
+ * actors.</p>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.interfaces.IView" params="" file="src/org/puremvc/haxe/multicore/interfaces/IView.hx" interface="1">
+		<removeView public="1" set="method">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Remove an IView instance</haxe_doc>
+		</removeView>
+		<hasMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a [Mediator] is registered or not</haxe_doc>
+		</hasMediator>
+		<removeMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+			</f>
+			<haxe_doc>* Remove an [IMediator] from the [View].</haxe_doc>
+		</removeMediator>
+		<retrieveMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+			</f>
+			<haxe_doc>* Retrieve an [IMediator] from the [View].</haxe_doc>
+		</retrieveMediator>
+		<registerMediator public="1" set="method">
+			<f a="mediator">
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Register an [IMediator] instance with the [View].
+	 * 
+	 * <p>Registers the [IMediator] so that it can be retrieved by name,
+	 * and further interrogates the [IMediator] for its [INotification] interests.</p>
+	 *
+	 * <p>If the [IMediator] returns any [INotification] 
+	 * names to be notified about, an [Observer] is created encapsulating 
+	 * the [IMediator] instance's [handleNotification] method 
+	 * and registering it as an [Observer] for all [INotifications] the 
+	 * [IMediator] is interested in.</p>]]></haxe_doc>
+		</registerMediator>
+		<notifyObservers public="1" set="method">
+			<f a="note">
+				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Notify the [IObservers] for a particular [INotification].
+	 * 
+	 * <p>All previously attached [IObservers] for this [INotification]'s
+	 * list are notified and are passed a reference to the [INotification] in 
+	 * the order in which they were registered.</p>]]></haxe_doc>
+		</notifyObservers>
+		<removeObserver public="1" set="method">
+			<f a="notificationName:notifyContext">
+				<c path="String"/>
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Remove a group of observers from the observer list for a given Notification name.</haxe_doc>
+		</removeObserver>
+		<registerObserver public="1" set="method">
+			<f a="noteName:observer">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register an [IObserver] to be notified of [INotifications] with a given name.</haxe_doc>
+		</registerObserver>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC View.
+ * 
+ * <p>In PureMVC, the [View] class assumes these responsibilities:
+ * <ul>
+ * <li>Maintain a cache of [IMediator] instances.</li>
+ * <li>Provide methods for registering, retrieving, and removing [IMediators].</li>
+ * <li>Managing the observer lists for each [INotification] in the application.</li>
+ * <li>Providing a method for attaching [IObservers] to an [INotification]'s observer list.</li>
+ * <li>Providing a method for broadcasting an [INotification].</li>
+ * <li>Notifying the [IObservers] of a given [INotification] when it broadcast.</li>
+ * </ul>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.core.View" params="" file="src/org/puremvc/haxe/multicore/core/View.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.IView"/>
+		<getInstance public="1" set="method" line="68" static="1"><f a="key">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IView"/>
+</f></getInstance>
+		<instanceMap static="1"><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IView"/></c></instanceMap>
+		<multitonKey><c path="String"/></multitonKey>
+		<observerMap><c path="haxe.ds.StringMap"><c path="List"><c path="org.puremvc.haxe.multicore.interfaces.IObserver"/></c></c></observerMap>
+		<mediatorMap><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IMediator"/></c></mediatorMap>
+		<removeView public="1" set="method" line="212"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeView>
+		<hasMediator public="1" set="method" line="204"><f a="mediatorName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasMediator>
+		<removeMediator public="1" set="method" line="175"><f a="mediatorName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+</f></removeMediator>
+		<retrieveMediator public="1" set="method" line="167"><f a="mediatorName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+</f></retrieveMediator>
+		<registerMediator public="1" set="method" line="142"><f a="mediator">
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+	<x path="Void"/>
+</f></registerMediator>
+		<removeObserver public="1" set="method" line="105"><f a="notificationName:notifyContext">
+	<c path="String"/>
+	<d/>
+	<x path="Void"/>
+</f></removeObserver>
+		<notifyObservers public="1" set="method" line="92"><f a="notification">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></notifyObservers>
+		<registerObserver public="1" set="method" line="78"><f a="notificationName:observer">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
+	<x path="Void"/>
+</f></registerObserver>
+		<initializeView set="method" line="61"><f a=""><x path="Void"/></f></initializeView>
+		<new public="1" set="method" line="46">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Constructor. 
+	 * 
+	 * <p>This [IView] implementation is a Multiton, 
+	 * so you should not call the constructor 
+	 * directly, but instead call the static Multiton 
+	 * Factory method [View.getInstance( multitonKey )]</p>]]></haxe_doc>
+		</new>
+		<haxe_doc><![CDATA[* A Multiton [IView] implementation.
+ * 
+ * <p>In PureMVC, the [View] class assumes these responsibilities:</p>
+ * <ul>
+ * <li>Maintain a cache of [IMediator] instances.</li>
+ * <li>Provide methods for registering, retrieving, and removing [IMediators].</li>
+ * <li>Notifiying [IMediators] when they are registered or removed.</li>
+ * <li>Managing the observer lists for each [INotification] in the application.</li>
+ * <li>Providing a method for attaching [IObservers] to an [INotification]'s observer list.</li>
+ * <li>Providing a method for broadcasting an [INotification].</li>
+ * <li>Notifying the [IObservers] of a given [INotification] when it broadcast.</li>
+ * </ul>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.interfaces.INotifier" params="" file="src/org/puremvc/haxe/multicore/interfaces/INotifier.hx" interface="1">
+		<initializeNotifier public="1" set="method">
+			<f a="key">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Initialize this INotifier instance.
 	 * 
 	 * <p>This is how a Notifier gets its multitonKey. 
 	 * Calls to sendNotification or to access the
 	 * facade will fail until after this method 
-	 * has been called.</p>
-	 ]]></haxe_doc>
+	 * has been called.</p>]]></haxe_doc>
 		</initializeNotifier>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Notifier.
+		<sendNotification public="1" set="method">
+			<f a="notificationName:?body:?type">
+				<c path="String"/>
+				<d/>
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Send a [INotification].
+	 * 
+	 * <p>Convenience method to prevent having to construct new 
+	 * notification instances in our implementation code.</p>]]></haxe_doc>
+		</sendNotification>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Notifier.
  * 
  * <p>[MacroCommand, Command, Mediator] and [Proxy]
  * all have a need to send [Notifications]. </p>
@@ -43,129 +1208,34 @@
  * Singleton, which is required for the convienience method
  * for sending [Notifications], but also eases implementation as these
  * classes have frequent [Facade] interactions and usually require
- * access to the facade anyway.</p>
- ]]></haxe_doc>
+ * access to the facade anyway.</p>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.interfaces.ICommand" params="" file="src/org/puremvc/haxe/multicore/interfaces/ICommand.hx" interface="1">
+		<extends path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
+		<execute public="1" set="method">
+			<f a="notification">
+				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Execute the [ICommand]'s logic to handle a given [INotification].</haxe_doc>
+		</execute>
+		<haxe_doc>* The interface definition for a PureMVC Command.</haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.interfaces.IFacade" params="" file="src/org/puremvc/haxe/multicore/interfaces/IFacade.hx" interface="1">
-		<implements path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
-		<registerProxy public="1">
-			<f a="proxy">
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IProxy] with the [Model] by name.
-	 </haxe_doc>
-		</registerProxy>
-		<retrieveProxy public="1">
-			<f a="proxyName">
+		<extends path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
+		<removeCore public="1" set="method">
+			<f a="key">
 				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-	 * Retrieve a [IProxy] from the [Model] by name.
-	 </haxe_doc>
-		</retrieveProxy>
-		<removeProxy public="1">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IProxy] instance from the [Model] by name.
-	 </haxe_doc>
-		</removeProxy>
-		<hasProxy public="1">
-			<f a="proxyName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Proxy] is registered
-	 </haxe_doc>
-		</hasProxy>
-		<registerCommand public="1">
-			<f a="noteName:commandClassRef">
-				<c path="String"/>
-				<c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [ICommand] with the [Controller].
-	 </haxe_doc>
-		</registerCommand>
-		<removeCommand public="1">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a previously registered [ICommand] to [INotification] mapping from the Controller.
-	 </haxe_doc>
-		</removeCommand>
-		<hasCommand public="1">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Command] is registered for a given Notification 
-	 </haxe_doc>
-		</hasCommand>
-		<registerMediator public="1">
-			<f a="mediator">
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IMediator] instance with the [View].
-	 </haxe_doc>
-		</registerMediator>
-		<retrieveMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IMediator] instance from the [View].
-	 </haxe_doc>
-		</retrieveMediator>
-		<removeMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Remove a [IMediator] instance from the [View].
-	 </haxe_doc>
-		</removeMediator>
-		<hasMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Mediator] is registered or not
-	 </haxe_doc>
-		</hasMediator>
-		<sendNotification public="1">
-			<f a="notificationName:?body:?type">
-				<c path="String"/>
-				<d/>
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Create and send an [INotification].
-	 </haxe_doc>
-		</sendNotification>
-		<notifyObservers public="1">
+			<haxe_doc>* Remove a Core</haxe_doc>
+		</removeCore>
+		<notifyObservers public="1" set="method">
 			<f a="note">
 				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc><![CDATA[
-	 * Notify the [IObservers] for a particular [INotification].
+			<haxe_doc><![CDATA[* Notify the [IObservers] for a particular [INotification].
 	 * 
 	 * <p>All previously attached [IObservers] for this [INotification]'s
 	 * list are notified and are passed a reference to the [INotification] in 
@@ -173,20 +1243,96 @@
 	 * 
 	 * <p>NOTE: Use this method only if you are sending custom Notifications. Otherwise
 	 * use the sendNotification method which does not require you to create the
-	 * Notification instance.</p> 
-	 ]]></haxe_doc>
+	 * Notification instance.</p>]]></haxe_doc>
 		</notifyObservers>
-		<removeCore public="1">
-			<f a="key">
+		<sendNotification public="1" set="method">
+			<f a="notificationName:?body:?type">
 				<c path="String"/>
-				<e path="Void"/>
+				<d/>
+				<c path="String"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-	 * Remove a Core 
-	 </haxe_doc>
-		</removeCore>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Facade.
+			<haxe_doc>* Create and send an [INotification].</haxe_doc>
+		</sendNotification>
+		<hasMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a [Mediator] is registered or not</haxe_doc>
+		</hasMediator>
+		<removeMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+			</f>
+			<haxe_doc>* Remove a [IMediator] instance from the [View].</haxe_doc>
+		</removeMediator>
+		<retrieveMediator public="1" set="method">
+			<f a="mediatorName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+			</f>
+			<haxe_doc>* Retrieve an [IMediator] instance from the [View].</haxe_doc>
+		</retrieveMediator>
+		<registerMediator public="1" set="method">
+			<f a="mediator">
+				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register an [IMediator] instance with the [View].</haxe_doc>
+		</registerMediator>
+		<hasCommand public="1" set="method">
+			<f a="notificationName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a [Command] is registered for a given Notification</haxe_doc>
+		</hasCommand>
+		<removeCommand public="1" set="method">
+			<f a="notificationName">
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Remove a previously registered [ICommand] to [INotification] mapping from the Controller.</haxe_doc>
+		</removeCommand>
+		<registerCommand public="1" set="method">
+			<f a="noteName:commandClassRef">
+				<c path="String"/>
+				<x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register an [ICommand] with the [Controller].</haxe_doc>
+		</registerCommand>
+		<hasProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Check if a [Proxy] is registered</haxe_doc>
+		</hasProxy>
+		<removeProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+			</f>
+			<haxe_doc>* Remove an [IProxy] instance from the [Model] by name.</haxe_doc>
+		</removeProxy>
+		<retrieveProxy public="1" set="method">
+			<f a="proxyName">
+				<c path="String"/>
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+			</f>
+			<haxe_doc>* Retrieve a [IProxy] from the [Model] by name.</haxe_doc>
+		</retrieveProxy>
+		<registerProxy public="1" set="method">
+			<f a="proxy">
+				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Register an [IProxy] with the [Model] by name.</haxe_doc>
+		</registerProxy>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Facade.
  *
  * <p>The Facade Pattern suggests providing a single
  * class to act as a central point of communication 
@@ -194,276 +1340,45 @@
  * 
  * <p>In PureMVC, the Facade acts as an interface between
  * the core MVC actors (Model, View, Controller) and
- * the rest of your application.</p>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.IModel" params="" file="src/org/puremvc/haxe/multicore/interfaces/IModel.hx" interface="1">
-		<registerProxy public="1">
-			<f a="proxy">
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IProxy] instance with the [Model].
-	 </haxe_doc>
-		</registerProxy>
-		<retrieveProxy public="1">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IProxy] instance from the Model.
-	 </haxe_doc>
-		</retrieveProxy>
-		<removeProxy public="1">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IProxy] instance from the Model.
-	 </haxe_doc>
-		</removeProxy>
-		<hasProxy public="1">
-			<f a="proxyName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Proxy] is registered
-	 </haxe_doc>
-		</hasProxy>
-		<removeModel public="1">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IModel instance
-	 </haxe_doc>
-		</removeModel>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Model.
- * 
- * <p>In PureMVC, [IModel] implementors provide
- * access to [IProxy] objects by named lookup. </p>
- * 
- * <p>An [IModel] assumes these responsibilities:</p>
- * <ul>
- * <li>Maintain a cache of [IProxy] instances</li>
- * <li>Provide methods for registering, retrieving, and removing [IProxy] instances</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.INotification" params="" file="src/org/puremvc/haxe/multicore/interfaces/INotification.hx" interface="1">
-		<getName public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the name of the [INotification] instance. 
-	 * No setter, should be set by constructor only
-	 </haxe_doc>
-		</getName>
-		<setBody public="1">
-			<f a="body">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the body of the [INotification] instance
-	 </haxe_doc>
-		</setBody>
-		<getBody public="1">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the body of the [INotification] instance
-	 </haxe_doc>
-		</getBody>
-		<setType public="1">
-			<f a="type">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the type of the [INotification] instance
-	 </haxe_doc>
-		</setType>
-		<getType public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the type of the [INotification] instance
-	 </haxe_doc>
-		</getType>
-		<toString public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the string representation of the [INotification] instance
-	 </haxe_doc>
-		</toString>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Notification.
- *
- * <p>PureMVC does not rely upon underlying event models such 
- * as the one provided with Flash.</p>
- * 
- * <p>The Observer Pattern as implemented within PureMVC exists 
- * to support event-driven communication between the 
- * application and the actors of the MVC triad.</p>
- * 
- * <p>Notifications are not meant to be a replacement for Events.
- * Generally, [IMediator] implementors
- * place event listeners on their view components, which they
- * then handle in the usual way. This may lead to the broadcast of [Notification]s to 
- * trigger [ICommand]s or to communicate with other [IMediators]. [IProxy] and [ICommand]
- * instances communicate with each other and [IMediator]s 
- * by broadcasting [INotification]s.</p>
- * 
- * <p>A key difference between Flash [Event]s and PureMVC 
- * [Notification]s is that [Event]s follow the 
- * 'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy 
- * until some parent component handles the [Event], while
- * PureMVC [Notification]s follow a 'Publish/Subscribe'
- * pattern. PureMVC classes need not be related to each other in a 
- * parent/child relationship in order to communicate with one another
- * using [Notification]s.
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.patterns.observer.Notification" params="" file="src/org/puremvc/haxe/multicore/patterns/observer/Notification.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-		<getName public="1" line="50">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the name of the [Notification] instance.
-	 </haxe_doc>
-		</getName>
-		<setBody public="1" line="58">
-			<f a="body">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the body of the [Notification] instance.
-	 </haxe_doc>
-		</setBody>
-		<getBody public="1" line="66">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the body of the [Notification] instance.
-	 </haxe_doc>
-		</getBody>
-		<setType public="1" line="74">
-			<f a="type">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the type of the [Notification] instance.
-	 </haxe_doc>
-		</setType>
-		<getType public="1" line="82">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the type of the [Notification] instance.
-	 </haxe_doc>
-		</getType>
-		<toString public="1" line="90">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the string representation of the [Notification] instance.
-	 </haxe_doc>
-		</toString>
-		<name><c path="String"/></name>
-		<type><c path="String"/></type>
-		<body><d/></body>
-		<new public="1" line="40">
-			<f a="name:?body:?type">
-				<c path="String"/>
-				<d/>
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Constructor. 
-	 </haxe_doc>
-		</new>
-		<haxe_doc><![CDATA[
- * A base [INotification] implementation.
- * 
- * <p>PureMVC does not rely upon underlying event models such 
- * as the one provided with Flash.</p>
- * 
- * <p>The Observer Pattern as implemented within PureMVC exists 
- * to support event-driven communication between the 
- * application and the actors of the MVC triad.</p>
- * 
- * <p>Notifications are not meant to be a replacement for Events.
- * Generally, [IMediator] implementors place event listeners on their view components, which they
- * then handle in the usual way. This may lead to the broadcast of [Notification]s to 
- * trigger [ICommand]s or to communicate with other [IMediators]. [IProxy] and [ICommand]
- * instances communicate with each other and [IMediator]s  by broadcasting [INotification]s.</p>
- * 
- * <p>A key difference between Flash [Event]s and PureMVC 
- * [Notification]s is that [Event]s follow the 
- * 'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy 
- * until some parent component handles the [Event], while
- * PureMVC [Notification]s follow a 'Publish/Subscribe'
- * pattern. PureMVC classes need not be related to each other in a 
- * parent/child relationship in order to communicate with one another
- * using [Notification]s.
- ]]></haxe_doc>
+ * the rest of your application.</p>]]></haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.interfaces.IMediator" params="" file="src/org/puremvc/haxe/multicore/interfaces/IMediator.hx" interface="1">
-		<implements path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
-		<getMediatorName public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the [IMediator] instance name
-	 </haxe_doc>
-		</getMediatorName>
-		<getViewComponent public="1">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the [IMediator]'s view component.
-	 </haxe_doc>
-		</getViewComponent>
-		<setViewComponent public="1">
-			<f a="viewComponent">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the [IMediator]'s view component.
-	 </haxe_doc>
-		</setViewComponent>
-		<listNotificationInterests public="1">
-			<f a=""><c path="Array"><c path="String"/></c></f>
-			<haxe_doc>
-	 * List [INotification] interests.
-	 </haxe_doc>
-		</listNotificationInterests>
-		<handleNotification public="1">
+		<extends path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
+		<onRemove public="1" set="method">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>* Called by the [View] when the [Mediator] is removed</haxe_doc>
+		</onRemove>
+		<onRegister public="1" set="method">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>* Called by the [View] when the [Mediator] is registered</haxe_doc>
+		</onRegister>
+		<handleNotification public="1" set="method">
 			<f a="notification">
 				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-	 * Handle an [INotification].
-	 </haxe_doc>
+			<haxe_doc>* Handle an [INotification].</haxe_doc>
 		</handleNotification>
-		<onRegister public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the [View] when the [Mediator] is registered
-	 </haxe_doc>
-		</onRegister>
-		<onRemove public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the [View] when the [Mediator] is removed
-	 </haxe_doc>
-		</onRemove>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Mediator.
+		<listNotificationInterests public="1" set="method">
+			<f a=""><c path="Array"><c path="String"/></c></f>
+			<haxe_doc>* List [INotification] interests.</haxe_doc>
+		</listNotificationInterests>
+		<setViewComponent public="1" set="method">
+			<f a="viewComponent">
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Set the [IMediator]'s view component.</haxe_doc>
+		</setViewComponent>
+		<getViewComponent public="1" set="method">
+			<f a=""><d/></f>
+			<haxe_doc>* Get the [IMediator]'s view component.</haxe_doc>
+		</getViewComponent>
+		<getMediatorName public="1" set="method">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>* Get the [IMediator] instance name</haxe_doc>
+		</getMediatorName>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Mediator.
  *
  * <p>In PureMVC, [IMediator] implementors assume these responsibilities:</p>
  * <ul>
@@ -489,408 +1404,101 @@
  * <p>The [IView] will then create an [Observer] object 
  * encapsulating that [IMediator]'s ([handleNotification]) method
  * and register it as an Observer for each [INotification] name returned by 
- * [listNotificationInterests].</p>
- ]]></haxe_doc>
+ * [listNotificationInterests].</p>]]></haxe_doc>
 	</class>
-	<class path="Reflect" params="" file="/usr/local/lib/haxe/std/Reflect.hx">
-		<hasField public="1" line="35" static="1">
-			<f a="o:field">
-				<d/>
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if an object has a field set. This doesn't take into account the object prototype (class methods).
-	</haxe_doc>
-		</hasField>
-		<field public="1" line="65" static="1">
-			<f a="o:field">
-				<d/>
-				<c path="String"/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Returns the field of an object, or null if [o] is not an object or doesn't have this field.
-	</haxe_doc>
-		</field>
-		<setField public="1" line="148" static="1">
-			<f a="o:field:value">
-				<d/>
-				<c path="String"/>
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Set an object field value.
-	</haxe_doc>
-		</setField>
-		<callMethod public="1" line="164" static="1">
-			<f a="o:func:args">
-				<d/>
-				<d/>
-				<c path="Array"><d/></c>
-				<d/>
-			</f>
-			<haxe_doc>
-		Call a method with the given object and arguments.
-	</haxe_doc>
-		</callMethod>
-		<fields public="1" line="188" static="1">
-			<f a="o">
-				<d/>
-				<c path="Array"><c path="String"/></c>
-			</f>
-			<haxe_doc>
-		Returns the list of fields of an object, excluding its prototype (class methods).
-	</haxe_doc>
-		</fields>
-		<isFunction public="1" line="259" static="1">
-			<f a="f">
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if a value is a function or not.
-	</haxe_doc>
-		</isFunction>
-		<compare public="1" params="T" line="278" static="1">
-			<f a="a:b">
-				<c path="compare.T"/>
-				<c path="compare.T"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Generic comparison function, does not work for methods, see [compareMethods]
-	</haxe_doc>
-		</compare>
-		<compareMethods public="1" line="290" static="1">
-			<f a="f1:f2">
-				<d/>
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Compare two methods closures. Returns true if it's the same method of the same instance.
-		Does not work on Neko platform.
-	</haxe_doc>
-		</compareMethods>
-		<isObject public="1" line="318" static="1">
-			<f a="v">
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if a value is an object or not.
-
-	</haxe_doc>
-		</isObject>
-		<deleteField public="1" line="358" static="1">
-			<f a="o:f">
-				<d/>
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Delete an object field.
-	</haxe_doc>
-		</deleteField>
-		<copy public="1" params="T" line="385" static="1">
-			<f a="o">
-				<c path="copy.T"/>
-				<c path="copy.T"/>
-			</f>
-			<haxe_doc>
-		Make a copy of the fields of an object.
-	</haxe_doc>
-		</copy>
-		<makeVarArgs public="1" line="403" static="1">
-			<f a="f">
-				<f a="">
-					<c path="Array"><d/></c>
-					<d/>
-				</f>
-				<d/>
-			</f>
-			<haxe_doc>
-		Transform a function taking an array of arguments into a function that can
-		be called with any number of arguments.
-	</haxe_doc>
-		</makeVarArgs>
-		<haxe_doc>
-	The Reflect API is a way to manipulate values dynamicly through an
-	abstract interface in an untyped manner. Use with care.
-</haxe_doc>
-	</class>
-	<class path="Array" params="T" file="/usr/local/lib/haxe/std/Array.hx" extern="1">
-		<length public="1" set="null">
-			<c path="Int"/>
-			<haxe_doc>
-		The length of the Array
-	</haxe_doc>
-		</length>
-		<concat public="1">
-			<f a="a">
-				<c path="Array"><c path="Array.T"/></c>
-				<c path="Array"><c path="Array.T"/></c>
-			</f>
-			<haxe_doc>
-		Returns a new Array by appending [a] to [this].
-	</haxe_doc>
-		</concat>
-		<join public="1">
-			<f a="sep">
-				<c path="String"/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns a representation of an array with [sep] for separating each element.
-	</haxe_doc>
-		</join>
-		<pop public="1">
-			<f a=""><t path="Null"><c path="Array.T"/></t></f>
-			<haxe_doc>
-		Removes the last element of the array and returns it.
-	</haxe_doc>
-		</pop>
-		<push public="1">
-			<f a="x">
-				<c path="Array.T"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Adds the element [x] at the end of the array.
-	</haxe_doc>
-		</push>
-		<reverse public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Reverse the order of elements of the Array.
-	</haxe_doc>
-		</reverse>
-		<shift public="1">
-			<f a=""><t path="Null"><c path="Array.T"/></t></f>
-			<haxe_doc>
-		Removes the first element and returns it.
-	</haxe_doc>
-		</shift>
-		<slice public="1">
-			<f a="pos:?end">
-				<c path="Int"/>
-				<c path="Int"/>
-				<c path="Array"><c path="Array.T"/></c>
-			</f>
-			<haxe_doc>
-		Copies the range of the array starting at [pos] up to,
-		but not including, [end]. Both [pos] and [end] can be
-		negative to count from the end: -1 is the last item in
-		the array.
-	</haxe_doc>
-		</slice>
-		<sort public="1">
-			<f a="f">
-				<f a=":">
-					<c path="Array.T"/>
-					<c path="Array.T"/>
-					<c path="Int"/>
-				</f>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-		Sort the Array according to the comparison function [f].
-		[f(x,y)] should return [0] if [x == y], [>0] if [x > y]
-		and [<0] if [x < y].
-	]]></haxe_doc>
-		</sort>
-		<splice public="1">
-			<f a="pos:len">
-				<c path="Int"/>
-				<c path="Int"/>
-				<c path="Array"><c path="Array.T"/></c>
-			</f>
-			<haxe_doc>
-		Removes [len] elements starting from [pos] an returns them.
-	</haxe_doc>
-		</splice>
-		<toString public="1">
+	<class path="org.puremvc.haxe.multicore.interfaces.INotification" params="" file="src/org/puremvc/haxe/multicore/interfaces/INotification.hx" interface="1">
+		<toString public="1" set="method">
 			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns a displayable representation of the Array content.
-	</haxe_doc>
+			<haxe_doc>* Get the string representation of the [INotification] instance</haxe_doc>
 		</toString>
-		<unshift public="1">
-			<f a="x">
-				<c path="Array.T"/>
-				<e path="Void"/>
+		<getType public="1" set="method">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>* Get the type of the [INotification] instance</haxe_doc>
+		</getType>
+		<setType public="1" set="method">
+			<f a="type">
+				<c path="String"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-		Adds the element [x] at the start of the array.
-	</haxe_doc>
-		</unshift>
-		<insert public="1">
-			<f a="pos:x">
-				<c path="Int"/>
-				<c path="Array.T"/>
-				<e path="Void"/>
+			<haxe_doc>* Set the type of the [INotification] instance</haxe_doc>
+		</setType>
+		<getBody public="1" set="method">
+			<f a=""><d/></f>
+			<haxe_doc>* Get the body of the [INotification] instance</haxe_doc>
+		</getBody>
+		<setBody public="1" set="method">
+			<f a="body">
+				<d/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-		Inserts the element [x] at the position [pos].
-		All elements after [pos] are moved one index ahead.
-	</haxe_doc>
-		</insert>
-		<remove public="1">
-			<f a="x">
-				<c path="Array.T"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Removes the first occurence of [x].
-		Returns false if [x] was not present.
-		Elements are compared by using standard equality.
-	</haxe_doc>
-		</remove>
-		<copy public="1">
-			<f a=""><c path="Array"><c path="Array.T"/></c></f>
-			<haxe_doc>
-		Returns a copy of the Array. The values are not
-		copied, only the Array structure.
-	</haxe_doc>
-		</copy>
-		<iterator public="1">
-			<f a=""><t path="Iterator"><t path="Null"><c path="Array.T"/></t></t></f>
-			<haxe_doc>
-		Returns an iterator of the Array values.
-	</haxe_doc>
-		</iterator>
-		<new public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Creates a new Array.
-	</haxe_doc>
-		</new>
-		<haxe_doc>
-	An Array is a storage for values. You can access it using indexes or
-	with its API. On the server side, it's often better to use a [List] which
-	is less memory and CPU consuming, unless you really need indexed access.
-</haxe_doc>
-	</class>
-	<class path="neko.NekoArray__" params="T" file="/usr/local/lib/haxe/std/neko/NekoArray__.hx">
-		<implements path="Array"><c path="neko.NekoArray__.T"/></implements>
-		<__name__ line="29" static="1"><c path="Array"><c path="String"/></c></__name__>
-		<new1 line="39" static="1"><f a="a:l">
-	<unknown/>
-	<c path="Int"/>
-	<c path="neko.NekoArray__"><d/></c>
-</f></new1>
-		<length public="1" set="null"><c path="Int"/></length>
-		<concat public="1" line="50"><f a="arr">
-	<c path="Array"><c path="neko.NekoArray__.T"/></c>
-	<c path="Array"><c path="neko.NekoArray__.T"/></c>
-</f></concat>
-		<copy public="1" line="63"><f a=""><c path="Array"><c path="neko.NekoArray__.T"/></c></f></copy>
-		<iterator public="1" line="67"><f a=""><t path="Iterator"><t path="Null"><c path="neko.NekoArray__.T"/></t></t></f></iterator>
-		<insert public="1" line="82"><f a="pos:x">
-	<c path="Int"/>
-	<c path="neko.NekoArray__.T"/>
-	<e path="Void"/>
-</f></insert>
-		<join public="1" line="97"><f a="delim">
-	<c path="String"/>
-	<c path="String"/>
-</f></join>
-		<toString public="1" line="109"><f a=""><c path="String"/></f></toString>
-		<pop public="1" line="122"><f a=""><t path="Null"><c path="neko.NekoArray__.T"/></t></f></pop>
-		<push public="1" line="133"><f a="v">
-	<c path="neko.NekoArray__.T"/>
-	<c path="Int"/>
-</f></push>
-		<unshift public="1" line="142"><f a="v">
-	<c path="neko.NekoArray__.T"/>
-	<e path="Void"/>
-</f></unshift>
-		<remove public="1" line="152"><f a="v">
-	<c path="neko.NekoArray__.T"/>
-	<e path="Bool"/>
-</f></remove>
-		<reverse public="1" line="171"><f a=""><e path="Void"/></f></reverse>
-		<shift public="1" line="187"><f a=""><t path="Null"><c path="neko.NekoArray__.T"/></t></f></shift>
-		<slice public="1" line="202"><f a="pos:?end">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="Array"><c path="neko.NekoArray__.T"/></c>
-</f></slice>
-		<sort public="1" line="219"><f a="f">
-	<f a=":">
-		<c path="neko.NekoArray__.T"/>
-		<c path="neko.NekoArray__.T"/>
-		<c path="Int"/>
-	</f>
-	<e path="Void"/>
-</f></sort>
-		<splice public="1" line="244"><f a="pos:len">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="Array"><c path="neko.NekoArray__.T"/></c>
-</f></splice>
-		<__get line="269"><f a="pos">
-	<c path="Int"/>
-	<unknown/>
-</f></__get>
-		<__set line="273"><f a="pos:v">
-	<c path="Int"/>
-	<unknown/>
-	<e path="Void"/>
-</f></__set>
-		<__double line="289"><f a="l">
-	<c path="Int"/>
-	<e path="Void"/>
-</f></__double>
-		<__neko line="306"><f a=""><unknown/></f></__neko>
-		<new line="32"><f a=""><e path="Void"/></f></new>
+			<haxe_doc>* Set the body of the [INotification] instance</haxe_doc>
+		</setBody>
+		<getName public="1" set="method">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>* Get the name of the [INotification] instance. 
+	 * No setter, should be set by constructor only</haxe_doc>
+		</getName>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Notification.
+ *
+ * <p>PureMVC does not rely upon underlying event models such 
+ * as the one provided with Flash.</p>
+ * 
+ * <p>The Observer Pattern as implemented within PureMVC exists 
+ * to support event-driven communication between the 
+ * application and the actors of the MVC triad.</p>
+ * 
+ * <p>Notifications are not meant to be a replacement for Events.
+ * Generally, [IMediator] implementors
+ * place event listeners on their view components, which they
+ * then handle in the usual way. This may lead to the broadcast of [Notification]s to 
+ * trigger [ICommand]s or to communicate with other [IMediators]. [IProxy] and [ICommand]
+ * instances communicate with each other and [IMediator]s 
+ * by broadcasting [INotification]s.</p>
+ * 
+ * <p>A key difference between Flash [Event]s and PureMVC 
+ * [Notification]s is that [Event]s follow the 
+ * 'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy 
+ * until some parent component handles the [Event], while
+ * PureMVC [Notification]s follow a 'Publish/Subscribe'
+ * pattern. PureMVC classes need not be related to each other in a 
+ * parent/child relationship in order to communicate with one another
+ * using [Notification]s.]]></haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.interfaces.IObserver" params="" file="src/org/puremvc/haxe/multicore/interfaces/IObserver.hx" interface="1">
-		<setNotifyMethod public="1">
+		<compareNotifyContext public="1" set="method">
+			<f a="object">
+				<d/>
+				<x path="Bool"/>
+			</f>
+			<haxe_doc>* Compare the given object to the notificaiton context object.</haxe_doc>
+		</compareNotifyContext>
+		<notifyObserver public="1" set="method">
+			<f a="notification">
+				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Notify the interested object.</haxe_doc>
+		</notifyObserver>
+		<setNotifyContext public="1" set="method">
+			<f a="notifyContext">
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Set the notification context.</haxe_doc>
+		</setNotifyContext>
+		<setNotifyMethod public="1" set="method">
 			<f a="notifyMethod">
 				<f a="">
 					<d/>
-					<e path="Void"/>
+					<x path="Void"/>
 				</f>
-				<e path="Void"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc><![CDATA[
-	 * Set the notification method.
+			<haxe_doc><![CDATA[* Set the notification method.
 	 * 
-	 * <p>The notification method should take one parameter of type [INotification]</p>
-	 ]]></haxe_doc>
+	 * <p>The notification method should take one parameter of type [INotification]</p>]]></haxe_doc>
 		</setNotifyMethod>
-		<setNotifyContext public="1">
-			<f a="notifyContext">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the notification context.
-	 </haxe_doc>
-		</setNotifyContext>
-		<notifyObserver public="1">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Notify the interested object.
-	 </haxe_doc>
-		</notifyObserver>
-		<compareNotifyContext public="1">
-			<f a="object">
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Compare the given object to the notificaiton context object.
-	 </haxe_doc>
-		</compareNotifyContext>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Observer.
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Observer.
  *
  * <p>In PureMVC, [IObserver] implementors assume these responsibilities:
  * <ul>
@@ -915,53 +1523,67 @@
  * <p>Observers can receive [Notification]s by having their
  * [notifyObserver] method invoked, passing
  * in an object implementing the [INotification] interface, such
- * as a subclass of [Notification].</p>
- ]]></haxe_doc>
+ * as a subclass of [Notification].</p>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.interfaces.IProxy" params="" file="src/org/puremvc/haxe/multicore/interfaces/IProxy.hx" interface="1">
+		<extends path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
+		<onRemove public="1" set="method">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>* Called by the Model when the [Proxy] is removed</haxe_doc>
+		</onRemove>
+		<onRegister public="1" set="method">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc>* Called by the Model when the [Proxy] is registered</haxe_doc>
+		</onRegister>
+		<getData public="1" set="method">
+			<f a=""><d/></f>
+			<haxe_doc>* Get the data object</haxe_doc>
+		</getData>
+		<setData public="1" set="method">
+			<f a="data">
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Set the data object</haxe_doc>
+		</setData>
+		<getProxyName public="1" set="method">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>* Get the [Proxy] name</haxe_doc>
+		</getProxyName>
+		<haxe_doc><![CDATA[* The interface definition for a PureMVC Proxy.
+ *
+ * <p>In PureMVC, [IProxy] implementors assume these responsibilities:</p>
+ * <ul>
+ * <li>Implement a common method which returns the name of the [Proxy].</li>
+ * </ul>
+ * <p>Additionally, [IProxy]s typically:</p>
+ * <ul>
+ * <li>Maintain references to one or more pieces of model data.</li>
+ * <li>Provide methods for manipulating that data.</li>
+ * <li>Generate [INotifications] when their model data changes.</li>
+ * <li>Expose their name as a [public static var] called [NAME].</li>
+ * <li>Encapsulate interaction with local or remote services used to fetch and persist model data.</li>
+ * </ul>]]></haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.patterns.observer.Notifier" params="" file="src/org/puremvc/haxe/multicore/patterns/observer/Notifier.hx">
 		<implements path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
-		<MULTITON_MSG line="80" static="1"><c path="String"/></MULTITON_MSG>
-		<sendNotification public="1" line="42">
-			<f a="notificationName:?body:?type">
-				<c path="String"/>
-				<d/>
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Send an [INotification]s.
-	 * 
-	 * <p>Keeps us from having to construct new notification 
-	 * instances in our implementation code.</p>
-	 ]]></haxe_doc>
-		</sendNotification>
-		<initializeNotifier public="1" line="62">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Initialize this INotifier instance.
-	 *
-	 * <p>This is how a Notifier gets its multitonKey. 
-	 * Calls to sendNotification or to access the
-	 * facade will fail until after this method 
-	 * has been called.</p>
-	 * 
-	 * <p>Mediators, Commands or Proxies may override 
-	 * this method in order to send notifications
-	 * or access the Multiton Facade instance as
-	 * soon as possible. They CANNOT access the facade
-	 * in their constructors, since this method will not
-	 * yet have been called.</p> 
-	 ]]></haxe_doc>
-		</initializeNotifier>
-		<facade public="1" get="getFacade" set="null"><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></facade>
-		<getFacade line="70"><f a=""><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></f></getFacade>
+		<MULTITON_MSG get="inline" set="null" line="89" static="1"><c path="String"/></MULTITON_MSG>
 		<multitonKey><c path="String"/></multitonKey>
-		<new public="1" line="32"><f a=""><e path="Void"/></f></new>
-		<haxe_doc><![CDATA[
- * A Base [INotifier] implementation.
+		<getFacade set="method" line="80"><f a=""><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></f></getFacade>
+		<get_facade set="method" line="74"><f a=""><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></f></get_facade>
+		<facade public="1" get="get_facade" set="null"><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></facade>
+		<initializeNotifier public="1" set="method" line="62"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></initializeNotifier>
+		<sendNotification public="1" set="method" line="42"><f a="notificationName:?body:?type">
+	<c path="String"/>
+	<d/>
+	<c path="String"/>
+	<x path="Void"/>
+</f></sendNotification>
+		<new public="1" set="method" line="32"><f a=""><x path="Void"/></f></new>
+		<haxe_doc><![CDATA[* A Base [INotifier] implementation.
  * 
  * <p>[MacroCommand, Command, Mediator] and [Proxy] 
  * all have a need to send [Notifications].</p>
@@ -975,1400 +1597,24 @@
  * Singleton, which is required for the convienience method
  * for sending [Notifications], but also eases implementation as these
  * classes have frequent [Facade] interactions and usually require
- * access to the facade anyway.</p>
- ]]></haxe_doc>
-	</class>
-	<class path="neko.Lib" params="" file="/usr/local/lib/haxe/std/neko/Lib.hx">
-		<load public="1" line="32" static="1">
-			<f a="lib:prim:nargs">
-				<c path="String"/>
-				<c path="String"/>
-				<c path="Int"/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Load and return a Neko primitive from a NDLL library.
-	</haxe_doc>
-		</load>
-		<loadLazy public="1" line="36" static="1"><f a="lib:prim:nargs">
-	<c path="String"/>
-	<c path="String"/>
-	<c path="Int"/>
-	<d/>
-</f></loadLazy>
-		<print public="1" line="47" static="1">
-			<f a="v">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Print the specified value on the default output.
-	</haxe_doc>
-		</print>
-		<println public="1" line="54" static="1">
-			<f a="v">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Print the specified value on the default output followed by a newline character.
-	</haxe_doc>
-		</println>
-		<rethrow public="1" line="62" static="1">
-			<f a="e">
-				<d/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Rethrow an exception. This is useful when manually filtering an exception in order
-		to keep the previous exception stack.
-	</haxe_doc>
-		</rethrow>
-		<serialize public="1" line="70" static="1">
-			<f a="v">
-				<d/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Serialize using native Neko serialization. This will return a Binary string that can be
-		stored for long term usage. The serialized data is optimized for speed and not for size.
-	</haxe_doc>
-		</serialize>
-		<unserialize public="1" line="77" static="1">
-			<f a="s">
-				<c path="String"/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Unserialize a string using native Neko serialization. See [serialize].
-	</haxe_doc>
-		</unserialize>
-		<localUnserialize public="1" line="88" static="1">
-			<f a="s">
-				<c path="String"/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Unserialize a string using native Neko serialization. See [serialize].
-		This function assume that all the serialized data was serialized with current
-		module, even if the module name was different. This can happen if you are unserializing
-		some data into mod_neko that was serialized on a different server using a different
-		file path.
-	</haxe_doc>
-		</localUnserialize>
-		<nekoToHaxe public="1" line="98" static="1">
-			<f a="v">
-				<d/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Converts a Neko value to its haXe equivalent. Used for wrapping String and Arrays raw values into haXe Objects.
-	</haxe_doc>
-		</nekoToHaxe>
-		<haxeToNeko public="1" line="130" static="1">
-			<f a="v">
-				<d/>
-				<d/>
-			</f>
-			<haxe_doc>
-		Converts a Neko value to its haXe equivalent. Used to unwrap String and Arrays Objects into raw Neko values.
-	</haxe_doc>
-		</haxeToNeko>
-		<getClasses public="1" line="165" static="1">
-			<f a=""><d/></f>
-			<haxe_doc>
-		Returns an object containing all compiled packages and classes.
-	</haxe_doc>
-		</getClasses>
-		<stringReference public="1" line="172" static="1">
-			<f a="b">
-				<c path="haxe.io.Bytes"/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns a string referencing the data contains in bytes.
-	</haxe_doc>
-		</stringReference>
-		<bytesReference public="1" line="179" static="1">
-			<f a="s">
-				<c path="String"/>
-				<c path="haxe.io.Bytes"/>
-			</f>
-			<haxe_doc>
-		Returns bytes referencing the content of a string.
-	</haxe_doc>
-		</bytesReference>
-		<__serialize line="183" static="1"><f a="">
-	<d/>
-	<c path="String"/>
-</f></__serialize>
-		<__unserialize line="184" static="1"><f a=":">
-	<unknown/>
-	<a>
-		<loadprim><f a="p:n">
-	<unknown/>
-	<unknown/>
-	<unknown/>
-</f></loadprim>
-		<loadmodule><f a="m:l">
-	<unknown/>
-	<unknown/>
-	<unknown/>
-</f></loadmodule>
-	</a>
-	<unknown/>
-</f></__unserialize>
-	</class>
-	<class path="StringBuf" params="" file="/usr/local/lib/haxe/std/StringBuf.hx">
-		<__make line="98" static="1"><d/></__make>
-		<__add line="99" static="1"><d/></__add>
-		<__add_char line="100" static="1"><d/></__add_char>
-		<__add_sub line="101" static="1"><d/></__add_sub>
-		<__string line="102" static="1"><d/></__string>
-		<add public="1" line="46">
-			<f a="?x">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Adds the representation of any value to the string buffer.
-	</haxe_doc>
-		</add>
-		<addSub public="1" line="57">
-			<f a="s:pos:?len">
-				<c path="String"/>
-				<c path="Int"/>
-				<c path="Int"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Adds a part of a string to the string buffer.
-	</haxe_doc>
-		</addSub>
-		<addChar public="1" line="73">
-			<f a="c">
-				<c path="Int"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Adds a character to the string buffer.
-	</haxe_doc>
-		</addChar>
-		<toString public="1" line="87">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns the content of the string buffer.
-		The buffer is not emptied by this operation.
-	</haxe_doc>
-		</toString>
-		<b><d/></b>
-		<new public="1" line="35">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Creates a new string buffer.
-	</haxe_doc>
-		</new>
-		<haxe_doc>
-	A String buffer is an efficient way to build a big string by
-	appending small elements together.
-</haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.patterns.observer.Observer" params="" file="src/org/puremvc/haxe/multicore/patterns/observer/Observer.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
-		<notify><f a="">
-	<d/>
-	<e path="Void"/>
-</f></notify>
-		<context><d/></context>
-		<setNotifyMethod public="1" line="49">
-			<f a="notifyMethod">
-				<f a="">
-					<d/>
-					<e path="Void"/>
-				</f>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Set the notification method.
-	 * 
-	 * <p>The notification method should take one parameter of type [INotification].</p>
-	 ]]></haxe_doc>
-		</setNotifyMethod>
-		<setNotifyContext public="1" line="57">
-			<f a="notifyContext">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the notification context.
-	 </haxe_doc>
-		</setNotifyContext>
-		<getNotifyMethod line="65">
-			<f a=""><f a="">
-	<d/>
-	<e path="Void"/>
-</f></f>
-			<haxe_doc>
-	 * Get the notification method.
-	 </haxe_doc>
-		</getNotifyMethod>
-		<getNotifyContext line="73">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the notification context.
-	 </haxe_doc>
-		</getNotifyContext>
-		<notifyObserver public="1" line="81">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Notify the interested object.
-	 </haxe_doc>
-		</notifyObserver>
-		<compareNotifyContext public="1" line="89">
-			<f a="object">
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Compare an object to the notification context. 
-	 </haxe_doc>
-		</compareNotifyContext>
-		<new public="1" line="38">
-			<f a="notifyMethod:notifyContext">
-				<f a="">
-					<d/>
-					<e path="Void"/>
-				</f>
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
-	 * 
-	 * <p>The notification method on the interested object should take 
-	 * one parameter of type [INotification]</p>
-	 ]]></haxe_doc>
-		</new>
-		<haxe_doc><![CDATA[
- * A base [IObserver] implementation.
- * 
- * <p>An [Observer] is an object that encapsulates information
- * about an interested object with a method that should 
- * be called when a particular [INotification] is broadcast.</p>
- * 
- * <p>In PureMVC, the [Observer] class assumes these responsibilities:</p>
- * <ul>
- * <li>Encapsulate the notification (callback) method of the interested object.</li>
- * <li>Encapsulate the notification context (this) of the interested object.</li>
- * <li>Provide methods for setting the notification method and context.</li>
- * <li>Provide a method for notifying the interested object.</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.IView" params="" file="src/org/puremvc/haxe/multicore/interfaces/IView.hx" interface="1">
-		<registerObserver public="1">
-			<f a="noteName:observer">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IObserver] to be notified of [INotifications] with a given name.
-	 </haxe_doc>
-		</registerObserver>
-		<removeObserver public="1">
-			<f a="notificationName:notifyContext">
-				<c path="String"/>
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a group of observers from the observer list for a given Notification name.
-	 </haxe_doc>
-		</removeObserver>
-		<notifyObservers public="1">
-			<f a="note">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Notify the [IObservers] for a particular [INotification].
-	 * 
-	 * <p>All previously attached [IObservers] for this [INotification]'s
-	 * list are notified and are passed a reference to the [INotification] in 
-	 * the order in which they were registered.</p>
-	 ]]></haxe_doc>
-		</notifyObservers>
-		<registerMediator public="1">
-			<f a="mediator">
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Register an [IMediator] instance with the [View].
-	 * 
-	 * <p>Registers the [IMediator] so that it can be retrieved by name,
-	 * and further interrogates the [IMediator] for its [INotification] interests.</p>
-	 *
-	 * <p>If the [IMediator] returns any [INotification] 
-	 * names to be notified about, an [Observer] is created encapsulating 
-	 * the [IMediator] instance's [handleNotification] method 
-	 * and registering it as an [Observer] for all [INotifications] the 
-	 * [IMediator] is interested in.</p>
-	 ]]></haxe_doc>
-		</registerMediator>
-		<retrieveMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IMediator] from the [View].
-	 </haxe_doc>
-		</retrieveMediator>
-		<removeMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IMediator] from the [View].
-	 </haxe_doc>
-		</removeMediator>
-		<hasMediator public="1">
-			<f a="mediatorName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Mediator] is registered or not
-	 </haxe_doc>
-		</hasMediator>
-		<removeView public="1">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IView instance
-	 </haxe_doc>
-		</removeView>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC View.
- * 
- * <p>In PureMVC, the [View] class assumes these responsibilities:
- * <ul>
- * <li>Maintain a cache of [IMediator] instances.</li>
- * <li>Provide methods for registering, retrieving, and removing [IMediators].</li>
- * <li>Managing the observer lists for each [INotification] in the application.</li>
- * <li>Providing a method for attaching [IObservers] to an [INotification]'s observer list.</li>
- * <li>Providing a method for broadcasting an [INotification].</li>
- * <li>Notifying the [IObservers] of a given [INotification] when it broadcast.</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.core.View" params="" file="src/org/puremvc/haxe/multicore/core/View.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.IView"/>
-		<getInstance public="1" line="62" static="1">
-			<f a="key">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IView"/>
-			</f>
-			<haxe_doc>
-	 * View Singleton Factory method.
-	 </haxe_doc>
-		</getInstance>
-		<instanceMap static="1"><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IView"/></c></instanceMap>
-		<initializeView line="55">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the Singleton [View] instance.
-	 * 
-	 * <p>Called automatically by the constructor, this is your opportunity to initialize the Singleton
-	 * instance in your subclass without overriding the constructor.</p>
-	 ]]></haxe_doc>
-		</initializeView>
-		<registerObserver public="1" line="72">
-			<f a="notificationName:observer">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IObserver] to be notified of [INotifications] with a given name.
-	 </haxe_doc>
-		</registerObserver>
-		<notifyObservers public="1" line="86">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Notify the [IObservers] for a particular [INotification].
-	 * 
-	 * <p>All previously attached [IObservers] for this [INotification]'s
-	 * list are notified and are passed a reference to the [INotification] in 
-	 * the order in which they were registered.</p>
-	 ]]></haxe_doc>
-		</notifyObservers>
-		<removeObserver public="1" line="99">
-			<f a="notificationName:notifyContext">
-				<c path="String"/>
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
- 	* Remove the observer for a given notifyContext from an observer list for a given Notification name.
- 	</haxe_doc>
-		</removeObserver>
-		<registerMediator public="1" line="136">
-			<f a="mediator">
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Register an [IMediator] instance with the [View].
-	 * 
-	 * <p>Registers the [IMediator] so that it can be retrieved by name,
-	 * and further interrogates the [IMediator] for its [INotification] interests.</p>
-	 * <p>
-	 * If the [IMediator] returns any [INotification] 
-	 * names to be notified about, an [Observer] is created encapsulating 
-	 * the [IMediator] instance's [handleNotification] method 
-	 * and registering it as an [Observer] for all [INotifications] the 
-	 * [IMediator] is interested in.</p>
-	 ]]></haxe_doc>
-		</registerMediator>
-		<retrieveMediator public="1" line="161">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IMediator] from the [View].
-	 </haxe_doc>
-		</retrieveMediator>
-		<removeMediator public="1" line="169">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
- 	* Remove an [IMediator] from the [View].
- 	</haxe_doc>
-		</removeMediator>
-		<hasMediator public="1" line="198">
-			<f a="mediatorName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a Mediator is registered or not
-	 </haxe_doc>
-		</hasMediator>
-		<removeView public="1" line="206">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IView instance
-	 </haxe_doc>
-		</removeView>
-		<mediatorMap><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IMediator"/></c></mediatorMap>
-		<observerMap><c path="Hash"><c path="List"><c path="org.puremvc.haxe.multicore.interfaces.IObserver"/></c></c></observerMap>
-		<multitonKey><c path="String"/></multitonKey>
-		<new public="1" line="40">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
-	 * 
-	 * <p>This [IView] implementation is a Multiton, 
-	 * so you should not call the constructor 
-	 * directly, but instead call the static Multiton 
-	 * Factory method [View.getInstance( multitonKey )]</p>
-	 ]]></haxe_doc>
-		</new>
-		<haxe_doc><![CDATA[
- * A Multiton [IView] implementation.
- * 
- * <p>In PureMVC, the [View] class assumes these responsibilities:</p>
- * <ul>
- * <li>Maintain a cache of [IMediator] instances.</li>
- * <li>Provide methods for registering, retrieving, and removing [IMediators].</li>
- * <li>Notifiying [IMediators] when they are registered or removed.</li>
- * <li>Managing the observer lists for each [INotification] in the application.</li>
- * <li>Providing a method for attaching [IObservers] to an [INotification]'s observer list.</li>
- * <li>Providing a method for broadcasting an [INotification].</li>
- * <li>Notifying the [IObservers] of a given [INotification] when it broadcast.</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.IProxy" params="" file="src/org/puremvc/haxe/multicore/interfaces/IProxy.hx" interface="1">
-		<implements path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
-		<getProxyName public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the [Proxy] name
-	 </haxe_doc>
-		</getProxyName>
-		<setData public="1">
-			<f a="data">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the data object
-	 </haxe_doc>
-		</setData>
-		<getData public="1">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the data object
-	 </haxe_doc>
-		</getData>
-		<onRegister public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the Model when the [Proxy] is registered
-	 </haxe_doc>
-		</onRegister>
-		<onRemove public="1">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the Model when the [Proxy] is removed
-	 </haxe_doc>
-		</onRemove>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Proxy.
- *
- * <p>In PureMVC, [IProxy] implementors assume these responsibilities:</p>
- * <ul>
- * <li>Implement a common method which returns the name of the [Proxy].</li>
- * </ul>
- * <p>Additionally, [IProxy]s typically:</p>
- * <ul>
- * <li>Maintain references to one or more pieces of model data.</li>
- * <li>Provide methods for manipulating that data.</li>
- * <li>Generate [INotifications] when their model data changes.</li>
- * <li>Expose their name as a [public static var] called [NAME].</li>
- * <li>Encapsulate interaction with local or remote services used to fetch and persist model data.</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.ICommand" params="" file="src/org/puremvc/haxe/multicore/interfaces/ICommand.hx" interface="1">
-		<implements path="org.puremvc.haxe.multicore.interfaces.INotifier"/>
-		<execute public="1">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
- 	 * Execute the [ICommand]'s logic to handle a given [INotification].
- 	 </haxe_doc>
-		</execute>
-		<haxe_doc>
- * The interface definition for a PureMVC Command.
- </haxe_doc>
-	</class>
-	<class path="haxe.io.Bytes" params="" file="/usr/local/lib/haxe/std/haxe/io/Bytes.hx">
-		<alloc public="1" line="182" static="1"><f a="length">
-	<c path="Int"/>
-	<c path="haxe.io.Bytes"/>
-</f></alloc>
-		<ofString public="1" line="197" static="1"><f a="s">
-	<c path="String"/>
-	<c path="haxe.io.Bytes"/>
-</f></ofString>
-		<ofData public="1" line="232" static="1"><f a="b">
-	<t path="haxe.io.BytesData"/>
-	<c path="haxe.io.Bytes"/>
-</f></ofData>
-		<length public="1" set="null"><c path="Int"/></length>
-		<b><t path="haxe.io.BytesData"/></b>
-		<get public="1" line="37"><f a="pos">
-	<c path="Int"/>
-	<c path="Int"/>
-</f></get>
-		<set public="1" line="47"><f a="pos:v">
-	<c path="Int"/>
-	<c path="Int"/>
-	<e path="Void"/>
-</f></set>
-		<blit public="1" line="57"><f a="pos:src:srcpos:len">
-	<c path="Int"/>
-	<c path="haxe.io.Bytes"/>
-	<c path="Int"/>
-	<c path="Int"/>
-	<e path="Void"/>
-</f></blit>
-		<sub public="1" line="82"><f a="pos:len">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="haxe.io.Bytes"/>
-</f></sub>
-		<compare public="1" line="98"><f a="other">
-	<c path="haxe.io.Bytes"/>
-	<c path="Int"/>
-</f></compare>
-		<readString public="1" line="128"><f a="pos:len">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="String"/>
-</f></readString>
-		<toString public="1" line="165"><f a=""><c path="String"/></f></toString>
-		<getData public="1" line="178"><f a=""><t path="haxe.io.BytesData"/></f></getData>
-		<new line="32"><f a="length:b">
-	<c path="Int"/>
-	<t path="haxe.io.BytesData"/>
-	<e path="Void"/>
-</f></new>
-	</class>
-	<class path="String" params="" file="/usr/local/lib/haxe/std/String.hx" extern="1">
-		<fromCharCode public="1" static="1"><f a="code">
-	<c path="Int"/>
-	<c path="String"/>
-</f></fromCharCode>
-		<length public="1" set="null">
-			<c path="Int"/>
-			<haxe_doc>
-		The number of characters in the String.
-	</haxe_doc>
-		</length>
-		<toUpperCase public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns an String where all characters have been uppercased.
-	</haxe_doc>
-		</toUpperCase>
-		<toLowerCase public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns an String where all characters have been lowercased.
-	</haxe_doc>
-		</toLowerCase>
-		<charAt public="1">
-			<f a="index">
-				<c path="Int"/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns the character at the given position.
-		Returns the empty String if outside of String bounds.
-	</haxe_doc>
-		</charAt>
-		<charCodeAt public="1">
-			<f a="index">
-				<c path="Int"/>
-				<t path="Null"><c path="Int"/></t>
-			</f>
-			<haxe_doc>
-		Returns the character code at the given position.
-		Returns [null] if outside of String bounds.
-	</haxe_doc>
-		</charCodeAt>
-		<indexOf public="1">
-			<f a="value:?startIndex">
-				<c path="String"/>
-				<c path="Int"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Returns the index of first occurence of [value]
-		Returns [1-1] if [value] is not found.
-		The optional [startIndex] parameter allows you to specify at which character to start searching.
-		The position returned is still relative to the beginning of the string.
-	</haxe_doc>
-		</indexOf>
-		<lastIndexOf public="1">
-			<f a="value:?startIndex">
-				<c path="String"/>
-				<c path="Int"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Similar to [indexOf] but returns the latest index.
-	</haxe_doc>
-		</lastIndexOf>
-		<split public="1">
-			<f a="delimiter">
-				<c path="String"/>
-				<c path="Array"><c path="String"/></c>
-			</f>
-			<haxe_doc>
-		Split the string using the specified delimiter.
-	</haxe_doc>
-		</split>
-		<substr public="1">
-			<f a="pos:?len">
-				<c path="Int"/>
-				<c path="Int"/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns a part of the String, taking [len] characters starting from [pos].
-		If [len] is not specified, it takes all the remaining characters.
-	</haxe_doc>
-		</substr>
-		<toString public="1">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns the String itself.
-	</haxe_doc>
-		</toString>
-		<new public="1">
-			<f a="string">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Creates a copy from a given String.
-	</haxe_doc>
-		</new>
-		<haxe_doc>
-	The basic String class.
-</haxe_doc>
-	</class>
-	<class path="neko.NekoString__" params="" file="/usr/local/lib/haxe/std/neko/NekoString__.hx">
-		<implements path="String"/>
-		<__name__ line="29" static="1"><c path="Array"><c path="String"/></c></__name__>
-		<__split line="30" static="1"><d/></__split>
-		<fromCharCode line="177" static="1"><f a="c">
-	<c path="Int"/>
-	<c path="String"/>
-</f></fromCharCode>
-		<length public="1" set="null"><c path="Int"/></length>
-		<charAt public="1" line="43"><f a="p">
-	<c path="Int"/>
-	<c path="String"/>
-</f></charAt>
-		<charCodeAt public="1" line="55"><f a="p">
-	<c path="Int"/>
-	<t path="Null"><c path="Int"/></t>
-</f></charCodeAt>
-		<indexOf public="1" line="61"><f a="str:?pos">
-	<c path="String"/>
-	<c path="Int"/>
-	<c path="Int"/>
-</f></indexOf>
-		<lastIndexOf public="1" line="70"><f a="str:?pos">
-	<c path="String"/>
-	<c path="Int"/>
-	<c path="Int"/>
-</f></lastIndexOf>
-		<split public="1" line="85"><f a="delim">
-	<c path="String"/>
-	<c path="Array"><c path="String"/></c>
-</f></split>
-		<substr public="1" line="101"><f a="pos:?len">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="String"/>
-</f></substr>
-		<toLowerCase public="1" line="127"><f a=""><c path="String"/></f></toLowerCase>
-		<toUpperCase public="1" line="143"><f a=""><c path="String"/></f></toUpperCase>
-		<toString public="1" line="159"><f a=""><c path="String"/></f></toString>
-		<__compare line="165"><f a="o">
-	<a><__s><unknown/></__s></a>
-	<unknown/>
-</f></__compare>
-		<__add line="169"><f a="s">
-	<unknown/>
-	<c path="String"/>
-</f></__add>
-		<__radd line="173"><f a="s">
-	<unknown/>
-	<c path="String"/>
-</f></__radd>
-		<new line="34"><f a="s">
-	<unknown/>
-	<e path="Void"/>
-</f></new>
-	</class>
-	<class path="IntIter" params="" file="/usr/local/lib/haxe/std/IntIter.hx">
-		<min><c path="Int"/></min>
-		<max><c path="Int"/></max>
-		<hasNext public="1" line="43"><f a=""><e path="Bool"/></f></hasNext>
-		<next public="1" line="47"><f a=""><c path="Int"/></f></next>
-		<new public="1" line="38">
-			<f a="min:max">
-				<c path="Int"/>
-				<c path="Int"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-		Iterate from [min] (inclusive) to [max] (exclusive).
-		If [max <= min], the iterator will not act as a countdown.
-	]]></haxe_doc>
-		</new>
-		<haxe_doc>
-	Integer iterator. Used for interval implementation.
-</haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.interfaces.IController" params="" file="src/org/puremvc/haxe/multicore/interfaces/IController.hx" interface="1">
-		<registerCommand public="1">
-			<f a="notificationName:commandClassRef">
-				<c path="String"/>
-				<c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register a particular [ICommand] class as the handler 
-	 * for a particular [INotification].
-	 </haxe_doc>
-		</registerCommand>
-		<executeCommand public="1">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Execute the [ICommand] previously registered as the
-	 * handler for [INotification]s with the given notification name.
-	 </haxe_doc>
-		</executeCommand>
-		<removeCommand public="1">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a previously registered [ICommand] to [INotification] mapping.
-	 </haxe_doc>
-		</removeCommand>
-		<hasCommand public="1">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a Command is registered for a given Notification 
-	 </haxe_doc>
-		</hasCommand>
-		<removeController public="1">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IController instance
-	 </haxe_doc>
-		</removeController>
-		<haxe_doc><![CDATA[
- * The interface definition for a PureMVC Controller.
- * 
- * <p>In PureMVC, an [IController] implementor 
- * follows the 'Command and Controller' strategy, and 
- * assumes these responsibilities:</p>
- * <ul>
- * <li> Remembering which [ICommand]s 
- * are intended to handle which [INotifications].</li>
- * <li> Registering itself as an [IObserver] with
- * the [View] for each [INotification] 
- * that it has an [ICommand] mapping for.</li>
- * <li> Creating a new instance of the proper [ICommand]
- * to handle a given [INotification] when notified by the [View].</li>
- * <li> Calling the [ICommand]'s [execute]
- * method, passing in the [INotification].</li>
- * </ul>
- ]]></haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.core.Controller" params="" file="src/org/puremvc/haxe/multicore/core/Controller.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.IController"/>
-		<getInstance public="1" line="69" static="1">
-			<f a="key">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IController"/>
-			</f>
-			<haxe_doc>
-	 * [Controller] Multiton Factory method.
-	 </haxe_doc>
-		</getInstance>
-		<instanceMap static="1"><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IController"/></c></instanceMap>
-		<initializeController line="61">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the Singleton [Controller] instance.
-	 * 
-	 * <p>Called automatically by the constructor.</p> 
-	 * 
-	 * <p>Note that if you are using a subclass of [View]
-	 * in your application, you should <em>also</em> subclass [Controller]
-	 * and override the [initializeController] method.
-	 ]]></haxe_doc>
-		</initializeController>
-		<executeCommand public="1" line="80">
-			<f a="note">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * If an [ICommand] has previously been registered 
-	 * to handle a the given [INotification], then it is executed.
-	 </haxe_doc>
-		</executeCommand>
-		<registerCommand public="1" line="100">
-			<f a="notificationName:commandClassRef">
-				<c path="String"/>
-				<c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Register a particular [ICommand] class as the handler for a particular [INotification].
-	 * 
-	 * <p>If an [ICommand] has already been registered to 
-	 * handle [INotification]s with this name, it is no longer
-	 * used, the new [ICommand] is used instead.</p>
-	 * 
-	 * <p>The Observer for the new ICommand is only created if this the 
-	 * first time an ICommand has been regisered for this Notification name.</p>
-	 ]]></haxe_doc>
-		</registerCommand>
-		<hasCommand public="1" line="110">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a Command is registered for a given Notification 
-	 </haxe_doc>
-		</hasCommand>
-		<removeCommand public="1" line="118">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a previously registered [ICommand] to [INotification] mapping.
-	 </haxe_doc>
-		</removeCommand>
-		<removeController public="1" line="133">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IController instance
-	 </haxe_doc>
-		</removeController>
-		<view><c path="org.puremvc.haxe.multicore.interfaces.IView"/></view>
-		<commandMap><c path="Hash"><c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c></c></commandMap>
-		<multitonKey><c path="String"/></multitonKey>
-		<new line="44">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
-	 * 
-	 * <p>This [IController] implementation is a Multiton, so you cannot
-	 * call the constructor directly, but instead call the static 
-	 * Factory method passing the unique key for this instance
-	 * [Controller.getInstance( multitonKey )]</p>
-	 ]]></haxe_doc>
-		</new>
-		<haxe_doc><![CDATA[
- * A Multiton [IController] implementation.
- * 
- * <p>In PureMVC, the [Controller] class follows the
- * 'Command and Controller' strategy, and assumes these responsibilities:</p>
- * <ul>
- * <li> Remembering which [ICommand]s are intended to handle which [INotifications].</li>
- * <li> Registering itself as an [IObserver] with the [View] for each [INotification] 
- * that it has an [ICommand] mapping for.</li>
- * <li> Creating a new instance of the proper [ICommand] to handle a given [INotification]
- * when notified by the [View].</li>
- * <li> Calling the [ICommand]'s [execute] method, passing in the [INotification].</li> 
- * </ul>
- * 
- * <p>Your application must register [ICommands] with the Controller.
- * The simplest way is to subclass [Facade], 
- * and use its [initializeController] method to add your registrations.</p>
- ]]></haxe_doc>
-	</class>
-	<enum path="haxe.io.Error" params="" file="/usr/local/lib/haxe/std/haxe/io/Error.hx">
-		<Overflow><haxe_doc> An integer value is outside its allowed range </haxe_doc></Overflow>
-		<OutsideBounds><haxe_doc> An operation on Bytes is outside of its valid range </haxe_doc></OutsideBounds>
-		<Custom a="e">
-			<d/>
-			<haxe_doc> Other errors </haxe_doc>
-		</Custom>
-		<Blocked><haxe_doc> The IO is set into nonblocking mode and some data cannot be read or written </haxe_doc></Blocked>
-		<haxe_doc>
-	The possible IO errors that can occur
-</haxe_doc>
-	</enum>
-	<class path="org.puremvc.haxe.multicore.patterns.command.SimpleCommand" params="" file="src/org/puremvc/haxe/multicore/patterns/command/SimpleCommand.hx">
-		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
-		<implements path="org.puremvc.haxe.multicore.interfaces.ICommand"/>
-		<execute public="1" line="29">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Fulfill the use-case initiated by the given [INotification].
-	 * 
-	 * <p>In the Command Pattern, an application use-case typically
-	 * begins with some user action, which results in an [INotification] being broadcast, which 
-	 * is handled by business logic in the [execute] method of an [ICommand].</p>
-	 ]]></haxe_doc>
-		</execute>
-		<new public="1" line="20"><f a=""><e path="Void"/></f></new>
-		<haxe_doc><![CDATA[
- * A base [ICommand] implementation.
- * 
- * <p>Your subclass should override the [execute] 
- * method where your business logic will handle the [INotification].</p>
- ]]></haxe_doc>
-	</class>
-	<class path="Float" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1"><haxe_doc>
-	The standard Float type, this is a double-precision IEEE 64bit float.
-</haxe_doc></class>
-	<class path="Int" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1">
-		<extends path="Float"/>
-		<haxe_doc>
-	The standard Int type. Its precision depends on the platform.
-</haxe_doc>
-	</class>
-	<enum path="Bool" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
-		<true/>
-		<false/>
-		<haxe_doc>
-	The standard Boolean type is represented as an enum with two choices.
-</haxe_doc>
-	</enum>
-	<class path="Dynamic" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1"><haxe_doc>
-	Dynamic is an internal compiler type which has special behavior.
-	See the haXe language reference for more informations.
-</haxe_doc></class>
-	<class path="Class" params="T" file="/usr/local/lib/haxe/std/Class.hx" extern="1"><haxe_doc>
-	An abstract type that represents a Class.
-	See [Type] for the haXe Reflection API.
-</haxe_doc></class>
-	<enum path="Void" params="" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes"><haxe_doc>
-	The standard Void type. Only [null] values can be of the type [Void].
-</haxe_doc></enum>
-	<class path="neko.Boot" params="" file="/usr/local/lib/haxe/std/neko/Boot.hx">
-		<__tmp_str line="29" static="1"><f a=""><c path="Int"/></f></__tmp_str>
-		<__enum_str line="33" static="1"><f a="e">
-	<d/>
-	<c path="Int"/>
-</f></__enum_str>
-		<__interfLoop line="55" static="1"><f a="cc:cl">
-	<d/>
-	<d/>
-	<e path="Bool"/>
-</f></__interfLoop>
-		<__instanceof line="70" static="1"><f a="o:cl">
-	<a>
-		<__name__><unknown/></__name__>
-		<__enum__><t path="#Dynamic"/></__enum__>
-		<__ename__><unknown/></__ename__>
-		<__class__><unknown/></__class__>
-	</a>
-	<t path="#Dynamic"/>
-	<e path="Bool"/>
-</f></__instanceof>
-		<__serialize line="88" static="1"><f a="o">
-	<a>
-		<__enum__><a><__ename__><a><length><c path="Int"/></length></a></__ename__></a></__enum__>
-		<__class__><a><__name__><a><length><c path="Int"/></length></a></__name__></a></__class__>
-	</a>
-	<c path="Array"><unknown/></c>
-</f></__serialize>
-		<__tagserialize line="108" static="1"><f a="o">
-	<a>
-		<tag><unknown/></tag>
-		<__enum__><a><__ename__><a><length><c path="Int"/></length></a></__ename__></a></__enum__>
-	</a>
-	<c path="Array"><unknown/></c>
-</f></__tagserialize>
-		<__unserialize line="117" static="1"><f a="v">
-	<c path="Array"><unknown/></c>
-	<unknown/>
-</f></__unserialize>
-		<__init line="140" static="1"><f a=""><e path="Void"/></f></__init>
-	</class>
-	<class path="Std" params="" file="/usr/local/lib/haxe/std/Std.hx">
-		<is public="1" line="34" static="1">
-			<f a="v:t">
-				<d/>
-				<d/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if a value v is of the type t.
-	</haxe_doc>
-		</is>
-		<string public="1" line="52" static="1">
-			<f a="s">
-				<d/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Convert any value to a String
-	</haxe_doc>
-		</string>
-		<int public="1" line="70" static="1">
-			<f a="x">
-				<c path="Float"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Convert a Float to an Int, rounded down.
-	</haxe_doc>
-		</int>
-		<parseInt public="1" line="84" static="1">
-			<f a="x">
-				<c path="String"/>
-				<t path="Null"><c path="Int"/></t>
-			</f>
-			<haxe_doc>
-		Convert a String to an Int, parsing different possible representations. Returns [null] if could not be parsed.
-	</haxe_doc>
-		</parseInt>
-		<parseFloat public="1" line="122" static="1">
-			<f a="x">
-				<c path="String"/>
-				<c path="Float"/>
-			</f>
-			<haxe_doc>
-		Convert a String to a Float, parsing different possible reprensations.
-	</haxe_doc>
-		</parseFloat>
-		<random public="1" line="142" static="1">
-			<f a="x">
-				<c path="Int"/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Return a random integer between 0 included and x excluded.
-	</haxe_doc>
-		</random>
-		<haxe_doc>
-	The Std class provides standard methods for manipulating basic types.
-</haxe_doc>
-	</class>
-	<typedef path="Null" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
-		<c path="Null.T"/>
-		<haxe_doc>
-	[Null] can be useful in two cases. In order to document some methods
-	that accepts or can return a [null] value, or for the Flash9 compiler and AS3
-	generator to distinguish between base values that can be null and others that
-	can't.
-</haxe_doc>
-	</typedef>
-	<typedef path="Iterator" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
-		<a>
-			<next><f a=""><c path="Iterator.T"/></f></next>
-			<hasNext><f a=""><e path="Bool"/></f></hasNext>
-		</a>
-		<haxe_doc>
-	An Iterator is a structure that permits to list a given container
-	values. It can be used by your own data structures. See the haXe
-	documentation for more informations.
-</haxe_doc>
-	</typedef>
-	<typedef path="Iterable" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes">
-		<a><iterator><f a=""><t path="Iterator"><c path="Iterable.T"/></t></f></iterator></a>
-		<haxe_doc>
-	An Iterable is a data structure which has an iterator() method.
-	See [Lambda] for generic functions on iterable structures.
-</haxe_doc>
-	</typedef>
-	<class path="ArrayAccess" params="T" file="/usr/local/lib/haxe/std/StdTypes.hx" module="StdTypes" extern="1" interface="1"><haxe_doc>
-	ArrayAccess is used to indicate a class that can be accessed using brackets.
-	The type parameter represent the type of the elements stored.
-</haxe_doc></class>
-	<class path="neko.NekoMath__" params="" file="/usr/local/lib/haxe/std/neko/NekoMath__.hx">
-		<PI static="1"><unknown/></PI>
-		<NaN static="1"><c path="Float"/></NaN>
-		<POSITIVE_INFINITY static="1"><c path="Float"/></POSITIVE_INFINITY>
-		<NEGATIVE_INFINITY static="1"><c path="Float"/></NEGATIVE_INFINITY>
-		<abs line="34" static="1"><unknown/></abs>
-		<min line="35" static="1"><f a="a:b">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="Int"/>
-</f></min>
-		<max line="36" static="1"><f a="a:b">
-	<c path="Int"/>
-	<c path="Int"/>
-	<c path="Int"/>
-</f></max>
-		<sin line="37" static="1"><unknown/></sin>
-		<cos line="38" static="1"><unknown/></cos>
-		<atan2 line="39" static="1"><unknown/></atan2>
-		<tan line="40" static="1"><unknown/></tan>
-		<exp line="41" static="1"><unknown/></exp>
-		<log line="42" static="1"><unknown/></log>
-		<sqrt line="43" static="1"><unknown/></sqrt>
-		<round line="44" static="1"><unknown/></round>
-		<floor line="45" static="1"><unknown/></floor>
-		<ceil line="46" static="1"><unknown/></ceil>
-		<atan line="47" static="1"><unknown/></atan>
-		<asin line="48" static="1"><unknown/></asin>
-		<acos line="49" static="1"><unknown/></acos>
-		<pow line="50" static="1"><unknown/></pow>
-		<__rnd static="1"><unknown/></__rnd>
-		<_rand_float line="53" static="1"><f a="">
-	<unknown/>
-	<unknown/>
-</f></_rand_float>
-		<_rand_int line="54" static="1"><unknown/></_rand_int>
-		<random line="55" static="1"><f a=""><unknown/></f></random>
-		<isNaN line="57" static="1"><f a="f">
-	<unknown/>
-	<unknown/>
-</f></isNaN>
-		<isFinite line="58" static="1"><f a="f">
-	<unknown/>
-	<e path="Bool"/>
-</f></isFinite>
-	</class>
-	<class path="Math" params="" file="/usr/local/lib/haxe/std/Math.hx" extern="1">
-		<PI public="1" set="null" static="1"><c path="Float"/></PI>
-		<NaN public="1" set="null" static="1"><c path="Float"/></NaN>
-		<NEGATIVE_INFINITY public="1" set="null" static="1"><c path="Float"/></NEGATIVE_INFINITY>
-		<POSITIVE_INFINITY public="1" set="null" static="1"><c path="Float"/></POSITIVE_INFINITY>
-		<abs public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></abs>
-		<min public="1" static="1"><f a="value1:value2">
-	<c path="Float"/>
-	<c path="Float"/>
-	<c path="Float"/>
-</f></min>
-		<max public="1" static="1"><f a="value1:value2">
-	<c path="Float"/>
-	<c path="Float"/>
-	<c path="Float"/>
-</f></max>
-		<sin public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></sin>
-		<cos public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></cos>
-		<atan2 public="1" static="1"><f a="value1:value2">
-	<c path="Float"/>
-	<c path="Float"/>
-	<c path="Float"/>
-</f></atan2>
-		<tan public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></tan>
-		<exp public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></exp>
-		<log public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></log>
-		<sqrt public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></sqrt>
-		<round public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Int"/>
-</f></round>
-		<floor public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Int"/>
-</f></floor>
-		<ceil public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Int"/>
-</f></ceil>
-		<atan public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></atan>
-		<asin public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></asin>
-		<acos public="1" static="1"><f a="value">
-	<c path="Float"/>
-	<c path="Float"/>
-</f></acos>
-		<pow public="1" static="1"><f a="value1:value2">
-	<c path="Float"/>
-	<c path="Float"/>
-	<c path="Float"/>
-</f></pow>
-		<random public="1" static="1"><f a=""><c path="Float"/></f></random>
-		<isFinite public="1" static="1"><f a="f">
-	<c path="Float"/>
-	<e path="Bool"/>
-</f></isFinite>
-		<isNaN public="1" static="1"><f a="f">
-	<c path="Float"/>
-	<e path="Bool"/>
-</f></isNaN>
-		<haxe_doc>
-	This class defines mathematical functions and constants.
-</haxe_doc>
+ * access to the facade anyway.</p>]]></haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.patterns.command.MacroCommand" params="" file="src/org/puremvc/haxe/multicore/patterns/command/MacroCommand.hx">
 		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
 		<implements path="org.puremvc.haxe.multicore.interfaces.ICommand"/>
-		<subCommands><c path="List"><c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c></c></subCommands>
-		<initializeMacroCommand line="64">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the [MacroCommand].
-	 * 
-	 * <p>In your subclass, override this method to 
-	 * initialize the [MacroCommand]'s <em>SubCommand</em>  
-	 * list with [ICommand] class references.
-	 *
-	 * <p>Note that <i>SubCommand</i>s may be any [ICommand] implementor,
-	 * [MacroCommand]s or [SimpleCommands] are both acceptable.</p>
-	 ]]></haxe_doc>
-		</initializeMacroCommand>
-		<addSubCommand line="74">
-			<f a="commandClassRef">
-				<c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Add a <em>SubCommand</em>.
-	 * 
-	 * <p>The <i>SubCommands</i> will be called in First In/First Out (FIFO)
-	 * order.</p>
-	 ]]></haxe_doc>
-		</addSubCommand>
-		<execute public="1" line="85">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[ 
-	 * Execute this [MacroCommand]'s <em>SubCommands</em>.
-	 * 
-	 * <p>The <i>SubCommands</i> will be called in First In/First Out (FIFO)
-	 * order.</p>
-	 ]]></haxe_doc>
-		</execute>
-		<new public="1" line="47">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
+		<execute public="1" set="method" line="89"><f a="notification">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></execute>
+		<addSubCommand set="method" line="78"><f a="commandClassRef">
+	<x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x>
+	<x path="Void"/>
+</f></addSubCommand>
+		<initializeMacroCommand set="method" line="68"><f a=""><x path="Void"/></f></initializeMacroCommand>
+		<subCommands><c path="List"><x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x></c></subCommands>
+		<new public="1" set="method" line="51">
+			<f a=""><x path="Void"/></f>
+			<haxe_doc><![CDATA[* Constructor. 
 	 * 
 	 * <p>You should not need to define a constructor, 
 	 * instead, override the [initializeMacroCommand]
@@ -2376,11 +1622,9 @@
 	 * 
 	 * <p>
 	 * If your subclass does define a constructor, be 
-	 * sure to call [super()].</p>
-	 ]]></haxe_doc>
+	 * sure to call [super()].</p>]]></haxe_doc>
 		</new>
-		<haxe_doc><![CDATA[
- * A base [ICommand] implementation that executes other [ICommand]s.
+		<haxe_doc><![CDATA[* A base [ICommand] implementation that executes other [ICommand]s.
  *  
  * <p>A [MacroCommand] maintains an list of
  * [ICommand] Class references called <em>SubCommands</em>.</p>
@@ -2395,190 +1639,288 @@
  * should not override [execute], but instead, should 
  * override the [initializeMacroCommand] method, 
  * calling [addSubCommand] once for each <em>SubCommand</em>
- * to be executed.</p>
- ]]></haxe_doc>
+ * to be executed.</p>]]></haxe_doc>
 	</class>
-	<class path="List" params="T" file="/usr/local/lib/haxe/std/List.hx">
-		<h><c path="Array"><d/></c></h>
-		<q><c path="Array"><d/></c></q>
-		<length public="1" set="null">
-			<c path="Int"/>
-			<haxe_doc>
-		The number of elements in this list.
-	</haxe_doc>
-		</length>
-		<add public="1" line="56">
-			<f a="item">
-				<c path="List.T"/>
-				<e path="Void"/>
+	<class path="org.puremvc.haxe.multicore.patterns.command.SimpleCommand" params="" file="src/org/puremvc/haxe/multicore/patterns/command/SimpleCommand.hx">
+		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
+		<implements path="org.puremvc.haxe.multicore.interfaces.ICommand"/>
+		<execute public="1" set="method" line="33">
+			<f a="notification">
+				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-		Add an element at the end of the list.
-	</haxe_doc>
-		</add>
-		<push public="1" line="76">
-			<f a="item">
-				<c path="List.T"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Push an element at the beginning of the list.
-	</haxe_doc>
-		</push>
-		<first public="1" line="100">
-			<f a=""><c path="List.T"/></f>
-			<haxe_doc>
-		Returns the first element of the list, or null
-		if the list is empty.
-	</haxe_doc>
-		</first>
-		<last public="1" line="108">
-			<f a=""><c path="List.T"/></f>
-			<haxe_doc>
-		Returns the last element of the list, or null
-		if the list is empty.
-	</haxe_doc>
-		</last>
-		<pop public="1" line="118">
-			<f a=""><c path="List.T"/></f>
-			<haxe_doc>
-		Removes the first element of the list and
-		returns it or simply returns null if the
-		list is empty.
-	</haxe_doc>
-		</pop>
-		<isEmpty public="1" line="132">
-			<f a=""><e path="Bool"/></f>
-			<haxe_doc>
-		Tells if a list is empty.
-	</haxe_doc>
-		</isEmpty>
-		<clear public="1" line="139">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Makes the list empty.
-	</haxe_doc>
-		</clear>
-		<remove public="1" line="148">
-			<f a="v">
-				<c path="List.T"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Remove the first element that is [== v] from the list.
-		Returns [true] if an element was removed, [false] otherwise.
-	</haxe_doc>
-		</remove>
-		<iterator public="1" line="190">
-			<f a=""><t path="Iterator"><c path="List.T"/></t></f>
-			<haxe_doc>
-		Returns an iterator on the elements of the list.
-	</haxe_doc>
-		</iterator>
-		<toString public="1" line="211">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns a displayable representation of the String.
-	</haxe_doc>
-		</toString>
-		<join public="1" line="231">
-			<f a="sep">
+			<haxe_doc><![CDATA[* Fulfill the use-case initiated by the given [INotification].
+	 * 
+	 * <p>In the Command Pattern, an application use-case typically
+	 * begins with some user action, which results in an [INotification] being broadcast, which 
+	 * is handled by business logic in the [execute] method of an [ICommand].</p>]]></haxe_doc>
+		</execute>
+		<new public="1" set="method" line="21"><f a=""><x path="Void"/></f></new>
+		<haxe_doc><![CDATA[* A base [ICommand] implementation.
+ * 
+ * <p>Your subclass should override the [execute] 
+ * method where your business logic will handle the [INotification].</p>]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.patterns.facade.Facade" params="" file="src/org/puremvc/haxe/multicore/patterns/facade/Facade.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.IFacade"/>
+		<getInstance public="1" set="method" line="64" static="1"><f a="key">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IFacade"/>
+</f></getInstance>
+		<instanceMap static="1"><c path="haxe.ds.StringMap"><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></c></instanceMap>
+		<multitonKey><c path="String"/></multitonKey>
+		<view><c path="org.puremvc.haxe.multicore.interfaces.IView"/></view>
+		<model><c path="org.puremvc.haxe.multicore.interfaces.IModel"/></model>
+		<controller><c path="org.puremvc.haxe.multicore.interfaces.IController"/></controller>
+		<removeCore public="1" set="method" line="268"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeCore>
+		<initializeNotifier public="1" set="method" line="260"><f a="key">
+	<c path="String"/>
+	<x path="Void"/>
+</f></initializeNotifier>
+		<notifyObservers public="1" set="method" line="247"><f a="notification">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></notifyObservers>
+		<sendNotification public="1" set="method" line="239"><f a="notificationName:?body:?type">
+	<c path="String"/>
+	<d/>
+	<c path="String"/>
+	<x path="Void"/>
+</f></sendNotification>
+		<hasMediator public="1" set="method" line="228"><f a="mediatorName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasMediator>
+		<removeMediator public="1" set="method" line="218"><f a="mediatorName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+</f></removeMediator>
+		<retrieveMediator public="1" set="method" line="210"><f a="mediatorName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+</f></retrieveMediator>
+		<registerMediator public="1" set="method" line="202"><f a="mediator">
+	<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+	<x path="Void"/>
+</f></registerMediator>
+		<hasProxy public="1" set="method" line="194"><f a="proxyName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasProxy>
+		<removeProxy public="1" set="method" line="184"><f a="proxyName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+</f></removeProxy>
+		<retrieveProxy public="1" set="method" line="176"><f a="proxyName">
+	<c path="String"/>
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+</f></retrieveProxy>
+		<registerProxy public="1" set="method" line="168"><f a="proxy">
+	<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
+	<x path="Void"/>
+</f></registerProxy>
+		<hasCommand public="1" set="method" line="160"><f a="notificationName">
+	<c path="String"/>
+	<x path="Bool"/>
+</f></hasCommand>
+		<removeCommand public="1" set="method" line="152"><f a="notificationName">
+	<c path="String"/>
+	<x path="Void"/>
+</f></removeCommand>
+		<registerCommand public="1" set="method" line="144"><f a="notificationName:commandClassRef">
+	<c path="String"/>
+	<x path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></x>
+	<x path="Void"/>
+</f></registerCommand>
+		<initializeView set="method" line="135"><f a=""><x path="Void"/></f></initializeView>
+		<initializeModel set="method" line="111"><f a=""><x path="Void"/></f></initializeModel>
+		<initializeController set="method" line="84"><f a=""><x path="Void"/></f></initializeController>
+		<initializeFacade set="method" line="54"><f a=""><x path="Void"/></f></initializeFacade>
+		<new set="method" line="40">
+			<f a="key">
 				<c path="String"/>
-				<c path="String"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-		Join the element of the list by using the separator [sep].
-	</haxe_doc>
-		</join>
-		<filter public="1" line="250">
-			<f a="f">
-				<f a="">
-					<c path="List.T"/>
-					<e path="Bool"/>
-				</f>
-				<c path="List"><c path="List.T"/></c>
-			</f>
-			<haxe_doc>
-		Returns a list filtered with [f]. The returned list
-		will contain all elements [x] for which [f(x) = true].
-	</haxe_doc>
-		</filter>
-		<map public="1" params="X" line="266">
-			<f a="f">
-				<f a="">
-					<c path="List.T"/>
-					<c path="map.X"/>
-				</f>
-				<c path="List"><c path="map.X"/></c>
-			</f>
-			<haxe_doc>
-		Returns a new list where all elements have been converted
-		by the function [f].
-	</haxe_doc>
-		</map>
-		<new public="1" line="49">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Creates a new empty list.
-	</haxe_doc>
+			<haxe_doc><![CDATA[* Constructor. 
+	 * 
+	 * <p>This [IFacade] implementation is a Multiton, so you should not call the constructor 
+	 * directly, but instead call the static Factory method
+	 * passing the unique key for this instance
+	 * [Facade.getInstance( multitonKey )]</p>]]></haxe_doc>
 		</new>
-		<haxe_doc>
-	A linked-list of elements. The list is composed of two-elements arrays
-	that are chained together. It's optimized so that adding or removing an
-	element doesn't imply to copy the whole array content everytime.
-</haxe_doc>
+		<haxe_doc>* A base Multiton [IFacade] implementation.</haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.patterns.mediator.Mediator" params="" file="src/org/puremvc/haxe/multicore/patterns/mediator/Mediator.hx">
+		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
+		<implements path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
+		<NAME public="1" line="30" static="1">
+			<c path="String"/>
+			<haxe_doc><![CDATA[* The name of the [Mediator]. 
+	 * 
+	 * <p>Typically, a [Mediator] will be written to serve
+	 * one specific control or group controls and so,
+	 * will not have a need to be dynamically named.</p>]]></haxe_doc>
+		</NAME>
+		<viewComponent><d/></viewComponent>
+		<mediatorName><c path="String"/></mediatorName>
+		<onRemove public="1" set="method" line="98"><f a=""><x path="Void"/></f></onRemove>
+		<onRegister public="1" set="method" line="91"><f a=""><x path="Void"/></f></onRegister>
+		<handleNotification public="1" set="method" line="83"><f a="notification">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></handleNotification>
+		<listNotificationInterests public="1" set="method" line="71"><f a=""><c path="Array"><c path="String"/></c></f></listNotificationInterests>
+		<getViewComponent public="1" set="method" line="62"><f a=""><d/></f></getViewComponent>
+		<setViewComponent public="1" set="method" line="54"><f a="viewComponent">
+	<d/>
+	<x path="Void"/>
+</f></setViewComponent>
+		<getMediatorName public="1" set="method" line="46"><f a=""><c path="String"/></f></getMediatorName>
+		<new public="1" set="method" line="35">
+			<f a="?mediatorName:?viewComponent">
+				<c path="String"/>
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Constructor.</haxe_doc>
+		</new>
+		<haxe_doc>* A base [IMediator] implementation.</haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.patterns.observer.Notification" params="" file="src/org/puremvc/haxe/multicore/patterns/observer/Notification.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+		<body><d/></body>
+		<type><c path="String"/></type>
+		<name><c path="String"/></name>
+		<toString public="1" set="method" line="90"><f a=""><c path="String"/></f></toString>
+		<getType public="1" set="method" line="82"><f a=""><c path="String"/></f></getType>
+		<setType public="1" set="method" line="74"><f a="type">
+	<c path="String"/>
+	<x path="Void"/>
+</f></setType>
+		<getBody public="1" set="method" line="66"><f a=""><d/></f></getBody>
+		<setBody public="1" set="method" line="58"><f a="body">
+	<d/>
+	<x path="Void"/>
+</f></setBody>
+		<getName public="1" set="method" line="50"><f a=""><c path="String"/></f></getName>
+		<new public="1" set="method" line="40">
+			<f a="name:?body:?type">
+				<c path="String"/>
+				<d/>
+				<c path="String"/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc>* Constructor.</haxe_doc>
+		</new>
+		<haxe_doc><![CDATA[* A base [INotification] implementation.
+ * 
+ * <p>PureMVC does not rely upon underlying event models such 
+ * as the one provided with Flash.</p>
+ * 
+ * <p>The Observer Pattern as implemented within PureMVC exists 
+ * to support event-driven communication between the 
+ * application and the actors of the MVC triad.</p>
+ * 
+ * <p>Notifications are not meant to be a replacement for Events.
+ * Generally, [IMediator] implementors place event listeners on their view components, which they
+ * then handle in the usual way. This may lead to the broadcast of [Notification]s to 
+ * trigger [ICommand]s or to communicate with other [IMediators]. [IProxy] and [ICommand]
+ * instances communicate with each other and [IMediator]s  by broadcasting [INotification]s.</p>
+ * 
+ * <p>A key difference between Flash [Event]s and PureMVC 
+ * [Notification]s is that [Event]s follow the 
+ * 'Chain of Responsibility' pattern, 'bubbling' up the display hierarchy 
+ * until some parent component handles the [Event], while
+ * PureMVC [Notification]s follow a 'Publish/Subscribe'
+ * pattern. PureMVC classes need not be related to each other in a 
+ * parent/child relationship in order to communicate with one another
+ * using [Notification]s.]]></haxe_doc>
+	</class>
+	<class path="org.puremvc.haxe.multicore.patterns.observer.Observer" params="" file="src/org/puremvc/haxe/multicore/patterns/observer/Observer.hx">
+		<implements path="org.puremvc.haxe.multicore.interfaces.IObserver"/>
+		<compareNotifyContext public="1" set="method" line="89"><f a="object">
+	<d/>
+	<x path="Bool"/>
+</f></compareNotifyContext>
+		<notifyObserver public="1" set="method" line="81"><f a="notification">
+	<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
+	<x path="Void"/>
+</f></notifyObserver>
+		<getNotifyContext set="method" line="73"><f a=""><d/></f></getNotifyContext>
+		<getNotifyMethod set="method" line="65"><f a=""><f a="">
+	<d/>
+	<x path="Void"/>
+</f></f></getNotifyMethod>
+		<setNotifyContext public="1" set="method" line="57"><f a="notifyContext">
+	<d/>
+	<x path="Void"/>
+</f></setNotifyContext>
+		<setNotifyMethod public="1" set="method" line="49"><f a="notifyMethod">
+	<f a="">
+		<d/>
+		<x path="Void"/>
+	</f>
+	<x path="Void"/>
+</f></setNotifyMethod>
+		<context><d/></context>
+		<notify><f a="">
+	<d/>
+	<x path="Void"/>
+</f></notify>
+		<new public="1" set="method" line="38">
+			<f a="notifyMethod:notifyContext">
+				<f a="">
+					<d/>
+					<x path="Void"/>
+				</f>
+				<d/>
+				<x path="Void"/>
+			</f>
+			<haxe_doc><![CDATA[* Constructor. 
+	 * 
+	 * <p>The notification method on the interested object should take 
+	 * one parameter of type [INotification]</p>]]></haxe_doc>
+		</new>
+		<haxe_doc><![CDATA[* A base [IObserver] implementation.
+ * 
+ * <p>An [Observer] is an object that encapsulates information
+ * about an interested object with a method that should 
+ * be called when a particular [INotification] is broadcast.</p>
+ * 
+ * <p>In PureMVC, the [Observer] class assumes these responsibilities:</p>
+ * <ul>
+ * <li>Encapsulate the notification (callback) method of the interested object.</li>
+ * <li>Encapsulate the notification context (this) of the interested object.</li>
+ * <li>Provide methods for setting the notification method and context.</li>
+ * <li>Provide a method for notifying the interested object.</li>
+ * </ul>]]></haxe_doc>
 	</class>
 	<class path="org.puremvc.haxe.multicore.patterns.proxy.Proxy" params="" file="src/org/puremvc/haxe/multicore/patterns/proxy/Proxy.hx">
 		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
 		<implements path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-		<NAME public="1" line="31" static="1"><c path="String"/></NAME>
-		<getProxyName public="1" line="46">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-	 * Get the proxy name
-	 </haxe_doc>
-		</getProxyName>
-		<setData public="1" line="54">
-			<f a="data">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the data object
-	 </haxe_doc>
-		</setData>
-		<getData public="1" line="62">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the data object
-	 </haxe_doc>
-		</getData>
-		<onRegister public="1" line="70">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the [Model] when the [Proxy] is registered
-	 </haxe_doc>
-		</onRegister>
-		<onRemove public="1" line="78">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the [Model] when the [Proxy] is removed
-	 </haxe_doc>
-		</onRemove>
-		<proxyName><c path="String"/></proxyName>
+		<NAME public="1" line="35" static="1"><c path="String"/></NAME>
 		<data><d/></data>
-		<new public="1" line="36">
+		<proxyName><c path="String"/></proxyName>
+		<onRemove public="1" set="method" line="82"><f a=""><x path="Void"/></f></onRemove>
+		<onRegister public="1" set="method" line="74"><f a=""><x path="Void"/></f></onRegister>
+		<getData public="1" set="method" line="66"><f a=""><d/></f></getData>
+		<setData public="1" set="method" line="58"><f a="data">
+	<d/>
+	<x path="Void"/>
+</f></setData>
+		<getProxyName public="1" set="method" line="50"><f a=""><c path="String"/></f></getProxyName>
+		<new public="1" set="method" line="40">
 			<f a="?proxyName:?data">
 				<c path="String"/>
 				<d/>
-				<e path="Void"/>
+				<x path="Void"/>
 			</f>
-			<haxe_doc>
-	 * Constructor
-	 </haxe_doc>
+			<haxe_doc>* Constructor</haxe_doc>
 		</new>
-		<haxe_doc><![CDATA[
- * A base [IProxy] implementation. 
+		<haxe_doc><![CDATA[* A base [IProxy] implementation. 
  * 
  * <p>In PureMVC, [Proxy] classes are used to manage parts of the 
  * application's data model. </p>
@@ -2591,720 +1933,6 @@
  * interaction with remote services to save or retrieve data, in which case, 
  * we adopt an asyncronous idiom; setting data (or calling a method) on the 
  * [Proxy] and listening for a [Notification] to be sent 
- * when the [Proxy] has retrieved the data from the service.</p>
- ]]></haxe_doc>
-	</class>
-	<class path="Enum" params="" file="/usr/local/lib/haxe/std/Type.hx" module="Type" extern="1"><haxe_doc>
-	An abstract type that represents an Enum.
-	See [Type] for the haXe Reflection API.
-</haxe_doc></class>
-	<enum path="ValueType" params="" file="/usr/local/lib/haxe/std/Type.hx" module="Type">
-		<TUnknown/>
-		<TObject/>
-		<TNull/>
-		<TInt/>
-		<TFunction/>
-		<TFloat/>
-		<TEnum a="e"><c path="Enum"/></TEnum>
-		<TClass a="c"><c path="Class"><d/></c></TClass>
-		<TBool/>
-		<haxe_doc>
-	The diffent possible runtime types of a value.
-	See [Type] for the haXe Reflection API.
-</haxe_doc>
-	</enum>
-	<class path="Type" params="" file="/usr/local/lib/haxe/std/Type.hx">
-		<getClass public="1" params="T" line="34" static="1">
-			<f a="o">
-				<c path="getClass.T"/>
-				<c path="Class"><c path="getClass.T"/></c>
-			</f>
-			<haxe_doc>
-		Returns the class of a value or [null] if this value is not a Class instance.
-	</haxe_doc>
-		</getClass>
-		<getEnum public="1" line="85" static="1">
-			<f a="o">
-				<d/>
-				<c path="Enum"/>
-			</f>
-			<haxe_doc>
-		Returns the enum of a value or [null] if this value is not an Enum instance.
-	</haxe_doc>
-		</getEnum>
-		<getSuperClass public="1" line="121" static="1">
-			<f a="c">
-				<c path="Class"><d/></c>
-				<c path="Class"><d/></c>
-			</f>
-			<haxe_doc>
-		Returns the super-class of a class, or null if no super class.
-	</haxe_doc>
-		</getSuperClass>
-		<getClassName public="1" line="142" static="1">
-			<f a="c">
-				<c path="Class"><d/></c>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns the complete name of a class.
-	</haxe_doc>
-		</getClassName>
-		<getEnumName public="1" line="165" static="1">
-			<f a="e">
-				<c path="Enum"/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns the complete name of an enum.
-	</haxe_doc>
-		</getEnumName>
-		<resolveClass public="1" line="180" static="1">
-			<f a="name">
-				<c path="String"/>
-				<c path="Class"><d/></c>
-			</f>
-			<haxe_doc>
-		Evaluates a class from a name. The class must have been compiled
-		to be accessible.
-	</haxe_doc>
-		</resolveClass>
-		<resolveEnum public="1" line="234" static="1">
-			<f a="name">
-				<c path="String"/>
-				<c path="Enum"/>
-			</f>
-			<haxe_doc>
-		Evaluates an enum from a name. The enum must have been compiled
-		to be accessible.
-	</haxe_doc>
-		</resolveEnum>
-		<createInstance public="1" params="T" line="282" static="1">
-			<f a="cl:args">
-				<c path="Class"><c path="createInstance.T"/></c>
-				<c path="Array"><d/></c>
-				<c path="createInstance.T"/>
-			</f>
-			<haxe_doc>
-		Creates an instance of the given class with the list of constructor arguments.
-	</haxe_doc>
-		</createInstance>
-		<createEmptyInstance public="1" params="T" line="323" static="1">
-			<f a="cl">
-				<c path="Class"><c path="createEmptyInstance.T"/></c>
-				<c path="createEmptyInstance.T"/>
-			</f>
-			<haxe_doc>
-		Similar to [Reflect.createInstance] excepts that the constructor is not called.
-		This enables you to create an instance without any side-effect.
-	</haxe_doc>
-		</createEmptyInstance>
-		<createEnum public="1" line="376" static="1">
-			<f a="e:constr:?params">
-				<c path="Enum"/>
-				<c path="String"/>
-				<c path="Array"><d/></c>
-				<d/>
-			</f>
-			<haxe_doc>
-		Create an instance of an enum by using a constructor name and parameters.
-	</haxe_doc>
-		</createEnum>
-		<getInstanceFields public="1" line="407" static="1">
-			<f a="c">
-				<c path="Class"><d/></c>
-				<c path="Array"><c path="String"/></c>
-			</f>
-			<haxe_doc>
-		Returns the list of instance fields.
-	</haxe_doc>
-		</getInstanceFields>
-		<getClassFields public="1" line="448" static="1">
-			<f a="c">
-				<c path="Class"><d/></c>
-				<c path="Array"><c path="String"/></c>
-			</f>
-			<haxe_doc>
-		Returns the list of a class static fields.
-	</haxe_doc>
-		</getClassFields>
-		<getEnumConstructs public="1" line="488" static="1">
-			<f a="e">
-				<c path="Enum"/>
-				<c path="Array"><c path="String"/></c>
-			</f>
-			<haxe_doc>
-		Returns all the available constructor names for an enum.
-	</haxe_doc>
-		</getEnumConstructs>
-		<typeof public="1" line="507" static="1">
-			<f a="v">
-				<d/>
-				<e path="ValueType"/>
-			</f>
-			<haxe_doc>
-		Returns the runtime type of a value.
-	</haxe_doc>
-		</typeof>
-		<enumEq public="1" params="T" line="617" static="1">
-			<f a="a:b">
-				<c path="enumEq.T"/>
-				<c path="enumEq.T"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Recursively compare two enums constructors and parameters.
-	</haxe_doc>
-		</enumEq>
-		<enumConstructor public="1" line="671" static="1">
-			<f a="e">
-				<d/>
-				<c path="String"/>
-			</f>
-			<haxe_doc>
-		Returns the constructor of an enum
-	</haxe_doc>
-		</enumConstructor>
-		<enumParameters public="1" line="684" static="1">
-			<f a="e">
-				<d/>
-				<c path="Array"><d/></c>
-			</f>
-			<haxe_doc>
-		Returns the parameters of an enum
-	</haxe_doc>
-		</enumParameters>
-		<enumIndex public="1" line="702" static="1">
-			<f a="e">
-				<d/>
-				<c path="Int"/>
-			</f>
-			<haxe_doc>
-		Returns the index of the constructor of an enum
-	</haxe_doc>
-		</enumIndex>
-		<haxe_doc>
-	The haXe Reflection API enables you to retreive informations about any value,
-	Classes and Enums at runtime.
-</haxe_doc>
-	</class>
-	<class path="org.puremvc.haxe.multicore.core.Model" params="" file="src/org/puremvc/haxe/multicore/core/Model.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.IModel"/>
-		<getInstance public="1" line="57" static="1">
-			<f a="key">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IModel"/>
-			</f>
-			<haxe_doc>
-	 * [Model] Multiton Factory method.
-	 </haxe_doc>
-		</getInstance>
-		<instanceMap static="1"><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IModel"/></c></instanceMap>
-		<initializeModel line="50">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the Singleton [Model] instance.
-	 * 
-	 * <p>Called automatically by the constructor, this is your opportunity to initialize the Singleton
-	 * instance in your subclass without overriding the constructor.</p>
-	 ]]></haxe_doc>
-		</initializeModel>
-		<registerProxy public="1" line="67">
-			<f a="proxy">
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IProxy] with the [Model].
-	 </haxe_doc>
-		</registerProxy>
-		<retrieveProxy public="1" line="77">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IProxy] from the [Model].
-	 </haxe_doc>
-		</retrieveProxy>
-		<hasProxy public="1" line="85">
-			<f a="proxyName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Proxy] is registered
-	 </haxe_doc>
-		</hasProxy>
-		<removeProxy public="1" line="93">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IProxy] from the [Model].
-	 </haxe_doc>
-		</removeProxy>
-		<removeModel public="1" line="107">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove an IModel instance
-	 </haxe_doc>
-		</removeModel>
-		<proxyMap><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IProxy"/></c></proxyMap>
-		<multitonKey><c path="String"/></multitonKey>
-		<new line="36">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
-	 * 
-	 * <p>This [IModel] implementation is a Multiton,
-	 * so you should not call the constructor 
-	 * directly, but instead call the static Multiton
-	 * Factory method [Model.getInstance( multitonKey )]</p>
-	 ]]></haxe_doc>
-		</new>
-		<haxe_doc><![CDATA[
- * A Singleton [IModel] implementation.
- * 
- * <p>In PureMVC, the [Model] class provides access to model objects (Proxies) by named lookup.</p> 
- * 
- * <p>The [Model] assumes these responsibilities:</p>
- * <ul>
- * <li>Maintain a cache of [IProxy] instances.</li>
- * <li>Provide methods for registering, retrieving, and removing [IProxy] instances.</li>
- * </ul>
- * 
- * <p>Your application must register [IProxy] instances with the [Model]. Typically, you use an 
- * [ICommand] to create and register [IProxy] instances once the [Facade] has initialized the Core 
- * actors.</p>
- ]]></haxe_doc>
-	</class>
-	<class path="neko.NativeString" params="" file="/usr/local/lib/haxe/std/neko/NativeString.hx">
-		<ofString public="1" line="29" static="1"><f a="s">
-	<c path="String"/>
-	<c path="neko.NativeString"/>
-</f></ofString>
-		<toString public="1" line="33" static="1"><f a="s">
-	<c path="neko.NativeString"/>
-	<c path="String"/>
-</f></toString>
-		<length public="1" line="37" static="1"><f a="s">
-	<c path="neko.NativeString"/>
-	<c path="Int"/>
-</f></length>
-	</class>
-	<class path="org.puremvc.haxe.multicore.patterns.facade.Facade" params="" file="src/org/puremvc/haxe/multicore/patterns/facade/Facade.hx">
-		<implements path="org.puremvc.haxe.multicore.interfaces.IFacade"/>
-		<getInstance public="1" line="58" static="1">
-			<f a="key">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IFacade"/>
-			</f>
-			<haxe_doc>
-	 * Facade Multiton Factory method
-	 </haxe_doc>
-		</getInstance>
-		<instanceMap static="1"><c path="Hash"><c path="org.puremvc.haxe.multicore.interfaces.IFacade"/></c></instanceMap>
-		<initializeFacade line="48">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the Multiton [Facade] instance.
-	 * 
-	 * <p>Called automatically by the constructor. Override in your
-	 * subclass to do any subclass specific initializations. Be
-	 * sure to call [super.initializeFacade()], though.</p>
-	 ]]></haxe_doc>
-		</initializeFacade>
-		<initializeController line="78">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the [Controller].
-	 * 
-	 * <p>Called by the [initializeFacade] method. Override this method in your subclass of [Facade] 
-	 * if one or both of the following are true:</p>
-	 * <ul>
-	 * <li> You wish to initialize a different [IController].</li>
-	 * <li> You have [Commands] to register with the [Controller] at startup.</li>		  
-	 * </ul>
-	 * <p>If you don't want to initialize a different [IController], 
-	 * call [super.initializeController()] at the beginning of your
-	 * method, then register [Command]s.</p>
-	 ]]></haxe_doc>
-		</initializeController>
-		<initializeModel line="105">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the [Model].
-	 * 
-	 * <p>Called by the [initializeFacade] method. Override this method in your subclass of [Facade] 
-	 * if one or both of the following are true:</p>
-	 * <ul>
-	 * <li> You wish to initialize a different [IModel].</li>
-	 * <li> You have [Proxy]s to register with the Model that do not 
-	 * retrieve a reference to the Facade at construction time.]</li> 
-	 * </ul>
-	 *
-	 * <p>If you don't want to initialize a different [IModel], 
-	 * call [super.initializeModel()] at the beginning of your
-	 * method, then register [Proxy]s.
-	 * Note: This method is <em>rarely</em> overridden; in practice you are more
-	 * likely to use a [Command] to create and register [Proxy]s
-	 * with the [Model], since [Proxy]s with mutable data will likely
-	 * need to send [INotification]s and thus will likely want to fetch a reference to 
-	 * the [Facade] during their construction. 
-	 * </P>
-	 ]]></haxe_doc>
-		</initializeModel>
-		<initializeView line="129">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc><![CDATA[
-	 * Initialize the [View].
-	 * 
-	 * <p>Called by the [initializeFacade] method.
-	 * Override this method in your subclass of [Facade] 
-	 * if one or both of the following are true:</p>
-	 * <ul>
-	 * <li> You wish to initialize a different [IView].</li>
-	 * <li> You have [Observers] to register with the [View]</li>
-	 * </ul>
-	 * If you don't want to initialize a different [IView], 
-	 * call [super.initializeView()] at the beginning of your method, then register [IMediator] instances.
-	 * <p>Note: This method is <i>rarely</i> overridden; in practice you are more
-	 * likely to use a [Command] to create and register [Mediator]s
-	 * with the [View], since [IMediator] instances will need to send 
-	 * [INotification]s and thus will likely want to fetch a reference 
-	 * to the [Facade] during their construction. </p>
-	 ]]></haxe_doc>
-		</initializeView>
-		<registerCommand public="1" line="138">
-			<f a="notificationName:commandClassRef">
-				<c path="String"/>
-				<c path="Class"><c path="org.puremvc.haxe.multicore.interfaces.ICommand"/></c>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [ICommand] with the [Controller] by [Notification] name.
-	 </haxe_doc>
-		</registerCommand>
-		<removeCommand public="1" line="146">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a previously registered [ICommand] to [INotification] mapping from the [Controller].
-	 </haxe_doc>
-		</removeCommand>
-		<hasCommand public="1" line="154">
-			<f a="notificationName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Command] is registered for a given [Notification] 
-	 </haxe_doc>
-		</hasCommand>
-		<registerProxy public="1" line="162">
-			<f a="proxy">
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register an [IProxy] with the [Model] by name.
-	 </haxe_doc>
-		</registerProxy>
-		<retrieveProxy public="1" line="170">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IProxy] from the [Model] by name.
-	 </haxe_doc>
-		</retrieveProxy>
-		<removeProxy public="1" line="178">
-			<f a="proxyName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IProxy"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IProxy] from the [Model] by name.
-	 </haxe_doc>
-		</removeProxy>
-		<hasProxy public="1" line="188">
-			<f a="proxyName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Proxy] is registered
-	 </haxe_doc>
-		</hasProxy>
-		<registerMediator public="1" line="196">
-			<f a="mediator">
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Register a [IMediator] with the [View].
-	 </haxe_doc>
-		</registerMediator>
-		<retrieveMediator public="1" line="204">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Retrieve an [IMediator] from the [View].
-	 </haxe_doc>
-		</retrieveMediator>
-		<removeMediator public="1" line="212">
-			<f a="mediatorName">
-				<c path="String"/>
-				<c path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-			</f>
-			<haxe_doc>
-	 * Remove an [IMediator] from the [View].
-	 </haxe_doc>
-		</removeMediator>
-		<hasMediator public="1" line="222">
-			<f a="mediatorName">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-	 * Check if a [Mediator] is registered or not
-	 </haxe_doc>
-		</hasMediator>
-		<sendNotification public="1" line="233">
-			<f a="notificationName:?body:?type">
-				<c path="String"/>
-				<d/>
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Create and send an [INotification].
-	 * 
-	 * <P>Keeps us from having to construct new notification 
-	 * instances in our implementation code.
-	 ]]></haxe_doc>
-		</sendNotification>
-		<notifyObservers public="1" line="241">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Notify [Observer]s.
-	 </haxe_doc>
-		</notifyObservers>
-		<initializeNotifier public="1" line="254">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[ 
-	 * Set the Multiton key for this facade instance.
-	 * 
-	 * <p>Not called directly, but instead from the 
-	 * constructor when getInstance is invoked. 
-	 * It is necessary to be public in order to 
-	 * implement INotifier.</p>
-	 ]]></haxe_doc>
-		</initializeNotifier>
-		<removeCore public="1" line="262">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Remove a Core 
-	 </haxe_doc>
-		</removeCore>
-		<controller><c path="org.puremvc.haxe.multicore.interfaces.IController"/></controller>
-		<model><c path="org.puremvc.haxe.multicore.interfaces.IModel"/></model>
-		<view><c path="org.puremvc.haxe.multicore.interfaces.IView"/></view>
-		<multitonKey><c path="String"/></multitonKey>
-		<new line="34">
-			<f a="key">
-				<c path="String"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Constructor. 
-	 * 
-	 * <p>This [IFacade] implementation is a Multiton, so you should not call the constructor 
-	 * directly, but instead call the static Factory method
-	 * passing the unique key for this instance
-	 * [Facade.getInstance( multitonKey )]</p>
-	 ]]></haxe_doc>
-		</new>
-		<haxe_doc>
- * A base Multiton [IFacade] implementation.
- </haxe_doc>
-	</class>
-	<typedef path="haxe.io.BytesData" params="" file="/usr/local/lib/haxe/std/haxe/io/BytesData.hx"><c path="neko.NativeString"/></typedef>
-	<class path="org.puremvc.haxe.multicore.patterns.mediator.Mediator" params="" file="src/org/puremvc/haxe/multicore/patterns/mediator/Mediator.hx">
-		<extends path="org.puremvc.haxe.multicore.patterns.observer.Notifier"/>
-		<implements path="org.puremvc.haxe.multicore.interfaces.IMediator"/>
-		<NAME public="1" line="26" static="1">
-			<c path="String"/>
-			<haxe_doc><![CDATA[
-	 * The name of the [Mediator]. 
-	 * 
-	 * <p>Typically, a [Mediator] will be written to serve
-	 * one specific control or group controls and so,
-	 * will not have a need to be dynamically named.</p>
-	 ]]></haxe_doc>
-		</NAME>
-		<getMediatorName public="1" line="42">
-			<f a=""><c path="String"/></f>
-			<haxe_doc><![CDATA[
-	 * Get the name of the [Mediator].
-	 * <p>Override in subclass!</p>
-	 ]]></haxe_doc>
-		</getMediatorName>
-		<setViewComponent public="1" line="50">
-			<f a="viewComponent">
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Set the [IMediator]'s view component.
-	 </haxe_doc>
-		</setViewComponent>
-		<getViewComponent public="1" line="58">
-			<f a=""><d/></f>
-			<haxe_doc>
-	 * Get the [Mediator]'s view component.
-	 </haxe_doc>
-		</getViewComponent>
-		<listNotificationInterests public="1" line="67">
-			<f a=""><c path="Array"><c path="String"/></c></f>
-			<haxe_doc>
-	 * List the [INotification] names this
-	 * [Mediator] is interested in being notified of.
-	 </haxe_doc>
-		</listNotificationInterests>
-		<handleNotification public="1" line="79">
-			<f a="notification">
-				<c path="org.puremvc.haxe.multicore.interfaces.INotification"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc><![CDATA[
-	 * Handle [INotification]s.
-	 * 
-	 * <P>Typically this will be handled in a switch statement,
-	 * with one 'case' entry per [INotification]
-	 * the [Mediator] is interested in.
-	 ]]></haxe_doc>
-		</handleNotification>
-		<onRegister public="1" line="87">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the View when the Mediator is registered
-	 </haxe_doc>
-		</onRegister>
-		<onRemove public="1" line="94">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-	 * Called by the View when the Mediator is removed
-	 </haxe_doc>
-		</onRemove>
-		<mediatorName><c path="String"/></mediatorName>
-		<viewComponent><d/></viewComponent>
-		<new public="1" line="31">
-			<f a="?mediatorName:?viewComponent">
-				<c path="String"/>
-				<d/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-	 * Constructor.
-	 </haxe_doc>
-		</new>
-		<haxe_doc>
- * A base [IMediator] implementation. 
- </haxe_doc>
-	</class>
-	<class path="Hash" params="T" file="/usr/local/lib/haxe/std/Hash.hx">
-		<h><d/></h>
-		<set public="1" line="61">
-			<f a="key:value">
-				<c path="String"/>
-				<c path="Hash.T"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Set a value for the given key.
-	</haxe_doc>
-		</set>
-		<get public="1" line="76">
-			<f a="key">
-				<c path="String"/>
-				<t path="Null"><c path="Hash.T"/></t>
-			</f>
-			<haxe_doc>
-		Get a value for the given key.
-	</haxe_doc>
-		</get>
-		<exists public="1" line="96">
-			<f a="key">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if a value exists for the given key.
-		In particular, it's useful to tells if a key has
-		a [null] value versus no value.
-	</haxe_doc>
-		</exists>
-		<remove public="1" line="125">
-			<f a="key">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Removes a hashtable entry. Returns [true] if
-		there was such entry.
-	</haxe_doc>
-		</remove>
-		<keys public="1" line="153">
-			<f a=""><t path="Iterator"><c path="String"/></t></f>
-			<haxe_doc>
-		Returns an iterator of all keys in the hashtable.
-	</haxe_doc>
-		</keys>
-		<iterator public="1" line="179">
-			<f a=""><t path="Iterator"><c path="Hash.T"/></t></f>
-			<haxe_doc>
-		Returns an iterator of all values in the hashtable.
-	</haxe_doc>
-		</iterator>
-		<toString public="1" line="216">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns an displayable representation of the hashtable content.
-	</haxe_doc>
-		</toString>
-		<new public="1" line="38">
-			<f a=""><e path="Void"/></f>
-			<haxe_doc>
-		Creates a new empty hashtable.
-	</haxe_doc>
-		</new>
-		<haxe_doc>
-	Hashtable over a set of elements, using [String] as keys.
-	Other kind of keys are not possible on all platforms since they
-	can't always be implemented efficiently.
-</haxe_doc>
+ * when the [Proxy] has retrieved the data from the service.</p>]]></haxe_doc>
 	</class>
 </haxe>

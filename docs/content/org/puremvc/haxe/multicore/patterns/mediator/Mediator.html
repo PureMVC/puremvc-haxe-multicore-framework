@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,30 +111,9 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
-<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.patterns.mediator.Mediator</div><div class="extends">extends <a href="../../../../../../org/puremvc/haxe/multicore/patterns/observer/Notifier.html" class="type">org.puremvc.haxe.multicore.patterns.observer.Notifier</a></div><div class="implements">implements <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">org.puremvc.haxe.multicore.interfaces.IMediator</a></div><div class="classdoc">
-  A base <code>IMediator</code> implementation.
-</div><dl><dt><span class="kwd">function </span>new(?mediatorName : <a href="../../../../../../String.html" class="type">String</a>, ?viewComponent : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Constructor.
-</dd><dt><span class="kwd">function </span>getMediatorName() : <a href="../../../../../../String.html" class="type">String</a></dt><dd>
-	  Get the name of the <code>Mediator</code>.
-	  <p>Override in subclass!</p>
-</dd><dt><span class="kwd">function </span>getViewComponent() : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a></dt><dd>
-	  Get the <code>Mediator</code>'s view component.
-</dd><dt><span class="kwd">function </span>handleNotification(notification : <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">org.puremvc.haxe.multicore.interfaces.INotification</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd><p>Handle <code>INotification</code>s.</p>
-<p><P>Typically this will be handled in a switch statement,
-	  with one 'case' entry per <code>INotification</code>
-	  the <code>Mediator</code> is interested in.</p></dd><dt><span class="kwd">function </span>listNotificationInterests() : <a href="../../../../../../Array.html" class="type">Array</a>&lt;<a href="../../../../../../String.html" class="type">String</a>&gt;</dt><dd>
-	  List the <code>INotification</code> names this
-	  <code>Mediator</code> is interested in being notified of.
-</dd><dt><span class="kwd">function </span>onRegister() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Called by the View when the Mediator is registered
-</dd><dt><span class="kwd">function </span>onRemove() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Called by the View when the Mediator is removed
-</dd><dt><span class="kwd">function </span>setViewComponent(viewComponent : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd>
-	  Set the <code>IMediator</code>'s view component.
-</dd><dt><span class="kwd">static </span><span class="kwd">var </span>NAME : <a href="../../../../../../String.html" class="type">String</a></dt><dd><p>The name of the <code>Mediator</code>.</p>
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>org.puremvc.haxe.multicore.patterns.mediator.Mediator</div><div class="extends">extends <a href="../../../../../../org/puremvc/haxe/multicore/patterns/observer/Notifier.html" class="type">org.puremvc.haxe.multicore.patterns.observer.Notifier</a></div><div class="implements">implements <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/IMediator.html" class="type">org.puremvc.haxe.multicore.interfaces.IMediator</a></div><div class="classdoc"> A base <code>IMediator</code> implementation.</div><dl><dt><span class="kwd">function </span>new(?mediatorName : <a href="../../../../../../String.html" class="type">String</a>, ?viewComponent : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd> Constructor.</dd><dt><span class="kwd">function </span>getMediatorName() : <a href="../../../../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">function </span>getViewComponent() : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a></dt><dd></dd><dt><span class="kwd">function </span>handleNotification(notification : <a href="../../../../../../org/puremvc/haxe/multicore/interfaces/INotification.html" class="type">org.puremvc.haxe.multicore.interfaces.INotification</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>listNotificationInterests() : <a href="../../../../../../Array.html" class="type">Array</a>&lt;<a href="../../../../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">function </span>onRegister() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>onRemove() : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>setViewComponent(viewComponent : <a href="../../../../../../Dynamic.html" class="type">Dynamic</a>) : <a href="../../../../../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">var </span>NAME : <a href="../../../../../../String.html" class="type">String</a></dt><dd><p>The name of the <code>Mediator</code>.</p>
 <p><p>Typically, a <code>Mediator</code> will be written to serve
 	  one specific control or group controls and so,
 	  will not have a need to be dynamically named.</p></p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../../../../index.html" class="index">Index</a>

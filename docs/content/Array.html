@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,56 +111,94 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
-<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">extern </span><span class="kwd">class </span>Array&lt;T&gt;</div><div class="classdoc">
-	An Array is a storage for values. You can access it using indexes or
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Array&lt;T&gt;</div><div class="classdoc">An Array is a storage for values. You can access it using indexes or
 	with its API. On the server side, it's often better to use a <code>List</code> which
-	is less memory and CPU consuming, unless you really need indexed access.
-</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>
-		The length of the Array
-</dd><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd>
-		Creates a new Array.
-</dd><dt><span class="kwd">function </span>concat(a : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
-		Returns a new Array by appending <code>a</code> to <code>this</code>.
-</dd><dt><span class="kwd">function </span>copy() : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
-		Returns a copy of the Array. The values are not
-		copied, only the Array structure.
-</dd><dt><span class="kwd">function </span>insert(pos : <a href="Int.html" class="type">Int</a>, x : T) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Inserts the element <code>x</code> at the position <code>pos</code>.
-		All elements after <code>pos</code> are moved one index ahead.
-</dd><dt><span class="kwd">function </span>iterator() : <a href="Iterator.html" class="type">Iterator</a>&lt;<a href="Null.html" class="type">Null</a>&lt;T&gt;&gt;</dt><dd>
-		Returns an iterator of the Array values.
-</dd><dt><span class="kwd">function </span>join(sep : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd>
-		Returns a representation of an array with <code>sep</code> for separating each element.
-</dd><dt><span class="kwd">function </span>pop() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd>
-		Removes the last element of the array and returns it.
-</dd><dt><span class="kwd">function </span>push(x : T) : <a href="Int.html" class="type">Int</a></dt><dd>
-		Adds the element <code>x</code> at the end of the array.
-</dd><dt><span class="kwd">function </span>remove(x : T) : <a href="Bool.html" class="type">Bool</a></dt><dd>
-		Removes the first occurence of <code>x</code>.
-		Returns false if <code>x</code> was not present.
-		Elements are compared by using standard equality.
-</dd><dt><span class="kwd">function </span>reverse() : <a href="Void.html" class="type">Void</a></dt><dd>
-		Reverse the order of elements of the Array.
-</dd><dt><span class="kwd">function </span>shift() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd>
-		Removes the first element and returns it.
-</dd><dt><span class="kwd">function </span>slice(pos : <a href="Int.html" class="type">Int</a>, ?end : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
-		Copies the range of the array starting at <code>pos</code> up to,
-		but not including, <code>end</code>. Both <code>pos</code> and <code>end</code> can be
-		negative to count from the end: -1 is the last item in
-		the array.
-</dd><dt><span class="kwd">function </span>sort(f : T -> T -> <a href="Int.html" class="type">Int</a>) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Sort the Array according to the comparison function <code>f</code>.
-		<code>f(x,y)</code> should return <code>0</code> if <code>x == y</code>, <code>&gt;0</code> if <code>x &gt; y</code>
-		and <code>&lt;0</code> if <code>x &lt; y</code>.
-</dd><dt><span class="kwd">function </span>splice(pos : <a href="Int.html" class="type">Int</a>, len : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
-		Removes <code>len</code> elements starting from <code>pos</code> an returns them.
-</dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd>
-		Returns a displayable representation of the Array content.
-</dd><dt><span class="kwd">function </span>unshift(x : T) : <a href="Void.html" class="type">Void</a></dt><dd>
-		Adds the element <code>x</code> at the start of the array.
-</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+	is less memory and CPU consuming, unless you really need indexed access.</div><dl><dt><span class="kwd">var </span>length(default,null) : <a href="Int.html" class="type">Int</a></dt><dd>The length of <code>this</code> Array.</dd><dt><span class="kwd">function </span>new() : <a href="Void.html" class="type">Void</a></dt><dd>Creates a new Array.</dd><dt><span class="kwd">function </span>concat(a : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd><p>Returns a new Array by appending the elements of <code>a</code> to the elements of
+		<code>this</code> Array.</p>
+<p>This operation does not modify <code>this</code> Array.</p>
+<p>If <code>a</code> is the empty Array <code></code>, a copy of <code>this</code> Array is returned.</p>
+<p>The length of the returned Array is equal to the sum of <code>this</code>.length
+		and <code>a</code>.length.</p>
+<p>If <code>a</code> is null, the result is unspecified.</p></dd><dt><span class="kwd">function </span>copy() : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd><p>Returns a shallow copy of <code>this</code> Array.</p>
+<p>The elements are not copied and retain their identity, so
+		a<code>i</code> == a.copy()<code>i</code> is true for any valid i. However, a == a.copy() is
+		always false.</p></dd><dt><span class="kwd">function </span>filter(f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">function </span>insert(pos : <a href="Int.html" class="type">Int</a>, x : T) : <a href="Void.html" class="type">Void</a></dt><dd><p>Inserts the element <code>x</code> at the position <code>pos</code>.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>The offset is calculated like so:</p>
+<p>- If <code>pos</code> exceeds <code>this</code>.length, the offset is <code>this</code>.length.
+		- If <code>pos</code> is negative, the offset is calculated from the end of <code>this</code>
+		Array, i.e. <code>this</code>.length + <code>pos</code>. If this yields a negative value,
+		the offset is 0.
+		- Otherwise, the offset is <code>pos</code>.</p>
+<p>If the resulting offset does not exceed <code>this</code>.length, all elements from
+		and including that offset to the end of <code>this</code> Array are moved one index
+		ahead.</p></dd><dt><span class="kwd">function </span>iterator() : <a href="Iterator.html" class="type">Iterator</a>&lt;T&gt;</dt><dd>Returns an iterator of the Array values.</dd><dt><span class="kwd">function </span>join(sep : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Returns a string representation of <code>this</code> Array, with <code>sep</code> separating
+		each element.</p>
+<p>The result of this operation is equal to Std.string(this<code>0</code>) + sep +
+		Std.string(this<code>1</code>) + sep + ... + sep + Std.string(this<code>this.length-1</code>).</p>
+<p>If <code>this</code> is the empty Array <code></code>, the result is the empty String "". If
+		<code>this</code> has exactly one element, the result is equal to a call to
+		Std.string(this<code>0</code>).</p>
+<p>If <code>a</code> is null, the result is unspecified.</p></dd><dt><span class="kwd">function </span>map&lt;S&gt;(f : T -> S) : <a href="Array.html" class="type">Array</a>&lt;S&gt;</dt><dd></dd><dt><span class="kwd">function </span>pop() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd><p>Removes the last element of <code>this</code> Array and returns it.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>If <code>this</code> has at least one element, <code>this</code>.length will decrease by 1.</p>
+<p>If <code>this</code> is the empty Array <code></code>, null is returned and the length remains
+		0.</p></dd><dt><span class="kwd">function </span>push(x : T) : <a href="Int.html" class="type">Int</a></dt><dd><p>Adds the element <code>x</code> at the end of <code>this</code> Array and returns the offset
+		it was added at.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p><code>this</code>.length will increase by 1.</p></dd><dt><span class="kwd">function </span>remove(x : T) : <a href="Bool.html" class="type">Bool</a></dt><dd><p>Removes the first occurence of <code>x</code> in <code>this</code> Array.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>If <code>x</code> is found by checking standard equality, it is removed from <code>this</code>
+		Array and all following elements are reindexed acoordingly. The function
+		then returns true.</p>
+<p>If <code>x</code> is not found, <code>this</code> Array is not changed and the function
+		returns false.</p></dd><dt><span class="kwd">function </span>reverse() : <a href="Void.html" class="type">Void</a></dt><dd><p>Reverse the order of elements of <code>this</code> Array.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>If <code>this</code>.length < 2, <code>this</code> remains unchanged.</p></dd><dt><span class="kwd">function </span>shift() : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd><p>Removes the first element of <code>this</code> Array and returns it.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>If <code>this</code> has at least one element, <code>this</code>.length and the index of each
+		remaining element is decreased by 1.</p>
+<p>If <code>this</code> is the empty Array <code></code>, null is returned and the length remains
+		0.</p></dd><dt><span class="kwd">function </span>slice(pos : <a href="Int.html" class="type">Int</a>, ?end : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd><p>Creates a shallow copy of the range of <code>this</code> Array, starting at and
+		including <code>pos</code>, up to but not including <code>end</code>.</p>
+<p>This operation does not modify <code>this</code> Array.</p>
+<p>The elements are not copied and retain their identity.</p>
+<p>If <code>end</code> is omitted or exceeds <code>this</code>.length, it defaults to the end of
+		<code>this</code> Array.</p>
+<p>If <code>pos</code> or <code>end</code> are negative, their offsets are calculated from the
+		end	of <code>this</code> Array by <code>this</code>.length + <code>pos</code> and <code>this</code>.length + <code>end</code>
+		respectively. If this yields a negative value, 0 is used instead.</p>
+<p>If <code>pos</code> exceeds <code>this</code>.length or if <pre>end} exceeds or equals [pos],
+        the result is []</pre></p></dd><dt><span class="kwd">function </span>sort(f : T -> T -> <a href="Int.html" class="type">Int</a>) : <a href="Void.html" class="type">Void</a></dt><dd><p>Sorts <code>this</code> Array according to the comparison function <code>f</code>, where
+		<code>f(x,y)</code> returns 0 if x == y, a positive Int if x > y and a
+		negative Int if x < y.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>The sort operation is not guaranteed to be stable, which means that the
+		order of equal elements may not be retained. For a stable Array sorting
+		algorithm, haxe.ds.sort.MergeSort.sort() can be used instead.</p>
+<p>If <code>f</code> is null, the result is unspecified.</p></dd><dt><span class="kwd">function </span>splice(pos : <a href="Int.html" class="type">Int</a>, len : <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd><p>Removes <code>len</code> elements from <code>this</code> Array, starting at and including
+		<code>pos</code>, an returns them.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p>If <code>len</code> is < 0 or <code>pos</code> exceeds <code>this</code>.length, the result is the empty
+		Array <code></code>.</p>
+<p>If <code>pos</code> is negative, its value is calculated from the end	of <code>this</code>
+		Array by <code>this</code>.length + <code>pos</code>. If this yields a negative value, 0 is
+		used instead.</p>
+<p>If the sum of the resulting values for <code>len</code> and <code>pos</code> exceed
+		<code>this</code>.length, this operation will affect the elements from <code>pos</code> to the
+		end of <code>this</code> Array.</p>
+<p>The length of the returned Array is equal to the new length of <code>this</code>
+		Array subtracted from the original length of <code>this</code> Array. In other
+		words, each element of the original <code>this</code> Array either remains in
+		<code>this</code> Array or becomes an element of the returned Array.</p></dd><dt><span class="kwd">function </span>toString() : <a href="String.html" class="type">String</a></dt><dd><p>Returns a string representation of <code>this</code> Array.</p>
+<p>The result will include the individual elements' String representations
+		separated by comma. The enclosing <code> </code> may be missing on some platforms,
+		use Std.string() to get a String representation that is consistent
+		across platforms.</p></dd><dt><span class="kwd">function </span>unshift(x : T) : <a href="Void.html" class="type">Void</a></dt><dd><p>Adds the element <code>x</code> at the start of <code>this</code> Array.</p>
+<p>This operation modifies <code>this</code> Array in place.</p>
+<p><code>this</code>.length and the index of each Array element increases by 1.</p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
 
 </div>
 

@@ -16,7 +16,11 @@ package org.puremvc.haxe.multicore.interfaces;
  * the core MVC actors (Model, View, Controller) and
  * the rest of your application.</p>
  */
+#if haxe3
+interface IFacade extends INotifier
+#else
 interface IFacade implements INotifier
+#end
 {
 	/**
 	 * Register an [IProxy] with the [Model] by name.

@@ -11,6 +11,12 @@ import org.puremvc.haxe.multicore.interfaces.INotification;
 import org.puremvc.haxe.multicore.interfaces.IMediator;
 import org.puremvc.haxe.multicore.patterns.observer.Observer;
 
+#if haxe3
+import haxe.ds.StringMap;
+#else
+private typedef StringMap<T> = Hash<T>;
+#end
+
 //	import org.puremvc.haxe.multicore.patterns.observer.Observer;
 
 /**
@@ -41,8 +47,8 @@ class View implements IView
 	{
 		multitonKey = key;
 		instanceMap.set( multitonKey, this );
-		mediatorMap = new Hash();
-		observerMap = new Hash();	
+		mediatorMap = new StringMap();
+		observerMap = new StringMap();	
 		initializeView();	
 	}
 	
@@ -61,7 +67,7 @@ class View implements IView
 	 */
 	public static function getInstance( key: String ): IView 
 	{
-		if ( instanceMap == null ) instanceMap = new Hash();
+		if ( instanceMap == null ) instanceMap = new StringMap();
 		if ( !instanceMap.exists( key ) ) instanceMap.set( key, new View( key ) );
 		return instanceMap.get( key );
 	}
@@ -209,13 +215,13 @@ class View implements IView
 	}
 					
 	// Mapping of Mediator names to Mediator instances
-	private var mediatorMap: Hash<IMediator>;
+	private var mediatorMap: StringMap<IMediator>;
 
 	// Mapping of Notification names to Observer lists
-	private var observerMap: Hash<List<IObserver>>;
+	private var observerMap: StringMap<List<IObserver>>;
 		
 	// Singleton instance
-	private static var instanceMap: Hash<IView>;
+	private static var instanceMap: StringMap<IView>;
 
 	// The Multiton Key for this Core
 	private var multitonKey: String;

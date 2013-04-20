@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<title>haXe API Documentation</title>
+<title>Haxe API Documentation</title>
 
 <script type="text/javascript">
 <!--
@@ -111,23 +111,19 @@ dt {
 <body>
 
 <div class="document">
-<div class="title">PureMVC Framework for haXe: API Documentation</div>
+<div class="title">PureMVC Framework for Haxe: API Documentation</div>
 
-<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Std</div><div class="classdoc">
-	The Std class provides standard methods for manipulating basic types.
-</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>int(x : <a href="Float.html" class="type">Float</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
-		Convert a Float to an Int, rounded down.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>is(v : <a href="Dynamic.html" class="type">Dynamic</a>, t : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd>
-		Tells if a value v is of the type t.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>parseFloat(x : <a href="String.html" class="type">String</a>) : <a href="Float.html" class="type">Float</a></dt><dd>
-		Convert a String to a Float, parsing different possible reprensations.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>parseInt(x : <a href="String.html" class="type">String</a>) : <a href="Null.html" class="type">Null</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd>
-		Convert a String to an Int, parsing different possible representations. Returns <code>null</code> if could not be parsed.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>random(x : <a href="Int.html" class="type">Int</a>) : <a href="Int.html" class="type">Int</a></dt><dd>
-		Return a random integer between 0 included and x excluded.
-</dd><dt><span class="kwd">static </span><span class="kwd">function </span>string(s : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="String.html" class="type">String</a></dt><dd>
-		Convert any value to a String
-</dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Std</div><div class="classdoc">The Std class provides standard methods for manipulating basic types.</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>string(s : <a href="Dynamic.html" class="type">Dynamic</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Converts any value to a String.</p>
+<p>If s is of String, Int, Float or Bool, its value is returned.</p>
+<p>If s is an instance of a class and that class or one of its parent classes has
+		a toString() method, that method is called. If no such method is present, the result
+		is unspecified.</p>
+<p>If s is an enum constructor without argument, the constructor's name is returned. If
+		arguments exists, the constructor's name followed by the String representations of
+		the arguments is returned.</p>
+<p>If s is a structure, the field names along with their values are returned. The field order
+		and the operator separating field names and values are unspecified.</p>
+<p>If s is null, "null" is returned.</p></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
 
 </div>
 
