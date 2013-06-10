@@ -63,7 +63,6 @@ class Facade implements IFacade
 	 */
 	public static function getInstance( key: String ): IFacade
 	{
-		if ( instanceMap == null ) instanceMap = new StringMap();
 		if ( !instanceMap.exists( key ) ) instanceMap.set(  key, new Facade( key ) );
 		return instanceMap.get( key );
 	}
@@ -284,6 +283,5 @@ class Facade implements IFacade
 	private var multitonKey: String;
 	
 	// The Multiton Facade instanceMap.
-	private static var instanceMap : StringMap<IFacade>;
-
+	private static var instanceMap : StringMap<IFacade> = new StringMap<IFacade>();
 }
