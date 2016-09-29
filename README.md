@@ -1,4 +1,6 @@
 ## [PureMVC](http://puremvc.github.com/) Haxe MultiCore Framework
+
+[![Join the chat at https://gitter.im/PureMVC/puremvc-haxe-multicore-framework](https://badges.gitter.im/PureMVC/puremvc-haxe-multicore-framework.svg)](https://gitter.im/PureMVC/puremvc-haxe-multicore-framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 PureMVC is a lightweight framework for creating applications based upon the classic [Model-View-Controller](http://en.wikipedia.org/wiki/Model-view-controller) design meta-pattern. This is a Haxe port of the [AS3 reference implementation of the MultiCore Version](https://github.com/PureMVC/puremvc-as3-multicore-framework/wiki). It supports [modular programming](http://en.wikipedia.org/wiki/Modular_programming) through the use of [Multiton](http://en.wikipedia.org/wiki/Multiton) Core actors instead of the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern)s used in the [Standard Version](https://github.com/PureMVC/puremvc-haxe-standard-framework/wiki).
 
 * [API Docs](http://darkstar.puremvc.org/content_header.html?url=http://puremvc.org/pages/docs/Haxe/multicore/docs&desc=PureMVC%20API%20Docs:%20PureMVC%20MultiCore%20for%20Haxe)
