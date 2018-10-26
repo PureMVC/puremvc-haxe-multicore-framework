@@ -14,7 +14,7 @@ PureMVC is a lightweight framework for creating applications based upon the clas
 * [Async Stub](https://github.com/PureMVC/puremvc-haxe-util-async-stub/wiki)
 * [Pipes](https://github.com/PureMVC/puremvc-haxe-util-pipes/wiki)
 * [State Machine](https://github.com/PureMVC/puremvc-haxe-util-statemachine/wiki)
-* [Undo](https://github.com/PureMVC/puremvc-haxe-util-statemachine/wiki)
+* [Undo](https://github.com/PureMVC/puremvc-haxe-util-undo/wiki)
 
 ## Status
 Production - [Version 1.4](https://github.com/PureMVC/puremvc-haxe-multicore-framework/blob/master/VERSION)
